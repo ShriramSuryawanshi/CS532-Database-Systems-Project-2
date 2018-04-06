@@ -8,14 +8,21 @@
  * Created: Apr 6, 2018
  */
 
-set serveroutput on;
+SET SERVEROUTPUT ON;
 
 CREATE OR REPLACE PACKAGE SQLPackage AS
 
-    type myCursor is ref cursor;
+    TYPE myCursor IS REF CURSOR;
 
 
-    PROCEDURE display_students(oCursor out myCursor);
+    -- @shree : Students Module
+
+    PROCEDURE display_students(oCursor OUT myCursor);
+
+    PROCEDURE add_student(temp_sid IN students.sid%TYPE, temp_firstname IN students.firstname%TYPE, temp_lastname IN students.lastname%TYPE, temp_status IN students.status%TYPE, temp_gpa IN students.gpa%TYPE, temp_email IN students.email%TYPE);
+
+    
+    
 
 END;
 /
@@ -24,12 +31,17 @@ END;
 CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 
 
--- @shree - Task 1 : showing tables
+-- @shree : Students module
 
 PROCEDURE display_students(oCursor out myCursor) AS
     BEGIN
-        OPEN ocursor for select * from students; 
+        OPEN ocursor FOR SELECT * FROM students; 
     END;
+
+PROCEDURE add_student(temp_sid IN students.sid%TYPE, temp_firstname IN students.firstname%TYPE, temp_lastname IN students.lastname%TYPE, temp_status IN students.status%TYPE, temp_gpa IN students.gpa%TYPE, temp_email IN students.email%TYPE) AS
+    BEGIN
+        INSERT INTO students VALUES (temp_sid, temp_firstname, temp_lastname, temp_status, temp_gpa, temp_email);
+     END;
 
 
 END;

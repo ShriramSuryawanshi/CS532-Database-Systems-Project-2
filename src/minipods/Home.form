@@ -513,7 +513,7 @@
                                   <EmptySpace pref="77" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jPanel5" max="32767" attributes="0"/>
-                                      <Component id="L_Success_AddNewStudent" max="32767" attributes="0"/>
+                                      <Component id="L_Message_AddNewStudent" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               </Group>
@@ -527,7 +527,7 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                                  <Component id="L_Success_AddNewStudent" min="-2" max="-2" attributes="0"/>
+                                  <Component id="L_Message_AddNewStudent" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="178" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -542,7 +542,7 @@
                             <Property name="text" type="java.lang.String" value="Please provide below details for the new student - "/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="L_Success_AddNewStudent">
+                        <Component class="javax.swing.JLabel" name="L_Message_AddNewStudent">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Montserrat" size="14" style="0"/>
@@ -633,7 +633,7 @@
                                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace pref="1060" max="32767" attributes="0"/>
-                                          <Component id="B_Cancel_AddNewStudent1" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <Component id="B_Cancel_AddNewStudent" min="-2" pref="160" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -701,7 +701,7 @@
                                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace pref="297" max="32767" attributes="0"/>
-                                          <Component id="B_Cancel_AddNewStudent1" min="-2" pref="47" max="-2" attributes="0"/>
+                                          <Component id="B_Cancel_AddNewStudent" min="-2" pref="47" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -940,7 +940,7 @@
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Add_AddNewStudentActionPerformed"/>
                               </Events>
                             </Component>
-                            <Component class="javax.swing.JButton" name="B_Cancel_AddNewStudent1">
+                            <Component class="javax.swing.JButton" name="B_Cancel_AddNewStudent">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Montserrat" size="15" style="1"/>
@@ -957,7 +957,7 @@
                                 <Property name="opaque" type="boolean" value="false"/>
                               </Properties>
                               <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Cancel_AddNewStudent1ActionPerformed"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Cancel_AddNewStudentActionPerformed"/>
                               </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="L_Error_AddNewStudent">

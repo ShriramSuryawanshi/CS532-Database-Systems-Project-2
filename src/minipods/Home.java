@@ -58,7 +58,7 @@ public class Home extends javax.swing.JFrame {
         TBL_ShowAllStudents = new javax.swing.JTable();
         P_AddNewStudent = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        L_Success_AddNewStudent = new javax.swing.JLabel();
+        L_Message_AddNewStudent = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         T_FirstName = new javax.swing.JTextField();
@@ -79,7 +79,7 @@ public class Home extends javax.swing.JFrame {
         RB_Senior = new javax.swing.JRadioButton();
         RB_Graduate = new javax.swing.JRadioButton();
         B_Add_AddNewStudent = new javax.swing.JButton();
-        B_Cancel_AddNewStudent1 = new javax.swing.JButton();
+        B_Cancel_AddNewStudent = new javax.swing.JButton();
         L_Error_AddNewStudent = new javax.swing.JLabel();
         P_FindStudent = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -278,8 +278,8 @@ public class Home extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         jLabel3.setText("Please provide below details for the new student - ");
 
-        L_Success_AddNewStudent.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
-        L_Success_AddNewStudent.setText("Congratulations!! Student added. Your B-Number (sid) is - ");
+        L_Message_AddNewStudent.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Message_AddNewStudent.setText("Congratulations!! Student added. Your B-Number (sid) is - ");
 
         jPanel5.setBackground(new java.awt.Color(153, 204, 255));
         jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -400,14 +400,14 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        B_Cancel_AddNewStudent1.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
-        B_Cancel_AddNewStudent1.setForeground(new java.awt.Color(0, 102, 102));
-        B_Cancel_AddNewStudent1.setText("Cancel");
-        B_Cancel_AddNewStudent1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        B_Cancel_AddNewStudent1.setOpaque(false);
-        B_Cancel_AddNewStudent1.addActionListener(new java.awt.event.ActionListener() {
+        B_Cancel_AddNewStudent.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_Cancel_AddNewStudent.setForeground(new java.awt.Color(0, 102, 102));
+        B_Cancel_AddNewStudent.setText("Cancel");
+        B_Cancel_AddNewStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_Cancel_AddNewStudent.setOpaque(false);
+        B_Cancel_AddNewStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B_Cancel_AddNewStudent1ActionPerformed(evt);
+                B_Cancel_AddNewStudentActionPerformed(evt);
             }
         });
 
@@ -473,7 +473,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                     .addContainerGap(1060, Short.MAX_VALUE)
-                    .addComponent(B_Cancel_AddNewStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_Cancel_AddNewStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(21, 21, 21)))
         );
         jPanel5Layout.setVerticalGroup(
@@ -525,7 +525,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                     .addContainerGap(297, Short.MAX_VALUE)
-                    .addComponent(B_Cancel_AddNewStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_Cancel_AddNewStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(14, 14, 14)))
         );
 
@@ -541,7 +541,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(77, Short.MAX_VALUE)
                 .addGroup(P_AddNewStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(L_Success_AddNewStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(L_Message_AddNewStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(59, 59, 59))
         );
         P_AddNewStudentLayout.setVerticalGroup(
@@ -552,7 +552,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
-                .addComponent(L_Success_AddNewStudent)
+                .addComponent(L_Message_AddNewStudent)
                 .addContainerGap(178, Short.MAX_VALUE))
         );
 
@@ -835,6 +835,7 @@ public class Home extends javax.swing.JFrame {
             ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
             Connection conn = ds.getConnection("shree", "shree2103");
 
+            // @shree - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_students(?); end;");
             call.registerOutParameter(1, OracleTypes.CURSOR);
             call.execute();
@@ -852,7 +853,7 @@ public class Home extends javax.swing.JFrame {
                 }
                 model.addRow(obj);
             }
-            
+
             L_Message_ShowAllStudent.setText("Displaying all available students - ");
             L_Message_ShowAllStudent.setForeground(Color.BLACK);
             TBL_ShowAllStudents.setModel(model);
@@ -869,7 +870,7 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_B_ShowAllStudentsActionPerformed
 
-    // @shree - Add new student
+    // @shree - Add new student - show panel for adding new student
     private void B_AddNewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_AddNewStudentActionPerformed
 
         // @shree - show P_AddNewStudents panel, hide all others
@@ -878,8 +879,15 @@ public class Home extends javax.swing.JFrame {
         P_FindStudent.setVisible(false);
         //     P_DeleteStudent.setVisible(false);
 
+        // @shree - resetting the panel (textbox values, selections etc.)
         L_Error_AddNewStudent.setVisible(false);
-        L_Success_AddNewStudent.setVisible(false);
+        L_Message_AddNewStudent.setVisible(false);
+        T_FirstName.setText("Enter firstname here");
+        T_LastName.setText("Enter lastname here");
+        T_GPA.setText("Enter gpa here");
+        T_Email.setText("Enter email id here");
+        RBG_Students.clearSelection();
+
     }//GEN-LAST:event_B_AddNewStudentActionPerformed
 
     // @shree - Add students to DB
@@ -894,9 +902,11 @@ public class Home extends javax.swing.JFrame {
             L_Error_AddNewStudent.setText("Please provide valid lastname!");
             L_Error_AddNewStudent.setVisible(true);
 
-        } else if (Float.parseFloat(T_GPA.getText()) < 0 || Float.parseFloat(T_GPA.getText()) > 4.0) {
-            L_Error_AddNewStudent.setText("Please provide valid gpa!");
-            L_Error_AddNewStudent.setVisible(true);
+        } else if (!(T_GPA.getText().equals("") || T_GPA.getText().equals("Enter gpa here"))) {
+            if (Float.parseFloat(T_GPA.getText()) < 0 || Float.parseFloat(T_GPA.getText()) > 4.0) {
+                L_Error_AddNewStudent.setText("Please provide valid gpa!");
+                L_Error_AddNewStudent.setVisible(true);
+            }
 
         } else if (T_Email.getText().equals("") || T_Email.getText().equals("Enter email id here") || (!T_Email.getText().contains("@"))) {
             L_Error_AddNewStudent.setText("Please provide valid email id!");
@@ -907,6 +917,8 @@ public class Home extends javax.swing.JFrame {
             L_Error_AddNewStudent.setVisible(true);
 
         } else {
+
+            L_Error_AddNewStudent.setVisible(false);
 
             // @shree - generate sid
             try {
@@ -928,8 +940,9 @@ public class Home extends javax.swing.JFrame {
                     SID = Integer.parseInt(rs.getString(1).substring(1));
                 }
 
+                // @shree - sid reached to 999, then do nothing
                 if (SID >= 999) {
-                    L_Error_AddNewStudent.setText("Maximum SID reached, please delete few old students details to proceed!");
+                    L_Error_AddNewStudent.setText("Maximum SID (999) reached!");
                     L_Error_AddNewStudent.setVisible(true);
                 } else {
 
@@ -961,32 +974,54 @@ public class Home extends javax.swing.JFrame {
                         status = "graduate";
                     }
 
-                    if (T_GPA.getText().equals("") || T_GPA.getText().equals("Enter gpa here")) {
-                        // @shree - GPA not provided, setting it to null
+                    // @shree - calling procedure to add student
+                    CallableStatement call = conn.prepareCall("begin SQLPackage.add_student(?, ?, ?, ?, ?, ?); end;");
+                    call.setString(1, sid);
+                    call.setString(2, firstname);
+                    call.setString(3, lastname);
+                    call.setString(4, status);
+                    call.setString(6, email);
 
+                    if (T_GPA.getText().equals("") || T_GPA.getText().equals("Enter gpa here")) {
+                        call.setString(5, "");
                     } else {
                         Float gpa = Float.parseFloat(T_GPA.getText());
+                        call.setFloat(5, gpa);
                     }
 
-                    JOptionPane.showMessageDialog(null, status);
+                    int temp = call.executeUpdate();
+
+                    if (temp == 1) {
+                        L_Message_AddNewStudent.setText("Congratulations!! Student added. Your B-Number (sid) is - " + sid);
+                        L_Message_AddNewStudent.setForeground(Color.BLACK);
+                        L_Message_AddNewStudent.setVisible(true);
+
+                        T_FirstName.setText("Enter firstname here");
+                        T_LastName.setText("Enter lastname here");
+                        T_GPA.setText("Enter gpa here");
+                        T_Email.setText("Enter email id here");
+                        RBG_Students.clearSelection();
+                    }
                 }
 
                 conn.close();
 
             } catch (SQLException ex) {
-                L_Error_AddNewStudent.setText("SQL Exception : " + ex);
-                L_Error_AddNewStudent.setVisible(true);
+                L_Message_AddNewStudent.setText("SQL Exception : " + ex);
+                L_Message_AddNewStudent.setForeground(Color.RED);
+                L_Message_AddNewStudent.setVisible(true);
             } catch (HeadlessException | NumberFormatException e) {
-                L_Error_AddNewStudent.setText("Exception : " + e);
-                L_Error_AddNewStudent.setVisible(true);
+                L_Message_AddNewStudent.setText("Exception : " + e);
+                L_Message_AddNewStudent.setForeground(Color.RED);
+                L_Message_AddNewStudent.setVisible(true);
             }
         }
     }//GEN-LAST:event_B_Add_AddNewStudentActionPerformed
 
     //@shree - Cancel adding new student
-    private void B_Cancel_AddNewStudent1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_AddNewStudent1ActionPerformed
+    private void B_Cancel_AddNewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_AddNewStudentActionPerformed
 
-    }//GEN-LAST:event_B_Cancel_AddNewStudent1ActionPerformed
+    }//GEN-LAST:event_B_Cancel_AddNewStudentActionPerformed
 
     // @shree - Find student
     private void B_FindStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_FindStudentActionPerformed
@@ -1017,6 +1052,7 @@ public class Home extends javax.swing.JFrame {
 
         }
         L_Error_AddNewStudent.setVisible(false);
+        L_Message_AddNewStudent.setVisible(false);
     }//GEN-LAST:event_T_FirstNameFocusGained
 
     // @shree - Foucs lost by firstname textbox
@@ -1037,6 +1073,7 @@ public class Home extends javax.swing.JFrame {
 
         }
         L_Error_AddNewStudent.setVisible(false);
+        L_Message_AddNewStudent.setVisible(false);
     }//GEN-LAST:event_T_LastNameFocusGained
 
     // @shree - Focus lost by lastname textbox
@@ -1057,6 +1094,7 @@ public class Home extends javax.swing.JFrame {
 
         }
         L_Error_AddNewStudent.setVisible(false);
+        L_Message_AddNewStudent.setVisible(false);
     }//GEN-LAST:event_T_GPAFocusGained
 
     // @shree - Focus lost by GPA textbox
@@ -1076,6 +1114,7 @@ public class Home extends javax.swing.JFrame {
             T_Email.setText("");
         }
         L_Error_AddNewStudent.setVisible(false);
+        L_Message_AddNewStudent.setVisible(false);
     }//GEN-LAST:event_T_EmailFocusGained
 
     // @shree - Focus lost by email textbox
@@ -1160,15 +1199,15 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton B_Add_AddNewStudent;
     private javax.swing.JButton B_Add_AddNewStudent1;
     private javax.swing.JButton B_Add_AddNewStudent2;
-    private javax.swing.JButton B_Cancel_AddNewStudent1;
+    private javax.swing.JButton B_Cancel_AddNewStudent;
     private javax.swing.JButton B_DeleteStudent;
     private javax.swing.JButton B_ExitStudent;
     private javax.swing.JButton B_FindStudent;
     private javax.swing.JButton B_ShowAllStudents;
     private javax.swing.JLayeredPane LP_Students;
     private javax.swing.JLabel L_Error_AddNewStudent;
+    private javax.swing.JLabel L_Message_AddNewStudent;
     private javax.swing.JLabel L_Message_ShowAllStudent;
-    private javax.swing.JLabel L_Success_AddNewStudent;
     private javax.swing.JPanel P_AddNewStudent;
     private javax.swing.JPanel P_Button_Students;
     private javax.swing.JPanel P_FindStudent;
