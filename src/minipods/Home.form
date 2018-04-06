@@ -304,6 +304,9 @@
                         </Property>
                         <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_ExitStudentActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -998,15 +1001,15 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jSeparator5" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="T_FirstName1" alignment="0" min="-2" pref="289" max="-2" attributes="0"/>
+                                              <Component id="T_sid_FindStudent" alignment="0" min="-2" pref="289" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace pref="436" max="32767" attributes="0"/>
-                                          <Component id="B_Add_AddNewStudent2" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <Component id="B_Find_FindStudent" min="-2" pref="160" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="B_Add_AddNewStudent1" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <Component id="B_Cancel_FindStudent" min="-2" pref="160" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jPanel7" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jPanel6" max="32767" attributes="0"/>
+                                      <Component id="P_ClassDetails_FindStudents" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="P_StudentDetails_FindStudent" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -1021,7 +1024,7 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="T_FirstName1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="T_sid_FindStudent" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
@@ -1032,15 +1035,15 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="B_Add_AddNewStudent1" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                                              <Component id="B_Add_AddNewStudent2" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                                              <Component id="B_Cancel_FindStudent" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                                              <Component id="B_Find_FindStudent" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="28" max="32767" attributes="0"/>
-                                  <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="P_StudentDetails_FindStudent" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="P_ClassDetails_FindStudents" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1055,7 +1058,7 @@
                             <Property name="text" type="java.lang.String" value="Please provide student&apos;s B-Number (sid) - "/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JPanel" name="jPanel6">
+                        <Container class="javax.swing.JPanel" name="P_StudentDetails_FindStudent">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -1085,7 +1088,7 @@
                             </DimensionLayout>
                           </Layout>
                         </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel7">
+                        <Container class="javax.swing.JPanel" name="P_ClassDetails_FindStudents">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -1115,7 +1118,7 @@
                             </DimensionLayout>
                           </Layout>
                         </Container>
-                        <Component class="javax.swing.JTextField" name="T_FirstName1">
+                        <Component class="javax.swing.JTextField" name="T_sid_FindStudent">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -1129,8 +1132,8 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="T_FirstName1FocusGained"/>
-                            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="T_FirstName1FocusLost"/>
+                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="T_sid_FindStudentFocusGained"/>
+                            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="T_sid_FindStudentFocusLost"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JSeparator" name="jSeparator5">
@@ -1140,7 +1143,7 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="B_Add_AddNewStudent1">
+                        <Component class="javax.swing.JButton" name="B_Cancel_FindStudent">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Montserrat" size="15" style="1"/>
@@ -1157,10 +1160,10 @@
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Add_AddNewStudent1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Cancel_FindStudentActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="B_Add_AddNewStudent2">
+                        <Component class="javax.swing.JButton" name="B_Find_FindStudent">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Montserrat" size="15" style="1"/>
@@ -1177,7 +1180,7 @@
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Add_AddNewStudent2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Find_FindStudentActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>

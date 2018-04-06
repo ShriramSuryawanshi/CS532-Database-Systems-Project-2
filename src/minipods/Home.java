@@ -83,12 +83,12 @@ public class Home extends javax.swing.JFrame {
         L_Error_AddNewStudent = new javax.swing.JLabel();
         P_FindStudent = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        T_FirstName1 = new javax.swing.JTextField();
+        P_StudentDetails_FindStudent = new javax.swing.JPanel();
+        P_ClassDetails_FindStudents = new javax.swing.JPanel();
+        T_sid_FindStudent = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
-        B_Add_AddNewStudent1 = new javax.swing.JButton();
-        B_Add_AddNewStudent2 = new javax.swing.JButton();
+        B_Cancel_FindStudent = new javax.swing.JButton();
+        B_Find_FindStudent = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -167,6 +167,11 @@ public class Home extends javax.swing.JFrame {
         B_ExitStudent.setText("Exit");
         B_ExitStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         B_ExitStudent.setOpaque(false);
+        B_ExitStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_ExitStudentActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout P_Button_StudentsLayout = new javax.swing.GroupLayout(P_Button_Students);
         P_Button_Students.setLayout(P_Button_StudentsLayout);
@@ -562,68 +567,68 @@ public class Home extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         jLabel10.setText("Please provide student's B-Number (sid) - ");
 
-        jPanel6.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "  Student Details - ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 14))); // NOI18N
+        P_StudentDetails_FindStudent.setBackground(new java.awt.Color(0, 204, 204));
+        P_StudentDetails_FindStudent.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "  Student Details - ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 14))); // NOI18N
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout P_StudentDetails_FindStudentLayout = new javax.swing.GroupLayout(P_StudentDetails_FindStudent);
+        P_StudentDetails_FindStudent.setLayout(P_StudentDetails_FindStudentLayout);
+        P_StudentDetails_FindStudentLayout.setHorizontalGroup(
+            P_StudentDetails_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        P_StudentDetails_FindStudentLayout.setVerticalGroup(
+            P_StudentDetails_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 152, Short.MAX_VALUE)
         );
 
-        jPanel7.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "  Class Details -  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 14))); // NOI18N
+        P_ClassDetails_FindStudents.setBackground(new java.awt.Color(0, 204, 204));
+        P_ClassDetails_FindStudents.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "  Class Details -  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 14))); // NOI18N
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout P_ClassDetails_FindStudentsLayout = new javax.swing.GroupLayout(P_ClassDetails_FindStudents);
+        P_ClassDetails_FindStudents.setLayout(P_ClassDetails_FindStudentsLayout);
+        P_ClassDetails_FindStudentsLayout.setHorizontalGroup(
+            P_ClassDetails_FindStudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        P_ClassDetails_FindStudentsLayout.setVerticalGroup(
+            P_ClassDetails_FindStudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 348, Short.MAX_VALUE)
         );
 
-        T_FirstName1.setBackground(new java.awt.Color(0, 204, 204));
-        T_FirstName1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
-        T_FirstName1.setText("Enter (B-Number) sid here");
-        T_FirstName1.setBorder(null);
-        T_FirstName1.addFocusListener(new java.awt.event.FocusAdapter() {
+        T_sid_FindStudent.setBackground(new java.awt.Color(0, 204, 204));
+        T_sid_FindStudent.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        T_sid_FindStudent.setText("Enter (B-Number) sid here");
+        T_sid_FindStudent.setBorder(null);
+        T_sid_FindStudent.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                T_FirstName1FocusGained(evt);
+                T_sid_FindStudentFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                T_FirstName1FocusLost(evt);
+                T_sid_FindStudentFocusLost(evt);
             }
         });
 
         jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
 
-        B_Add_AddNewStudent1.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
-        B_Add_AddNewStudent1.setForeground(new java.awt.Color(0, 102, 102));
-        B_Add_AddNewStudent1.setText("Cancel");
-        B_Add_AddNewStudent1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        B_Add_AddNewStudent1.setOpaque(false);
-        B_Add_AddNewStudent1.addActionListener(new java.awt.event.ActionListener() {
+        B_Cancel_FindStudent.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_Cancel_FindStudent.setForeground(new java.awt.Color(0, 102, 102));
+        B_Cancel_FindStudent.setText("Cancel");
+        B_Cancel_FindStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_Cancel_FindStudent.setOpaque(false);
+        B_Cancel_FindStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B_Add_AddNewStudent1ActionPerformed(evt);
+                B_Cancel_FindStudentActionPerformed(evt);
             }
         });
 
-        B_Add_AddNewStudent2.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
-        B_Add_AddNewStudent2.setForeground(new java.awt.Color(0, 102, 102));
-        B_Add_AddNewStudent2.setText("Find");
-        B_Add_AddNewStudent2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        B_Add_AddNewStudent2.setOpaque(false);
-        B_Add_AddNewStudent2.addActionListener(new java.awt.event.ActionListener() {
+        B_Find_FindStudent.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_Find_FindStudent.setForeground(new java.awt.Color(0, 102, 102));
+        B_Find_FindStudent.setText("Find");
+        B_Find_FindStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_Find_FindStudent.setOpaque(false);
+        B_Find_FindStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B_Add_AddNewStudent2ActionPerformed(evt);
+                B_Find_FindStudentActionPerformed(evt);
             }
         });
 
@@ -639,13 +644,13 @@ public class Home extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(P_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSeparator5)
-                            .addComponent(T_FirstName1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(T_sid_FindStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 436, Short.MAX_VALUE)
-                        .addComponent(B_Add_AddNewStudent2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(B_Find_FindStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(B_Add_AddNewStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(B_Cancel_FindStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(P_ClassDetails_FindStudents, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(P_StudentDetails_FindStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         P_FindStudentLayout.setVerticalGroup(
@@ -657,19 +662,19 @@ public class Home extends javax.swing.JFrame {
                         .addGroup(P_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(P_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel10)
-                                .addComponent(T_FirstName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(T_sid_FindStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(P_FindStudentLayout.createSequentialGroup()
                                 .addGap(25, 25, 25)
                                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(P_FindStudentLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(P_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(B_Add_AddNewStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B_Add_AddNewStudent2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(B_Cancel_FindStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(B_Find_FindStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(P_StudentDetails_FindStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(P_ClassDetails_FindStudents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -818,7 +823,7 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // @shree - Show all student
+
     private void B_ShowAllStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllStudentsActionPerformed
 
         // @shree - show P_ShowAllStudents panel, hide all others
@@ -842,13 +847,11 @@ public class Home extends javax.swing.JFrame {
 
             ResultSet rs = (ResultSet) call.getObject(1);
 
-            
-            
             // @shree - inserting data into the table on GUI
             DefaultTableModel model = (DefaultTableModel) TBL_ShowAllStudents.getModel();
             model.setRowCount(0);
             TBL_ShowAllStudents.setModel(model);
-            
+
             int cols = TBL_ShowAllStudents.getColumnCount();
 
             while (rs.next()) {
@@ -859,23 +862,27 @@ public class Home extends javax.swing.JFrame {
                 model.addRow(obj);
             }
 
-            L_Message_ShowAllStudent.setText("Displaying all available students - ");
-            L_Message_ShowAllStudent.setForeground(Color.BLACK);
             TBL_ShowAllStudents.setModel(model);
             TBL_ShowAllStudents.getTableHeader().setFont(new Font("Monteserrat", Font.BOLD, 14));
+
+            L_Message_ShowAllStudent.setText("Displaying all available students - ");
+            L_Message_ShowAllStudent.setForeground(Color.BLACK);
 
             conn.close();
 
         } catch (SQLException ex) {
+
+            // @shree - show errors on panel -
             L_Message_ShowAllStudent.setText("SQL Exception : " + ex);
             L_Message_ShowAllStudent.setForeground(Color.RED);
         } catch (Exception e) {
+
+            // @shree - show errors on panel -
             L_Message_ShowAllStudent.setText("Exception : " + e);
             L_Message_ShowAllStudent.setForeground(Color.RED);
         }
     }//GEN-LAST:event_B_ShowAllStudentsActionPerformed
 
-    // @shree - Add new student - show panel for adding new student
     private void B_AddNewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_AddNewStudentActionPerformed
 
         // @shree - show P_AddNewStudents panel, hide all others
@@ -895,7 +902,7 @@ public class Home extends javax.swing.JFrame {
 
     }//GEN-LAST:event_B_AddNewStudentActionPerformed
 
-    // @shree - Add students to DB
+
     private void B_Add_AddNewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Add_AddNewStudentActionPerformed
 
         // @shree - Performing validation on the details provided
@@ -923,7 +930,6 @@ public class Home extends javax.swing.JFrame {
 
             L_Error_AddNewStudent.setVisible(false);
 
-            // @shree - generate sid
             try {
 
                 int SID = 0;
@@ -943,7 +949,7 @@ public class Home extends javax.swing.JFrame {
                     SID = Integer.parseInt(rs.getString(1).substring(1));
                 }
 
-                // @shree - sid reached to 999, then do nothing
+                // @shree - sid reached to 999, then do nothing, else create new sid
                 if (SID >= 999) {
                     L_Error_AddNewStudent.setText("Maximum SID (999) reached!");
                     L_Error_AddNewStudent.setVisible(true);
@@ -985,6 +991,7 @@ public class Home extends javax.swing.JFrame {
                     call.setString(4, status);
                     call.setString(6, email);
 
+                    // @shree - handling the null gpa condition
                     if (T_GPA.getText().equals("") || T_GPA.getText().equals("Enter gpa here")) {
                         call.setString(5, "");
                     } else {
@@ -1011,16 +1018,21 @@ public class Home extends javax.swing.JFrame {
 
             } catch (SQLException ex) {
 
+                // @shree - if same email found, show error on GUI instead of long oracle excpetion
                 if (ex.toString().contains("java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constrain")) {
                     L_Error_AddNewStudent.setText("SQL Exception : Email id should be unique!");
                     L_Error_AddNewStudent.setVisible(true);
                 } else {
+
+                    // @shree - show other exceptions on the GUI
                     L_Message_AddNewStudent.setText("SQL Exception : " + ex);
                     L_Message_AddNewStudent.setForeground(Color.RED);
                     L_Message_AddNewStudent.setVisible(true);
                 }
-                
+
             } catch (HeadlessException | NumberFormatException e) {
+
+                // @shree - show other exceptions on the GUI
                 L_Message_AddNewStudent.setText("Exception : " + e);
                 L_Message_AddNewStudent.setForeground(Color.RED);
                 L_Message_AddNewStudent.setVisible(true);
@@ -1028,12 +1040,20 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_B_Add_AddNewStudentActionPerformed
 
-    //@shree - Cancel adding new student
+
     private void B_Cancel_AddNewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_AddNewStudentActionPerformed
 
+        // @shree - clearing all the selected/entered values, errors on Cancel
+        L_Error_AddNewStudent.setVisible(false);
+        L_Message_AddNewStudent.setVisible(false);
+        T_FirstName.setText("Enter firstname here");
+        T_LastName.setText("Enter lastname here");
+        T_GPA.setText("Enter gpa here");
+        T_Email.setText("Enter email id here");
+        RBG_Students.clearSelection();
     }//GEN-LAST:event_B_Cancel_AddNewStudentActionPerformed
 
-    // @shree - Find student
+
     private void B_FindStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_FindStudentActionPerformed
 
         // @shree - show P_FindStudent panel, hide all others
@@ -1043,7 +1063,7 @@ public class Home extends javax.swing.JFrame {
         //P_DeleteStudent.setVisible(false);
     }//GEN-LAST:event_B_FindStudentActionPerformed
 
-    // @shree - Delete student
+
     private void B_DeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_DeleteStudentActionPerformed
 
         // @shree - show P_DeleteStudent panel, hide all others
@@ -1053,7 +1073,7 @@ public class Home extends javax.swing.JFrame {
         //P_DeleteStudent.setVisible(true);
     }//GEN-LAST:event_B_DeleteStudentActionPerformed
 
-    // @shree - Focus gained by firstname textbox
+
     private void T_FirstNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_FirstNameFocusGained
 
         // @shree - clearing the default text on focus
@@ -1065,7 +1085,7 @@ public class Home extends javax.swing.JFrame {
         L_Message_AddNewStudent.setVisible(false);
     }//GEN-LAST:event_T_FirstNameFocusGained
 
-    // @shree - Foucs lost by firstname textbox
+
     private void T_FirstNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_FirstNameFocusLost
 
         // @shree - resetting the defualt text if the firstname is not entered
@@ -1074,7 +1094,7 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_T_FirstNameFocusLost
 
-    // @shree - Focus gained by lastname textbox
+
     private void T_LastNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_LastNameFocusGained
 
         // @shree - clearing the default text on focus
@@ -1086,7 +1106,7 @@ public class Home extends javax.swing.JFrame {
         L_Message_AddNewStudent.setVisible(false);
     }//GEN-LAST:event_T_LastNameFocusGained
 
-    // @shree - Focus lost by lastname textbox
+
     private void T_LastNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_LastNameFocusLost
 
         // @shree - resetting the defualt text if the lastname is not entered
@@ -1095,7 +1115,7 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_T_LastNameFocusLost
 
-    // @shree - Focus gained by GPA textbox
+
     private void T_GPAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_GPAFocusGained
 
         // @shree - clearing the default text on focus
@@ -1107,7 +1127,7 @@ public class Home extends javax.swing.JFrame {
         L_Message_AddNewStudent.setVisible(false);
     }//GEN-LAST:event_T_GPAFocusGained
 
-    // @shree - Focus lost by GPA textbox
+
     private void T_GPAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_GPAFocusLost
 
         // @shree - resetting the defualt text if the gpa is not entered
@@ -1116,7 +1136,7 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_T_GPAFocusLost
 
-    // @shree - Focus gained by email textbox
+
     private void T_EmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_EmailFocusGained
 
         // @shree - clearing the default text on focus
@@ -1127,7 +1147,7 @@ public class Home extends javax.swing.JFrame {
         L_Message_AddNewStudent.setVisible(false);
     }//GEN-LAST:event_T_EmailFocusGained
 
-    // @shree - Focus lost by email textbox
+
     private void T_EmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_EmailFocusLost
 
         // @shree - resetting the defualt text if the email is not entered
@@ -1136,10 +1156,10 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_T_EmailFocusLost
 
-    // @shree - GPA input restrictions
+
     private void T_GPAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T_GPAKeyTyped
 
-        // @shree - allowing only numbers and .
+        // @shree - allowing only numbers and only one "."
         char temp = evt.getKeyChar();
 
         if (Character.isDigit(temp) || temp == KeyEvent.VK_PERIOD) {
@@ -1153,21 +1173,32 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_T_GPAKeyTyped
 
-    private void T_FirstName1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_FirstName1FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_T_FirstName1FocusGained
+    private void T_sid_FindStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_FindStudentFocusGained
 
-    private void T_FirstName1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_FirstName1FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_T_FirstName1FocusLost
+        // @shree - clearing the default text on focus
+        if (T_sid_FindStudent.getText().equals("Enter (B-Number) sid here")) {
+            T_sid_FindStudent.setText("");
 
-    private void B_Add_AddNewStudent1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Add_AddNewStudent1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B_Add_AddNewStudent1ActionPerformed
+        }
+    }//GEN-LAST:event_T_sid_FindStudentFocusGained
 
-    private void B_Add_AddNewStudent2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Add_AddNewStudent2ActionPerformed
+    private void T_sid_FindStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_FindStudentFocusLost
+        if (T_sid_FindStudent.getText().equals("")) {
+            T_sid_FindStudent.setText("Enter (B-Number) sid here");
+        }
+    }//GEN-LAST:event_T_sid_FindStudentFocusLost
+
+    private void B_Cancel_FindStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_FindStudentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_B_Add_AddNewStudent2ActionPerformed
+    }//GEN-LAST:event_B_Cancel_FindStudentActionPerformed
+
+    private void B_Find_FindStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Find_FindStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_Find_FindStudentActionPerformed
+
+    private void B_ExitStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ExitStudentActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_B_ExitStudentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1207,12 +1238,12 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_AddNewStudent;
     private javax.swing.JButton B_Add_AddNewStudent;
-    private javax.swing.JButton B_Add_AddNewStudent1;
-    private javax.swing.JButton B_Add_AddNewStudent2;
     private javax.swing.JButton B_Cancel_AddNewStudent;
+    private javax.swing.JButton B_Cancel_FindStudent;
     private javax.swing.JButton B_DeleteStudent;
     private javax.swing.JButton B_ExitStudent;
     private javax.swing.JButton B_FindStudent;
+    private javax.swing.JButton B_Find_FindStudent;
     private javax.swing.JButton B_ShowAllStudents;
     private javax.swing.JLayeredPane LP_Students;
     private javax.swing.JLabel L_Error_AddNewStudent;
@@ -1220,9 +1251,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel L_Message_ShowAllStudent;
     private javax.swing.JPanel P_AddNewStudent;
     private javax.swing.JPanel P_Button_Students;
+    private javax.swing.JPanel P_ClassDetails_FindStudents;
     private javax.swing.JPanel P_FindStudent;
     private javax.swing.JPanel P_ManageStudents;
     private javax.swing.JPanel P_ShowAllStudents;
+    private javax.swing.JPanel P_StudentDetails_FindStudent;
     private javax.swing.JPanel P_Table_ShowAllStudents;
     private javax.swing.ButtonGroup RBG_Students;
     private javax.swing.JRadioButton RB_Freshman;
@@ -1233,9 +1266,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTable TBL_ShowAllStudents;
     private javax.swing.JTextField T_Email;
     private javax.swing.JTextField T_FirstName;
-    private javax.swing.JTextField T_FirstName1;
     private javax.swing.JTextField T_GPA;
     private javax.swing.JTextField T_LastName;
+    private javax.swing.JTextField T_sid_FindStudent;
     private javax.swing.JPanel Tab_Students;
     private javax.swing.JTabbedPane Tabs;
     private javax.swing.JLabel jLabel1;
@@ -1252,8 +1285,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
