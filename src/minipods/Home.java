@@ -842,8 +842,13 @@ public class Home extends javax.swing.JFrame {
 
             ResultSet rs = (ResultSet) call.getObject(1);
 
+            
+            
             // @shree - inserting data into the table on GUI
             DefaultTableModel model = (DefaultTableModel) TBL_ShowAllStudents.getModel();
+            model.setRowCount(0);
+            TBL_ShowAllStudents.setModel(model);
+            
             int cols = TBL_ShowAllStudents.getColumnCount();
 
             while (rs.next()) {
@@ -902,11 +907,9 @@ public class Home extends javax.swing.JFrame {
             L_Error_AddNewStudent.setText("Please provide valid lastname!");
             L_Error_AddNewStudent.setVisible(true);
 
-        } else if (!(T_GPA.getText().equals("") || T_GPA.getText().equals("Enter gpa here"))) {
-            if (Float.parseFloat(T_GPA.getText()) < 0 || Float.parseFloat(T_GPA.getText()) > 4.0) {
-                L_Error_AddNewStudent.setText("Please provide valid gpa!");
-                L_Error_AddNewStudent.setVisible(true);
-            }
+        } else if ((!(T_GPA.getText().equals("") || T_GPA.getText().equals("Enter gpa here"))) && (Float.parseFloat(T_GPA.getText()) < 0 || Float.parseFloat(T_GPA.getText()) > 4.0)) {
+            L_Error_AddNewStudent.setText("Please provide valid gpa!");
+            L_Error_AddNewStudent.setVisible(true);
 
         } else if (T_Email.getText().equals("") || T_Email.getText().equals("Enter email id here") || (!T_Email.getText().contains("@"))) {
             L_Error_AddNewStudent.setText("Please provide valid email id!");
@@ -1007,9 +1010,16 @@ public class Home extends javax.swing.JFrame {
                 conn.close();
 
             } catch (SQLException ex) {
-                L_Message_AddNewStudent.setText("SQL Exception : " + ex);
-                L_Message_AddNewStudent.setForeground(Color.RED);
-                L_Message_AddNewStudent.setVisible(true);
+
+                if (ex.toString().contains("java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constrain")) {
+                    L_Error_AddNewStudent.setText("SQL Exception : Email id should be unique!");
+                    L_Error_AddNewStudent.setVisible(true);
+                } else {
+                    L_Message_AddNewStudent.setText("SQL Exception : " + ex);
+                    L_Message_AddNewStudent.setForeground(Color.RED);
+                    L_Message_AddNewStudent.setVisible(true);
+                }
+                
             } catch (HeadlessException | NumberFormatException e) {
                 L_Message_AddNewStudent.setText("Exception : " + e);
                 L_Message_AddNewStudent.setForeground(Color.RED);
