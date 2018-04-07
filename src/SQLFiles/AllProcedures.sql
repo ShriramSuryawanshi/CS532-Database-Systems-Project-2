@@ -15,6 +15,7 @@ CREATE OR REPLACE PACKAGE SQLPackage AS
     TYPE myCursor IS REF CURSOR;
 
 
+
 -- @shree : Students Module
 
     PROCEDURE display_students(oCursor OUT myCursor);
@@ -22,6 +23,8 @@ CREATE OR REPLACE PACKAGE SQLPackage AS
     PROCEDURE add_student(temp_sid IN students.sid%TYPE, temp_firstname IN students.firstname%TYPE, temp_lastname IN students.lastname%TYPE, temp_status IN students.status%TYPE, temp_gpa IN students.gpa%TYPE, temp_email IN students.email%TYPE);
 
     PROCEDURE find_student(oCursor IN OUT myCursor,  temp_sid IN students.sid%TYPE);
+
+    PROCEDURE delete_student(temp_sid IN students.sid%TYPE);
     
     
 
@@ -32,20 +35,19 @@ END;
 CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 
 
--- @shree : Students module
-
+-- @shree : Students module - show students
     PROCEDURE display_students(oCursor OUT myCursor) AS
         BEGIN
             OPEN oCursor FOR SELECT * FROM students; 
         END;
 
-
+-- @shree : Students module - insert student
     PROCEDURE add_student(temp_sid IN students.sid%TYPE, temp_firstname IN students.firstname%TYPE, temp_lastname IN students.lastname%TYPE, temp_status IN students.status%TYPE, temp_gpa IN students.gpa%TYPE, temp_email IN students.email%TYPE) AS
         BEGIN
             INSERT INTO students VALUES (temp_sid, temp_firstname, temp_lastname, temp_status, temp_gpa, temp_email);
         END;
 
-
+-- @shree : Students module - find student and his classes
     PROCEDURE find_student(oCursor IN OUT myCursor,  temp_sid IN students.sid%TYPE) AS
 
     sidcheck varchar(10);
@@ -79,7 +81,30 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 
     END;
 
+-- @shree : Students module - delete student
+    PROCEDURE delete_student(temp_sid IN students.sid%TYPE) AS
+        
+        sidcheck varchar(10);
+        
+        BEGIN
+            sidcheck := 0;
 
+            BEGIN
+                SELECT sid INTO sidcheck FROM students WHERE sid = temp_sid;
+                EXCEPTION
+                    WHEN no_data_found THEN raise_application_error(-20001, 'The sid is invalid.');
+                return;
+            END;
+
+            BEGIN
+                DELETE FROM students WHERE sid = temp_sid;
+            END;
+
+        END;
+            
+            
+            
+    
 
 
 END;

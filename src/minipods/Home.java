@@ -99,7 +99,15 @@ public class Home extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         B_Find_FindStudent = new javax.swing.JButton();
         B_Cancel_FindStudent = new javax.swing.JButton();
-        L_Error_FindStudents = new javax.swing.JLabel();
+        L_Error_FindStudent = new javax.swing.JLabel();
+        P_DeleteStudent = new javax.swing.JPanel();
+        L_Message_DeleteStudent = new javax.swing.JLabel();
+        T_sid_DeleteStudent = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        B_Delete_DeleteStudent = new javax.swing.JButton();
+        B_Cancel_DeleteStudent = new javax.swing.JButton();
+        L_Error_DeleteStudent = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -633,15 +641,16 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(L_Message_Student_FindStudent)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(P_StudentDetails_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(L_SID_FindStudent)
-                    .addComponent(L_SID_Value_FindStudent)
+                .addGroup(P_StudentDetails_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_StudentDetails_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(L_Status_FindStudent)
+                        .addComponent(L_Status_Value_FindStudent))
                     .addGroup(P_StudentDetails_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(L_Lastname_FindStudent)
-                        .addComponent(L_Lastname_Value_FindStudent)
-                        .addGroup(P_StudentDetails_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(L_Status_FindStudent)
-                            .addComponent(L_Status_Value_FindStudent))))
+                        .addComponent(L_Lastname_Value_FindStudent))
+                    .addGroup(P_StudentDetails_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(L_SID_FindStudent)
+                        .addComponent(L_SID_Value_FindStudent)))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
@@ -688,7 +697,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(P_ClassDetails_FindStudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(L_Message_Classes_FindStudent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ClassDetails_FindStudentsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 28, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1321, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -698,7 +707,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(L_Message_Classes_FindStudent)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -739,9 +748,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        L_Error_FindStudents.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
-        L_Error_FindStudents.setForeground(new java.awt.Color(255, 51, 51));
-        L_Error_FindStudents.setText("Please provide valid sid (sid should be of length 4, and it starts with B)!");
+        L_Error_FindStudent.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Error_FindStudent.setForeground(new java.awt.Color(255, 51, 51));
+        L_Error_FindStudent.setText("Please provide valid sid (sid should be of length 4, and it starts with B)!");
 
         javax.swing.GroupLayout P_FindStudentLayout = new javax.swing.GroupLayout(P_FindStudent);
         P_FindStudent.setLayout(P_FindStudentLayout);
@@ -757,7 +766,7 @@ public class Home extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(P_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(P_FindStudentLayout.createSequentialGroup()
-                                .addComponent(L_Error_FindStudents)
+                                .addComponent(L_Error_FindStudent)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(P_FindStudentLayout.createSequentialGroup()
                                 .addGroup(P_FindStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -788,7 +797,7 @@ public class Home extends javax.swing.JFrame {
                                 .addGap(25, 25, 25)
                                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                        .addComponent(L_Error_FindStudents)))
+                        .addComponent(L_Error_FindStudent)))
                 .addGap(13, 13, 13)
                 .addComponent(P_StudentDetails_FindStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -796,31 +805,138 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        P_DeleteStudent.setBackground(new java.awt.Color(255, 218, 213));
+        P_DeleteStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        L_Message_DeleteStudent.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Message_DeleteStudent.setText("Student with sid - has been deleted successfully!");
+
+        T_sid_DeleteStudent.setBackground(new java.awt.Color(255, 218, 213));
+        T_sid_DeleteStudent.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        T_sid_DeleteStudent.setText("Enter (B-Number) sid here");
+        T_sid_DeleteStudent.setBorder(null);
+        T_sid_DeleteStudent.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                T_sid_DeleteStudentFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                T_sid_DeleteStudentFocusLost(evt);
+            }
+        });
+
+        jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
+
+        B_Delete_DeleteStudent.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_Delete_DeleteStudent.setForeground(new java.awt.Color(0, 102, 102));
+        B_Delete_DeleteStudent.setText("Delete");
+        B_Delete_DeleteStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_Delete_DeleteStudent.setOpaque(false);
+        B_Delete_DeleteStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_Delete_DeleteStudentActionPerformed(evt);
+            }
+        });
+
+        B_Cancel_DeleteStudent.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_Cancel_DeleteStudent.setForeground(new java.awt.Color(0, 102, 102));
+        B_Cancel_DeleteStudent.setText("Cancel");
+        B_Cancel_DeleteStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_Cancel_DeleteStudent.setOpaque(false);
+        B_Cancel_DeleteStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_Cancel_DeleteStudentActionPerformed(evt);
+            }
+        });
+
+        L_Error_DeleteStudent.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Error_DeleteStudent.setForeground(new java.awt.Color(255, 51, 51));
+        L_Error_DeleteStudent.setText("Please provide valid sid (sid should be of length 4, and it starts with B)!");
+
+        jLabel12.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        jLabel12.setText("Please provide student's B-Number (sid) - ");
+
+        javax.swing.GroupLayout P_DeleteStudentLayout = new javax.swing.GroupLayout(P_DeleteStudent);
+        P_DeleteStudent.setLayout(P_DeleteStudentLayout);
+        P_DeleteStudentLayout.setHorizontalGroup(
+            P_DeleteStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_DeleteStudentLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(P_DeleteStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_DeleteStudentLayout.createSequentialGroup()
+                        .addGroup(P_DeleteStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator6)
+                            .addComponent(T_sid_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(B_Delete_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(B_Cancel_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(P_DeleteStudentLayout.createSequentialGroup()
+                        .addComponent(L_Error_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 728, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 355, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(P_DeleteStudentLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(L_Message_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 743, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        P_DeleteStudentLayout.setVerticalGroup(
+            P_DeleteStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_DeleteStudentLayout.createSequentialGroup()
+                .addGroup(P_DeleteStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_DeleteStudentLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(P_DeleteStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(B_Cancel_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(B_Delete_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(P_DeleteStudentLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(P_DeleteStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(P_DeleteStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(T_sid_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel12))
+                            .addGroup(P_DeleteStudentLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_DeleteStudentLayout.createSequentialGroup()
+                        .addContainerGap(64, Short.MAX_VALUE)
+                        .addComponent(L_Error_DeleteStudent)))
+                .addGap(75, 75, 75)
+                .addComponent(L_Message_DeleteStudent)
+                .addContainerGap(481, Short.MAX_VALUE))
+        );
+
         LP_Students.setLayer(P_ShowAllStudents, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LP_Students.setLayer(P_AddNewStudent, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LP_Students.setLayer(P_FindStudent, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LP_Students.setLayer(P_DeleteStudent, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout LP_StudentsLayout = new javax.swing.GroupLayout(LP_Students);
         LP_Students.setLayout(LP_StudentsLayout);
         LP_StudentsLayout.setHorizontalGroup(
             LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1388, Short.MAX_VALUE)
+            .addGap(0, 1416, Short.MAX_VALUE)
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_AddNewStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_FindStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_ShowAllStudents, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_DeleteStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LP_StudentsLayout.setVerticalGroup(
             LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
+            .addGap(0, 660, Short.MAX_VALUE)
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_AddNewStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_FindStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_ShowAllStudents, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_DeleteStudent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout P_ManageStudentsLayout = new javax.swing.GroupLayout(P_ManageStudents);
@@ -948,7 +1064,7 @@ public class Home extends javax.swing.JFrame {
         P_ShowAllStudents.setVisible(true);
         P_AddNewStudent.setVisible(false);
         P_FindStudent.setVisible(false);
-        //P_DeleteStudent.setVisible(false);
+        P_DeleteStudent.setVisible(false);
 
         // @shree - fecthing the data using procedure and display on GUI
         try {
@@ -1007,7 +1123,7 @@ public class Home extends javax.swing.JFrame {
         P_ShowAllStudents.setVisible(false);
         P_AddNewStudent.setVisible(true);
         P_FindStudent.setVisible(false);
-        //     P_DeleteStudent.setVisible(false);
+        P_DeleteStudent.setVisible(false);
 
         // @shree - resetting the panel (textbox values, selections etc.)
         L_Error_AddNewStudent.setVisible(false);
@@ -1179,13 +1295,13 @@ public class Home extends javax.swing.JFrame {
         P_ShowAllStudents.setVisible(false);
         P_AddNewStudent.setVisible(false);
         P_FindStudent.setVisible(true);
-        //P_DeleteStudent.setVisible(false);
+        P_DeleteStudent.setVisible(false);
 
         // @shree -  hiding the internal panels, labels from find student panel
         P_StudentDetails_FindStudent.setVisible(false);
         P_ClassDetails_FindStudents.setVisible(false);
         T_sid_FindStudent.setText("Enter (B-Number) sid here");
-        L_Error_FindStudents.setVisible(false);
+        L_Error_FindStudent.setVisible(false);
     }//GEN-LAST:event_B_FindStudentActionPerformed
 
 
@@ -1195,7 +1311,12 @@ public class Home extends javax.swing.JFrame {
         P_ShowAllStudents.setVisible(false);
         P_AddNewStudent.setVisible(false);
         P_FindStudent.setVisible(false);
-        //P_DeleteStudent.setVisible(true);
+        P_DeleteStudent.setVisible(true);
+
+        // @shree -  hiding labels
+        T_sid_DeleteStudent.setText("Enter (B-Number) sid here");
+        L_Error_DeleteStudent.setVisible(false);
+        L_Message_DeleteStudent.setVisible(false);
     }//GEN-LAST:event_B_DeleteStudentActionPerformed
 
 
@@ -1304,10 +1425,12 @@ public class Home extends javax.swing.JFrame {
         if (T_sid_FindStudent.getText().equals("Enter (B-Number) sid here")) {
             T_sid_FindStudent.setText("");
         }
-        L_Error_FindStudents.setVisible(false);
+        L_Error_FindStudent.setVisible(false);
     }//GEN-LAST:event_T_sid_FindStudentFocusGained
 
     private void T_sid_FindStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_FindStudentFocusLost
+
+        // @shree - no value provided, resetting the text
         if (T_sid_FindStudent.getText().equals("")) {
             T_sid_FindStudent.setText("Enter (B-Number) sid here");
         }
@@ -1319,19 +1442,19 @@ public class Home extends javax.swing.JFrame {
         P_StudentDetails_FindStudent.setVisible(false);
         P_ClassDetails_FindStudents.setVisible(false);
         T_sid_FindStudent.setText("Enter (B-Number) sid here");
-        L_Error_FindStudents.setVisible(false);
+        L_Error_FindStudent.setVisible(false);
     }//GEN-LAST:event_B_Cancel_FindStudentActionPerformed
 
     private void B_Find_FindStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Find_FindStudentActionPerformed
 
         // @shree - perform sid validations first, if passes then fetch student details using procedure along with his classes, show errors
         if ((!T_sid_FindStudent.getText().matches("B[0-9]+")) || (T_sid_FindStudent.getText().length() < 4) || (T_sid_FindStudent.getText().equals("Enter (B-Number) sid here"))) {
-            L_Error_FindStudents.setVisible(true);
+            L_Error_FindStudent.setVisible(true);
             P_StudentDetails_FindStudent.setVisible(false);
             P_ClassDetails_FindStudents.setVisible(false);
         } else {
 
-            L_Error_FindStudents.setVisible(false);
+            L_Error_FindStudent.setVisible(false);
 
             // @shree - validation pass, fetech the data and show on GUI
             try {
@@ -1419,17 +1542,17 @@ public class Home extends javax.swing.JFrame {
 
                 // @shree - show excptions on GUI (avoiding long error text thrown by oracle)
                 if (ex.toString().contains("The sid is invalid.")) {
-                    L_Error_FindStudents.setText("The sid is invalid");
+                    L_Error_FindStudent.setText("The sid is invalid.");
                 } else {
-                    L_Error_FindStudents.setText(ex.toString());
+                    L_Error_FindStudent.setText(ex.toString());
                 }
-                L_Error_FindStudents.setVisible(true);
+                L_Error_FindStudent.setVisible(true);
 
             } catch (HeadlessException | NumberFormatException e) {
 
                 // @shree - show excptions on GUI
-                L_Error_FindStudents.setText(e.toString());
-                L_Error_FindStudents.setVisible(true);
+                L_Error_FindStudent.setText(e.toString());
+                L_Error_FindStudent.setVisible(true);
             }
 
         }
@@ -1440,6 +1563,84 @@ public class Home extends javax.swing.JFrame {
     private void B_ExitStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ExitStudentActionPerformed
         System.exit(0);
     }//GEN-LAST:event_B_ExitStudentActionPerformed
+
+    private void T_sid_DeleteStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_DeleteStudentFocusGained
+
+        // @shree - clearing the default text on focus
+        if (T_sid_DeleteStudent.getText().equals("Enter (B-Number) sid here")) {
+            T_sid_DeleteStudent.setText("");
+        }
+        L_Error_DeleteStudent.setVisible(false);
+        L_Message_DeleteStudent.setVisible(false);
+    }//GEN-LAST:event_T_sid_DeleteStudentFocusGained
+
+    private void T_sid_DeleteStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_DeleteStudentFocusLost
+
+        // @shree - no value provided, resetting the text
+        if (T_sid_DeleteStudent.getText().equals("")) {
+            T_sid_DeleteStudent.setText("Enter (B-Number) sid here");
+        }
+    }//GEN-LAST:event_T_sid_DeleteStudentFocusLost
+
+    private void B_Delete_DeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Delete_DeleteStudentActionPerformed
+
+        // @shree - perform sid validations first, if passes then delete student
+        if ((!T_sid_DeleteStudent.getText().matches("B[0-9]+")) || (T_sid_DeleteStudent.getText().length() < 4) || (T_sid_DeleteStudent.getText().equals("Enter (B-Number) sid here"))) {
+            L_Error_DeleteStudent.setVisible(true);
+            L_Message_DeleteStudent.setVisible(false);
+        } else {
+
+            L_Error_DeleteStudent.setVisible(false);
+
+            try {
+
+                String sid = T_sid_DeleteStudent.getText();
+
+                // @shree - connect to DB
+                OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
+                ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+                Connection conn = ds.getConnection("shree", "shree2103");
+
+                // @shree - calling procedure to  student
+                CallableStatement call = conn.prepareCall("begin SQLPackage.delete_student(?); end;");
+                call.setString(1, sid);
+                int temp = call.executeUpdate();
+
+                if (temp == 1) {
+                    L_Message_DeleteStudent.setText("Student having sid - " + sid + " has been deleted successfully!");
+                    L_Message_DeleteStudent.setVisible(true);
+                    T_sid_DeleteStudent.setText("Enter (B-Number) sid here");
+                }
+
+                conn.close();
+
+            } catch (SQLException ex) {
+
+                // @shree - show excptions on GUI (avoiding long error text thrown by oracle)
+                if (ex.toString().contains("The sid is invalid.")) {
+                    L_Error_DeleteStudent.setText("The sid is invalid.");
+                } else {
+                    L_Error_DeleteStudent.setText(ex.toString());
+                }
+                L_Error_DeleteStudent.setVisible(true);
+
+            } catch (HeadlessException | NumberFormatException e) {
+
+                // @shree - show excptions on GUI
+                L_Error_DeleteStudent.setText(e.toString());
+                L_Error_DeleteStudent.setVisible(true);
+            }
+
+        }
+
+    }//GEN-LAST:event_B_Delete_DeleteStudentActionPerformed
+
+    private void B_Cancel_DeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_DeleteStudentActionPerformed
+
+        // @shree -  hiding labels
+        T_sid_DeleteStudent.setText("Enter (B-Number) sid here");
+        L_Error_DeleteStudent.setVisible(false);
+    }//GEN-LAST:event_B_Cancel_DeleteStudentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1488,19 +1689,23 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton B_AddNewStudent;
     private javax.swing.JButton B_Add_AddNewStudent;
     private javax.swing.JButton B_Cancel_AddNewStudent;
+    private javax.swing.JButton B_Cancel_DeleteStudent;
     private javax.swing.JButton B_Cancel_FindStudent;
     private javax.swing.JButton B_DeleteStudent;
+    private javax.swing.JButton B_Delete_DeleteStudent;
     private javax.swing.JButton B_ExitStudent;
     private javax.swing.JButton B_FindStudent;
     private javax.swing.JButton B_Find_FindStudent;
     private javax.swing.JButton B_ShowAllStudents;
     private javax.swing.JLayeredPane LP_Students;
     private javax.swing.JLabel L_Error_AddNewStudent;
-    private javax.swing.JLabel L_Error_FindStudents;
+    private javax.swing.JLabel L_Error_DeleteStudent;
+    private javax.swing.JLabel L_Error_FindStudent;
     private javax.swing.JLabel L_Lastname_FindStudent;
     private javax.swing.JLabel L_Lastname_Value_FindStudent;
     private javax.swing.JLabel L_Message_AddNewStudent;
     private javax.swing.JLabel L_Message_Classes_FindStudent;
+    private javax.swing.JLabel L_Message_DeleteStudent;
     private javax.swing.JLabel L_Message_ShowAllStudent;
     private javax.swing.JLabel L_Message_Student_FindStudent;
     private javax.swing.JLabel L_SID_FindStudent;
@@ -1510,6 +1715,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel P_AddNewStudent;
     private javax.swing.JPanel P_Button_Students;
     private javax.swing.JPanel P_ClassDetails_FindStudents;
+    private javax.swing.JPanel P_DeleteStudent;
     private javax.swing.JPanel P_FindStudent;
     private javax.swing.JPanel P_ManageStudents;
     private javax.swing.JPanel P_ShowAllStudents;
@@ -1527,11 +1733,13 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField T_FirstName;
     private javax.swing.JTextField T_GPA;
     private javax.swing.JTextField T_LastName;
+    private javax.swing.JTextField T_sid_DeleteStudent;
     private javax.swing.JTextField T_sid_FindStudent;
     private javax.swing.JPanel Tab_Students;
     private javax.swing.JTabbedPane Tabs;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1551,5 +1759,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     // End of variables declaration//GEN-END:variables
 }
