@@ -52,11 +52,11 @@ public class Home extends javax.swing.JFrame {
         B_ExitStudent = new javax.swing.JButton();
         LP_Students = new javax.swing.JLayeredPane();
         P_Default_Students = new javax.swing.JPanel();
-        L_Message_DeleteStudent1 = new javax.swing.JLabel();
-        L_Message_DeleteStudent2 = new javax.swing.JLabel();
-        L_Message_DeleteStudent3 = new javax.swing.JLabel();
-        L_Message_DeleteStudent4 = new javax.swing.JLabel();
-        L_Message_DeleteStudent5 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
         P_ShowAllStudents = new javax.swing.JPanel();
         L_Message_ShowAllStudent = new javax.swing.JLabel();
         P_Table_ShowAllStudents = new javax.swing.JPanel();
@@ -114,7 +114,45 @@ public class Home extends javax.swing.JFrame {
         B_Cancel_DeleteStudent = new javax.swing.JButton();
         L_Error_DeleteStudent = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        Tab_Courses = new javax.swing.JPanel();
+        P_ViewCourses = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        P_Button_Courses = new javax.swing.JPanel();
+        B_ShowAllCourses = new javax.swing.JButton();
+        B_ShowAllPrerequisites = new javax.swing.JButton();
+        B_FindCourse = new javax.swing.JButton();
+        B_ExitCourses = new javax.swing.JButton();
+        LP_Courses = new javax.swing.JLayeredPane();
+        P_Default_Courses = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        P_ShowAllCourses = new javax.swing.JPanel();
+        L_Message_ShowAllCourses = new javax.swing.JLabel();
+        P_Table_ShowAllCourses = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TBL_ShowAllCourses = new javax.swing.JTable();
+        P_FindCourse = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        P_StudentDetails_FindStudent1 = new javax.swing.JPanel();
+        L_Message_Student_FindStudent1 = new javax.swing.JLabel();
+        L_SID_FindStudent1 = new javax.swing.JLabel();
+        L_SID_Value_FindStudent1 = new javax.swing.JLabel();
+        L_Lastname_FindStudent1 = new javax.swing.JLabel();
+        L_Lastname_Value_FindStudent1 = new javax.swing.JLabel();
+        L_Status_FindStudent1 = new javax.swing.JLabel();
+        L_Status_Value_FindStudent1 = new javax.swing.JLabel();
+        P_ClassDetails_FindStudents1 = new javax.swing.JPanel();
+        L_Message_Classes_FindStudent1 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        TBL_Classes_FindStudent1 = new javax.swing.JTable();
+        T_sid_FindStudent1 = new javax.swing.JTextField();
+        jSeparator11 = new javax.swing.JSeparator();
+        B_Find_FindStudent1 = new javax.swing.JButton();
+        B_Cancel_FindStudent1 = new javax.swing.JButton();
+        L_Error_FindStudent1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -148,7 +186,7 @@ public class Home extends javax.swing.JFrame {
         P_Button_Students.setBackground(new java.awt.Color(0, 153, 153));
         P_Button_Students.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        B_ShowAllStudents.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        B_ShowAllStudents.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
         B_ShowAllStudents.setForeground(new java.awt.Color(0, 102, 102));
         B_ShowAllStudents.setText("Show All Students");
         B_ShowAllStudents.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -159,7 +197,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        B_AddNewStudent.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        B_AddNewStudent.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
         B_AddNewStudent.setForeground(new java.awt.Color(0, 102, 102));
         B_AddNewStudent.setText("Add New Student");
         B_AddNewStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -170,7 +208,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        B_FindStudent.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        B_FindStudent.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
         B_FindStudent.setForeground(new java.awt.Color(0, 102, 102));
         B_FindStudent.setText("Find Student");
         B_FindStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -181,7 +219,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        B_DeleteStudent.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        B_DeleteStudent.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
         B_DeleteStudent.setForeground(new java.awt.Color(0, 102, 102));
         B_DeleteStudent.setText("Delete Student");
         B_DeleteStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -192,7 +230,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        B_ExitStudent.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        B_ExitStudent.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
         B_ExitStudent.setForeground(new java.awt.Color(0, 102, 102));
         B_ExitStudent.setText("Exit");
         B_ExitStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -228,7 +266,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(B_FindStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(B_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 350, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 323, Short.MAX_VALUE)
                 .addComponent(B_ExitStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -238,20 +276,20 @@ public class Home extends javax.swing.JFrame {
         P_Default_Students.setBackground(new java.awt.Color(153, 153, 255));
         P_Default_Students.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        L_Message_DeleteStudent1.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        L_Message_DeleteStudent1.setText("Please select the desired action with the help of buttons provided on the left. ");
+        jLabel20.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel20.setText("Please select the desired action with the help of buttons provided on the left. ");
 
-        L_Message_DeleteStudent2.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        L_Message_DeleteStudent2.setText("CS 532 : Database System");
+        jLabel21.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel21.setText("CS 532 : Database System");
 
-        L_Message_DeleteStudent3.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        L_Message_DeleteStudent3.setText("1. Shriram Suryawanshi");
+        jLabel22.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel22.setText("1. Shriram Suryawanshi");
 
-        L_Message_DeleteStudent4.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        L_Message_DeleteStudent4.setText("2. Vinen Furtado");
+        jLabel23.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel23.setText("2. Vinen Furtado");
 
-        L_Message_DeleteStudent5.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        L_Message_DeleteStudent5.setText("Welcome to Manage Student section!");
+        jLabel24.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel24.setText("Welcome to Manage Student section!");
 
         javax.swing.GroupLayout P_Default_StudentsLayout = new javax.swing.GroupLayout(P_Default_Students);
         P_Default_Students.setLayout(P_Default_StudentsLayout);
@@ -259,37 +297,37 @@ public class Home extends javax.swing.JFrame {
             P_Default_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_Default_StudentsLayout.createSequentialGroup()
                 .addGap(543, 543, 543)
-                .addComponent(L_Message_DeleteStudent5)
+                .addComponent(jLabel24)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_StudentsLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 1230, Short.MAX_VALUE)
                 .addGroup(P_Default_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_StudentsLayout.createSequentialGroup()
-                        .addGroup(P_Default_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(L_Message_DeleteStudent4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(L_Message_DeleteStudent3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_StudentsLayout.createSequentialGroup()
-                        .addComponent(L_Message_DeleteStudent1)
-                        .addGap(369, 369, 369))))
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_StudentsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(L_Message_DeleteStudent2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(P_Default_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_StudentsLayout.createSequentialGroup()
+                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_StudentsLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addGap(339, 339, 339))))
         );
         P_Default_StudentsLayout.setVerticalGroup(
             P_Default_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_Default_StudentsLayout.createSequentialGroup()
                 .addGap(131, 131, 131)
-                .addComponent(L_Message_DeleteStudent5)
+                .addComponent(jLabel24)
                 .addGap(27, 27, 27)
-                .addComponent(L_Message_DeleteStudent1)
+                .addComponent(jLabel20)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 407, Short.MAX_VALUE)
-                .addComponent(L_Message_DeleteStudent2)
+                .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(L_Message_DeleteStudent3)
+                .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(L_Message_DeleteStudent4)
+                .addComponent(jLabel23)
                 .addContainerGap())
         );
 
@@ -308,7 +346,7 @@ public class Home extends javax.swing.JFrame {
 
             },
             new String [] {
-                "sid", "firstname", "lastname", "status", "gpa", "email"
+                "SID", "Firstname", "Lastname", "Status", "GPA", "Email"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -327,9 +365,11 @@ public class Home extends javax.swing.JFrame {
             TBL_ShowAllStudents.getColumnModel().getColumn(1).setResizable(false);
             TBL_ShowAllStudents.getColumnModel().getColumn(2).setResizable(false);
             TBL_ShowAllStudents.getColumnModel().getColumn(3).setResizable(false);
+            TBL_ShowAllStudents.getColumnModel().getColumn(3).setHeaderValue("Status");
             TBL_ShowAllStudents.getColumnModel().getColumn(4).setResizable(false);
+            TBL_ShowAllStudents.getColumnModel().getColumn(4).setHeaderValue("GPA");
             TBL_ShowAllStudents.getColumnModel().getColumn(5).setResizable(false);
-            TBL_ShowAllStudents.getColumnModel().getColumn(5).setHeaderValue("email");
+            TBL_ShowAllStudents.getColumnModel().getColumn(5).setHeaderValue("Email");
         }
 
         javax.swing.GroupLayout P_Table_ShowAllStudentsLayout = new javax.swing.GroupLayout(P_Table_ShowAllStudents);
@@ -353,7 +393,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(P_Table_ShowAllStudents, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(P_ShowAllStudentsLayout.createSequentialGroup()
                         .addComponent(L_Message_ShowAllStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 1340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 58, Short.MAX_VALUE)))
+                        .addGap(0, 19, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         P_ShowAllStudentsLayout.setVerticalGroup(
@@ -632,7 +672,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_AddNewStudentLayout.createSequentialGroup()
-                .addContainerGap(126, Short.MAX_VALUE)
+                .addContainerGap(65, Short.MAX_VALUE)
                 .addGroup(P_AddNewStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(L_Message_AddNewStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -766,7 +806,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(P_ClassDetails_FindStudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(L_Message_Classes_FindStudent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ClassDetails_FindStudentsLayout.createSequentialGroup()
-                        .addGap(0, 49, Short.MAX_VALUE)
+                        .addGap(0, 10, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1321, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -874,13 +914,13 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        P_DeleteStudent.setBackground(new java.awt.Color(255, 218, 213));
+        P_DeleteStudent.setBackground(new java.awt.Color(0, 204, 153));
         P_DeleteStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         L_Message_DeleteStudent.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         L_Message_DeleteStudent.setText("Student with sid - has been deleted successfully!");
 
-        T_sid_DeleteStudent.setBackground(new java.awt.Color(255, 218, 213));
+        T_sid_DeleteStudent.setBackground(new java.awt.Color(0, 204, 153));
         T_sid_DeleteStudent.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         T_sid_DeleteStudent.setText("Enter (B-Number) sid here");
         T_sid_DeleteStudent.setBorder(null);
@@ -943,7 +983,7 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(B_Cancel_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(P_DeleteStudentLayout.createSequentialGroup()
                         .addComponent(L_Error_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 728, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 376, Short.MAX_VALUE)))
+                        .addGap(0, 337, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(P_DeleteStudentLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
@@ -986,7 +1026,7 @@ public class Home extends javax.swing.JFrame {
         LP_Students.setLayout(LP_StudentsLayout);
         LP_StudentsLayout.setHorizontalGroup(
             LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1437, Short.MAX_VALUE)
+            .addGap(0, 1398, Short.MAX_VALUE)
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_AddNewStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1018,15 +1058,16 @@ public class Home extends javax.swing.JFrame {
         P_ManageStudentsLayout.setHorizontalGroup(
             P_ManageStudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_ManageStudentsLayout.createSequentialGroup()
-                .addGap(753, 753, 753)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(P_ManageStudentsLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(P_Button_Students, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(LP_Students)
-                .addContainerGap())
+                .addGroup(P_ManageStudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_ManageStudentsLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(P_Button_Students, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(LP_Students, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(P_ManageStudentsLayout.createSequentialGroup()
+                        .addGap(782, 782, 782)
+                        .addComponent(jLabel2)))
+                .addGap(14, 14, 14))
         );
         P_ManageStudentsLayout.setVerticalGroup(
             P_ManageStudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1053,24 +1094,510 @@ public class Home extends javax.swing.JFrame {
 
         Tabs.addTab("   Manage Students   ", Tab_Students);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1703, Short.MAX_VALUE)
+        P_ViewCourses.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel9.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel9.setText("View Courses");
+
+        P_Button_Courses.setBackground(new java.awt.Color(0, 153, 153));
+        P_Button_Courses.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        B_ShowAllCourses.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_ShowAllCourses.setForeground(new java.awt.Color(0, 102, 102));
+        B_ShowAllCourses.setText("Show All Courses");
+        B_ShowAllCourses.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_ShowAllCourses.setOpaque(false);
+        B_ShowAllCourses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_ShowAllCoursesActionPerformed(evt);
+            }
+        });
+
+        B_ShowAllPrerequisites.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_ShowAllPrerequisites.setForeground(new java.awt.Color(0, 102, 102));
+        B_ShowAllPrerequisites.setText("Show All Prerequisites");
+        B_ShowAllPrerequisites.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_ShowAllPrerequisites.setOpaque(false);
+        B_ShowAllPrerequisites.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_ShowAllPrerequisitesActionPerformed(evt);
+            }
+        });
+
+        B_FindCourse.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_FindCourse.setForeground(new java.awt.Color(0, 102, 102));
+        B_FindCourse.setText("Find Course");
+        B_FindCourse.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_FindCourse.setOpaque(false);
+        B_FindCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_FindCourseActionPerformed(evt);
+            }
+        });
+
+        B_ExitCourses.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_ExitCourses.setForeground(new java.awt.Color(0, 102, 102));
+        B_ExitCourses.setText("Exit");
+        B_ExitCourses.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_ExitCourses.setOpaque(false);
+        B_ExitCourses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_ExitCoursesActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout P_Button_CoursesLayout = new javax.swing.GroupLayout(P_Button_Courses);
+        P_Button_Courses.setLayout(P_Button_CoursesLayout);
+        P_Button_CoursesLayout.setHorizontalGroup(
+            P_Button_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Button_CoursesLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(P_Button_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(B_ExitCourses, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_ShowAllPrerequisites, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_ShowAllCourses, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 736, Short.MAX_VALUE)
+        P_Button_CoursesLayout.setVerticalGroup(
+            P_Button_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Button_CoursesLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(B_ShowAllCourses, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(B_ShowAllPrerequisites, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(B_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(B_ExitCourses, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
-        Tabs.addTab("   View Courses   ", jPanel1);
+        LP_Courses.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        P_Default_Courses.setBackground(new java.awt.Color(153, 153, 255));
+        P_Default_Courses.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel25.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel25.setText("Please select the desired action with the help of buttons provided on the left. ");
+
+        jLabel26.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel26.setText("CS 532 : Database System");
+
+        jLabel27.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel27.setText("1. Shriram Suryawanshi");
+
+        jLabel28.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel28.setText("2. Vinen Furtado");
+
+        jLabel29.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel29.setText("Welcome to View Courses section!");
+
+        javax.swing.GroupLayout P_Default_CoursesLayout = new javax.swing.GroupLayout(P_Default_Courses);
+        P_Default_Courses.setLayout(P_Default_CoursesLayout);
+        P_Default_CoursesLayout.setHorizontalGroup(
+            P_Default_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Default_CoursesLayout.createSequentialGroup()
+                .addGap(543, 543, 543)
+                .addComponent(jLabel29)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_CoursesLayout.createSequentialGroup()
+                .addGap(0, 1230, Short.MAX_VALUE)
+                .addGroup(P_Default_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_CoursesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(P_Default_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_CoursesLayout.createSequentialGroup()
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_CoursesLayout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addGap(339, 339, 339))))
+        );
+        P_Default_CoursesLayout.setVerticalGroup(
+            P_Default_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Default_CoursesLayout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(jLabel29)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 407, Short.MAX_VALUE)
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel28)
+                .addContainerGap())
+        );
+
+        P_ShowAllCourses.setBackground(new java.awt.Color(204, 255, 204));
+        P_ShowAllCourses.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        L_Message_ShowAllCourses.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Message_ShowAllCourses.setText("Displaying all available courses - ");
+
+        P_Table_ShowAllCourses.setBackground(new java.awt.Color(204, 255, 204));
+        P_Table_ShowAllCourses.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        TBL_ShowAllCourses.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        TBL_ShowAllCourses.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Department Code", "Course No.", "Title"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TBL_ShowAllCourses.setRowHeight(22);
+        TBL_ShowAllCourses.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(TBL_ShowAllCourses);
+        if (TBL_ShowAllCourses.getColumnModel().getColumnCount() > 0) {
+            TBL_ShowAllCourses.getColumnModel().getColumn(0).setResizable(false);
+            TBL_ShowAllCourses.getColumnModel().getColumn(1).setResizable(false);
+            TBL_ShowAllCourses.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        javax.swing.GroupLayout P_Table_ShowAllCoursesLayout = new javax.swing.GroupLayout(P_Table_ShowAllCourses);
+        P_Table_ShowAllCourses.setLayout(P_Table_ShowAllCoursesLayout);
+        P_Table_ShowAllCoursesLayout.setHorizontalGroup(
+            P_Table_ShowAllCoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3)
+        );
+        P_Table_ShowAllCoursesLayout.setVerticalGroup(
+            P_Table_ShowAllCoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout P_ShowAllCoursesLayout = new javax.swing.GroupLayout(P_ShowAllCourses);
+        P_ShowAllCourses.setLayout(P_ShowAllCoursesLayout);
+        P_ShowAllCoursesLayout.setHorizontalGroup(
+            P_ShowAllCoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ShowAllCoursesLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(P_ShowAllCoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P_Table_ShowAllCourses, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(P_ShowAllCoursesLayout.createSequentialGroup()
+                        .addComponent(L_Message_ShowAllCourses, javax.swing.GroupLayout.PREFERRED_SIZE, 1340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 19, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        P_ShowAllCoursesLayout.setVerticalGroup(
+            P_ShowAllCoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_ShowAllCoursesLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(L_Message_ShowAllCourses)
+                .addGap(18, 18, 18)
+                .addComponent(P_Table_ShowAllCourses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        P_FindCourse.setBackground(new java.awt.Color(0, 204, 204));
+        P_FindCourse.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel18.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        jLabel18.setText("Please provide student's B-Number (sid) - ");
+
+        P_StudentDetails_FindStudent1.setBackground(new java.awt.Color(0, 204, 204));
+        P_StudentDetails_FindStudent1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        L_Message_Student_FindStudent1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Message_Student_FindStudent1.setText("Student Details - ");
+
+        L_SID_FindStudent1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        L_SID_FindStudent1.setText("SID - ");
+
+        L_SID_Value_FindStudent1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_SID_Value_FindStudent1.setText("SID - ");
+
+        L_Lastname_FindStudent1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        L_Lastname_FindStudent1.setText("Lastname -");
+
+        L_Lastname_Value_FindStudent1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Lastname_Value_FindStudent1.setText("SID - ");
+
+        L_Status_FindStudent1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        L_Status_FindStudent1.setText("Status - ");
+
+        L_Status_Value_FindStudent1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Status_Value_FindStudent1.setText("SID - ");
+
+        javax.swing.GroupLayout P_StudentDetails_FindStudent1Layout = new javax.swing.GroupLayout(P_StudentDetails_FindStudent1);
+        P_StudentDetails_FindStudent1.setLayout(P_StudentDetails_FindStudent1Layout);
+        P_StudentDetails_FindStudent1Layout.setHorizontalGroup(
+            P_StudentDetails_FindStudent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_StudentDetails_FindStudent1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(P_StudentDetails_FindStudent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(L_Message_Student_FindStudent1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(P_StudentDetails_FindStudent1Layout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addComponent(L_SID_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(L_SID_Value_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(L_Lastname_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(L_Lastname_Value_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)
+                        .addComponent(L_Status_FindStudent1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(L_Status_Value_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        P_StudentDetails_FindStudent1Layout.setVerticalGroup(
+            P_StudentDetails_FindStudent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_StudentDetails_FindStudent1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(L_Message_Student_FindStudent1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(P_StudentDetails_FindStudent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_StudentDetails_FindStudent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(L_Status_FindStudent1)
+                        .addComponent(L_Status_Value_FindStudent1))
+                    .addGroup(P_StudentDetails_FindStudent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(L_Lastname_FindStudent1)
+                        .addComponent(L_Lastname_Value_FindStudent1))
+                    .addGroup(P_StudentDetails_FindStudent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(L_SID_FindStudent1)
+                        .addComponent(L_SID_Value_FindStudent1)))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        P_ClassDetails_FindStudents1.setBackground(new java.awt.Color(0, 204, 204));
+        P_ClassDetails_FindStudents1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        L_Message_Classes_FindStudent1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Message_Classes_FindStudent1.setText("Classes Enrolled - ");
+
+        TBL_Classes_FindStudent1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        TBL_Classes_FindStudent1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Class ID", "Course No.", "Title", "Year", "Semester"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TBL_Classes_FindStudent1.setRowHeight(22);
+        TBL_Classes_FindStudent1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(TBL_Classes_FindStudent1);
+        if (TBL_Classes_FindStudent1.getColumnModel().getColumnCount() > 0) {
+            TBL_Classes_FindStudent1.getColumnModel().getColumn(0).setResizable(false);
+            TBL_Classes_FindStudent1.getColumnModel().getColumn(1).setResizable(false);
+            TBL_Classes_FindStudent1.getColumnModel().getColumn(2).setResizable(false);
+            TBL_Classes_FindStudent1.getColumnModel().getColumn(3).setResizable(false);
+            TBL_Classes_FindStudent1.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        javax.swing.GroupLayout P_ClassDetails_FindStudents1Layout = new javax.swing.GroupLayout(P_ClassDetails_FindStudents1);
+        P_ClassDetails_FindStudents1.setLayout(P_ClassDetails_FindStudents1Layout);
+        P_ClassDetails_FindStudents1Layout.setHorizontalGroup(
+            P_ClassDetails_FindStudents1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_ClassDetails_FindStudents1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(P_ClassDetails_FindStudents1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(L_Message_Classes_FindStudent1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ClassDetails_FindStudents1Layout.createSequentialGroup()
+                        .addGap(0, 10, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1321, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        P_ClassDetails_FindStudents1Layout.setVerticalGroup(
+            P_ClassDetails_FindStudents1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ClassDetails_FindStudents1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(L_Message_Classes_FindStudent1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        T_sid_FindStudent1.setBackground(new java.awt.Color(0, 204, 204));
+        T_sid_FindStudent1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        T_sid_FindStudent1.setText("Enter (B-Number) sid here");
+        T_sid_FindStudent1.setBorder(null);
+        T_sid_FindStudent1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                T_sid_FindStudent1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                T_sid_FindStudent1FocusLost(evt);
+            }
+        });
+
+        jSeparator11.setForeground(new java.awt.Color(255, 255, 255));
+
+        B_Find_FindStudent1.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_Find_FindStudent1.setForeground(new java.awt.Color(0, 102, 102));
+        B_Find_FindStudent1.setText("Find");
+        B_Find_FindStudent1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_Find_FindStudent1.setOpaque(false);
+        B_Find_FindStudent1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_Find_FindStudent1ActionPerformed(evt);
+            }
+        });
+
+        B_Cancel_FindStudent1.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_Cancel_FindStudent1.setForeground(new java.awt.Color(0, 102, 102));
+        B_Cancel_FindStudent1.setText("Cancel");
+        B_Cancel_FindStudent1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_Cancel_FindStudent1.setOpaque(false);
+        B_Cancel_FindStudent1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_Cancel_FindStudent1ActionPerformed(evt);
+            }
+        });
+
+        L_Error_FindStudent1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Error_FindStudent1.setForeground(new java.awt.Color(255, 51, 51));
+        L_Error_FindStudent1.setText("Please provide valid sid (sid should be of length 4, and it starts with B)!");
+
+        javax.swing.GroupLayout P_FindCourseLayout = new javax.swing.GroupLayout(P_FindCourse);
+        P_FindCourse.setLayout(P_FindCourseLayout);
+        P_FindCourseLayout.setHorizontalGroup(
+            P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_FindCourseLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P_ClassDetails_FindStudents1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(P_StudentDetails_FindStudent1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(P_FindCourseLayout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(P_FindCourseLayout.createSequentialGroup()
+                                .addComponent(L_Error_FindStudent1)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(P_FindCourseLayout.createSequentialGroup()
+                                .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jSeparator11)
+                                    .addComponent(T_sid_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(B_Find_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(B_Cancel_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
+        );
+        P_FindCourseLayout.setVerticalGroup(
+            P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_FindCourseLayout.createSequentialGroup()
+                .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(P_FindCourseLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(B_Cancel_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(B_Find_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(P_FindCourseLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel18)
+                                .addComponent(T_sid_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(P_FindCourseLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                        .addComponent(L_Error_FindStudent1)))
+                .addGap(13, 13, 13)
+                .addComponent(P_StudentDetails_FindStudent1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(P_ClassDetails_FindStudents1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        LP_Courses.setLayer(P_Default_Courses, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LP_Courses.setLayer(P_ShowAllCourses, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LP_Courses.setLayer(P_FindCourse, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout LP_CoursesLayout = new javax.swing.GroupLayout(LP_Courses);
+        LP_Courses.setLayout(LP_CoursesLayout);
+        LP_CoursesLayout.setHorizontalGroup(
+            LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1398, Short.MAX_VALUE)
+            .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_FindCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_ShowAllCourses, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_Default_Courses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        LP_CoursesLayout.setVerticalGroup(
+            LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 687, Short.MAX_VALUE)
+            .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_FindCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_ShowAllCourses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_Default_Courses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout P_ViewCoursesLayout = new javax.swing.GroupLayout(P_ViewCourses);
+        P_ViewCourses.setLayout(P_ViewCoursesLayout);
+        P_ViewCoursesLayout.setHorizontalGroup(
+            P_ViewCoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_ViewCoursesLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(P_Button_Courses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LP_Courses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ViewCoursesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addGap(769, 769, 769))
+        );
+        P_ViewCoursesLayout.setVerticalGroup(
+            P_ViewCoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_ViewCoursesLayout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addGroup(P_ViewCoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P_Button_Courses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LP_Courses))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout Tab_CoursesLayout = new javax.swing.GroupLayout(Tab_Courses);
+        Tab_Courses.setLayout(Tab_CoursesLayout);
+        Tab_CoursesLayout.setHorizontalGroup(
+            Tab_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(P_ViewCourses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        Tab_CoursesLayout.setVerticalGroup(
+            Tab_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(P_ViewCourses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        Tabs.addTab("   View Courses   ", Tab_Courses);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1703, Short.MAX_VALUE)
+            .addGap(0, 1739, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1083,7 +1610,7 @@ public class Home extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1703, Short.MAX_VALUE)
+            .addGap(0, 1739, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1096,7 +1623,7 @@ public class Home extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1703, Short.MAX_VALUE)
+            .addGap(0, 1739, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1109,14 +1636,14 @@ public class Home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Tabs)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(784, 784, 784))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Tabs, javax.swing.GroupLayout.PREFERRED_SIZE, 1744, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1140,6 +1667,9 @@ public class Home extends javax.swing.JFrame {
         P_AddNewStudent.setVisible(false);
         P_FindStudent.setVisible(false);
         P_DeleteStudent.setVisible(false);
+        
+        // @shree - hiding table, in case exceptions
+        P_Table_ShowAllStudents.setVisible(false);
 
         // @shree - fecthing the data using procedure and display on GUI
         try {
@@ -1173,6 +1703,7 @@ public class Home extends javax.swing.JFrame {
 
             TBL_ShowAllStudents.setModel(model);
             TBL_ShowAllStudents.getTableHeader().setFont(new Font("Monteserrat", Font.BOLD, 14));
+            P_Table_ShowAllStudents.setVisible(true);
 
             L_Message_ShowAllStudent.setText("Displaying all available students - ");
             L_Message_ShowAllStudent.setForeground(Color.BLACK);
@@ -1722,15 +2253,113 @@ public class Home extends javax.swing.JFrame {
 
     private void TabsStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabsStateChanged
 
-        // @shree - tab selection changed, hide Layered pane depending on Tab selected
+        // @shree - tab selection changed, hide panels depending on Tab selected
         if (Tabs.getSelectedIndex() == 0) {
             P_Default_Students.setVisible(true);
             P_ShowAllStudents.setVisible(false);
             P_AddNewStudent.setVisible(false);
             P_FindStudent.setVisible(false);
             P_DeleteStudent.setVisible(false);
+
+        } else if (Tabs.getSelectedIndex() == 1) {
+            P_Default_Courses.setVisible(true);
+            P_ShowAllCourses.setVisible(false);
+//            P_ShowAllPrerequisites.setVisible(false);
+            P_FindCourse.setVisible(false);
         }
     }//GEN-LAST:event_TabsStateChanged
+
+    private void B_ShowAllCoursesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllCoursesActionPerformed
+
+        // @shree - show only P_ShowAllCourses panel
+        P_Default_Courses.setVisible(false);
+        P_ShowAllCourses.setVisible(true);
+//            P_ShowAllPrerequisites.setVisible(false);
+        P_FindCourse.setVisible(false);
+        
+        // @shree - hiding a table
+        P_Table_ShowAllCourses.setVisible(false);
+
+        // @shree - fecthing the data using procedure and display on GUI
+        try {
+
+            // @shree - connect to DB
+            OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
+            ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+            Connection conn = ds.getConnection("shree", "shree2103");
+
+            // @shree - fetching result from DB usnig procedure
+            CallableStatement call = conn.prepareCall("begin SQLPackage.display_courses(?); end;");
+            call.registerOutParameter(1, OracleTypes.CURSOR);
+            call.execute();
+
+            ResultSet rs = (ResultSet) call.getObject(1);
+
+            // @shree - inserting data into the table on GUI
+            DefaultTableModel model = (DefaultTableModel) TBL_ShowAllCourses.getModel();
+            model.setRowCount(0);
+            TBL_ShowAllCourses.setModel(model);
+
+            int cols = TBL_ShowAllCourses.getColumnCount();
+
+            while (rs.next()) {
+                Object[] obj = new Object[cols];
+                for (int i = 0; i < cols; i++) {
+                    obj[i] = rs.getObject(i + 1);
+                }
+                model.addRow(obj);
+            }
+
+            TBL_ShowAllCourses.setModel(model);
+            TBL_ShowAllCourses.getTableHeader().setFont(new Font("Monteserrat", Font.BOLD, 14));
+            P_Table_ShowAllCourses.setVisible(true);
+
+            L_Message_ShowAllCourses.setText("Displaying all available courses - ");
+            L_Message_ShowAllCourses.setForeground(Color.BLACK);
+
+            conn.close();
+
+        } catch (SQLException ex) {
+
+            // @shree - show errors on panel -
+            L_Message_ShowAllCourses.setText("SQL Exception : " + ex);
+            L_Message_ShowAllCourses.setForeground(Color.RED);
+        } catch (Exception e) {
+
+            // @shree - show errors on panel -
+            L_Message_ShowAllCourses.setText("Exception : " + e);
+            L_Message_ShowAllCourses.setForeground(Color.RED);
+        }
+
+    }//GEN-LAST:event_B_ShowAllCoursesActionPerformed
+
+    private void B_ShowAllPrerequisitesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllPrerequisitesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_ShowAllPrerequisitesActionPerformed
+
+    private void B_FindCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_FindCourseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_FindCourseActionPerformed
+
+    private void B_ExitCoursesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ExitCoursesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_ExitCoursesActionPerformed
+
+    private void T_sid_FindStudent1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_FindStudent1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_sid_FindStudent1FocusGained
+
+    private void T_sid_FindStudent1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_FindStudent1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_sid_FindStudent1FocusLost
+
+    private void B_Find_FindStudent1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Find_FindStudent1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_Find_FindStudent1ActionPerformed
+
+    private void B_Cancel_FindStudent1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_FindStudent1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_Cancel_FindStudent1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1781,42 +2410,62 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton B_Cancel_AddNewStudent;
     private javax.swing.JButton B_Cancel_DeleteStudent;
     private javax.swing.JButton B_Cancel_FindStudent;
+    private javax.swing.JButton B_Cancel_FindStudent1;
     private javax.swing.JButton B_DeleteStudent;
     private javax.swing.JButton B_Delete_DeleteStudent;
+    private javax.swing.JButton B_ExitCourses;
     private javax.swing.JButton B_ExitStudent;
+    private javax.swing.JButton B_FindCourse;
     private javax.swing.JButton B_FindStudent;
     private javax.swing.JButton B_Find_FindStudent;
+    private javax.swing.JButton B_Find_FindStudent1;
+    private javax.swing.JButton B_ShowAllCourses;
+    private javax.swing.JButton B_ShowAllPrerequisites;
     private javax.swing.JButton B_ShowAllStudents;
+    private javax.swing.JLayeredPane LP_Courses;
     private javax.swing.JLayeredPane LP_Students;
     private javax.swing.JLabel L_Error_AddNewStudent;
     private javax.swing.JLabel L_Error_DeleteStudent;
     private javax.swing.JLabel L_Error_FindStudent;
+    private javax.swing.JLabel L_Error_FindStudent1;
     private javax.swing.JLabel L_Lastname_FindStudent;
+    private javax.swing.JLabel L_Lastname_FindStudent1;
     private javax.swing.JLabel L_Lastname_Value_FindStudent;
+    private javax.swing.JLabel L_Lastname_Value_FindStudent1;
     private javax.swing.JLabel L_Message_AddNewStudent;
     private javax.swing.JLabel L_Message_Classes_FindStudent;
+    private javax.swing.JLabel L_Message_Classes_FindStudent1;
     private javax.swing.JLabel L_Message_DeleteStudent;
-    private javax.swing.JLabel L_Message_DeleteStudent1;
-    private javax.swing.JLabel L_Message_DeleteStudent2;
-    private javax.swing.JLabel L_Message_DeleteStudent3;
-    private javax.swing.JLabel L_Message_DeleteStudent4;
-    private javax.swing.JLabel L_Message_DeleteStudent5;
+    private javax.swing.JLabel L_Message_ShowAllCourses;
     private javax.swing.JLabel L_Message_ShowAllStudent;
     private javax.swing.JLabel L_Message_Student_FindStudent;
+    private javax.swing.JLabel L_Message_Student_FindStudent1;
     private javax.swing.JLabel L_SID_FindStudent;
+    private javax.swing.JLabel L_SID_FindStudent1;
     private javax.swing.JLabel L_SID_Value_FindStudent;
+    private javax.swing.JLabel L_SID_Value_FindStudent1;
     private javax.swing.JLabel L_Status_FindStudent;
+    private javax.swing.JLabel L_Status_FindStudent1;
     private javax.swing.JLabel L_Status_Value_FindStudent;
+    private javax.swing.JLabel L_Status_Value_FindStudent1;
     private javax.swing.JPanel P_AddNewStudent;
+    private javax.swing.JPanel P_Button_Courses;
     private javax.swing.JPanel P_Button_Students;
     private javax.swing.JPanel P_ClassDetails_FindStudents;
+    private javax.swing.JPanel P_ClassDetails_FindStudents1;
+    private javax.swing.JPanel P_Default_Courses;
     private javax.swing.JPanel P_Default_Students;
     private javax.swing.JPanel P_DeleteStudent;
+    private javax.swing.JPanel P_FindCourse;
     private javax.swing.JPanel P_FindStudent;
     private javax.swing.JPanel P_ManageStudents;
+    private javax.swing.JPanel P_ShowAllCourses;
     private javax.swing.JPanel P_ShowAllStudents;
     private javax.swing.JPanel P_StudentDetails_FindStudent;
+    private javax.swing.JPanel P_StudentDetails_FindStudent1;
+    private javax.swing.JPanel P_Table_ShowAllCourses;
     private javax.swing.JPanel P_Table_ShowAllStudents;
+    private javax.swing.JPanel P_ViewCourses;
     private javax.swing.ButtonGroup RBG_Students;
     private javax.swing.JRadioButton RB_Freshman;
     private javax.swing.JRadioButton RB_Graduate;
@@ -1824,6 +2473,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JRadioButton RB_Senior;
     private javax.swing.JRadioButton RB_Sophomore;
     private javax.swing.JTable TBL_Classes_FindStudent;
+    private javax.swing.JTable TBL_Classes_FindStudent1;
+    private javax.swing.JTable TBL_ShowAllCourses;
     private javax.swing.JTable TBL_ShowAllStudents;
     private javax.swing.JTextField T_Email;
     private javax.swing.JTextField T_FirstName;
@@ -1831,26 +2482,42 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField T_LastName;
     private javax.swing.JTextField T_sid_DeleteStudent;
     private javax.swing.JTextField T_sid_FindStudent;
+    private javax.swing.JTextField T_sid_FindStudent1;
+    private javax.swing.JPanel Tab_Courses;
     private javax.swing.JPanel Tab_Students;
     private javax.swing.JTabbedPane Tabs;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;

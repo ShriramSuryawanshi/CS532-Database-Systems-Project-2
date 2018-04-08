@@ -25,6 +25,13 @@ CREATE OR REPLACE PACKAGE SQLPackage AS
     PROCEDURE find_student(oCursor IN OUT myCursor,  temp_sid IN students.sid%TYPE);
 
     PROCEDURE delete_student(temp_sid IN students.sid%TYPE);
+
+
+-- @shree : Courses Module
+
+    PROCEDURE display_courses(oCursor OUT myCursor);
+
+    PROCEDURE display_prerequisites(oCursor OUT myCursor);
     
     
 
@@ -102,7 +109,18 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 
         END;
             
-            
+    
+    -- @shree : Courses module - show courses
+    PROCEDURE display_courses(oCursor OUT myCursor) AS
+        BEGIN
+            OPEN oCursor FOR SELECT * FROM courses; 
+        END;
+
+   -- @shree : Courses module - show prerequisites
+    PROCEDURE display_prerequisites(oCursor OUT myCursor) AS
+        BEGIN
+            OPEN oCursor FOR SELECT * FROM prerequisites; 
+        END;
             
     
 
