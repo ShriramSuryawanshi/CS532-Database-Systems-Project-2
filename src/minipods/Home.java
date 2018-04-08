@@ -134,6 +134,11 @@ public class Home extends javax.swing.JFrame {
         P_Table_ShowAllCourses = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         TBL_ShowAllCourses = new javax.swing.JTable();
+        P_ShowAllPrerequisites = new javax.swing.JPanel();
+        L_Message_ShowAllPre = new javax.swing.JLabel();
+        P_Table_ShowAllPre = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        TBL_ShowAllPre = new javax.swing.JTable();
         P_FindCourse = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         P_StudentDetails_FindStudent1 = new javax.swing.JPanel();
@@ -1202,7 +1207,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel29)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_CoursesLayout.createSequentialGroup()
-                .addGap(0, 1230, Short.MAX_VALUE)
+                .addGap(0, 1282, Short.MAX_VALUE)
                 .addGroup(P_Default_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1289,7 +1294,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(P_Table_ShowAllCourses, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(P_ShowAllCoursesLayout.createSequentialGroup()
                         .addComponent(L_Message_ShowAllCourses, javax.swing.GroupLayout.PREFERRED_SIZE, 1340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 19, Short.MAX_VALUE)))
+                        .addGap(0, 71, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         P_ShowAllCoursesLayout.setVerticalGroup(
@@ -1299,6 +1304,76 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(L_Message_ShowAllCourses)
                 .addGap(18, 18, 18)
                 .addComponent(P_Table_ShowAllCourses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        P_ShowAllPrerequisites.setBackground(new java.awt.Color(204, 255, 204));
+        P_ShowAllPrerequisites.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        L_Message_ShowAllPre.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Message_ShowAllPre.setText("Displaying all available prerequisites - ");
+
+        P_Table_ShowAllPre.setBackground(new java.awt.Color(204, 255, 204));
+        P_Table_ShowAllPre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        TBL_ShowAllPre.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        TBL_ShowAllPre.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Department Code", "Course No.", "Prerequisite Department Code", "Prerequisite Course No."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TBL_ShowAllPre.setRowHeight(22);
+        TBL_ShowAllPre.getTableHeader().setReorderingAllowed(false);
+        jScrollPane5.setViewportView(TBL_ShowAllPre);
+        if (TBL_ShowAllPre.getColumnModel().getColumnCount() > 0) {
+            TBL_ShowAllPre.getColumnModel().getColumn(0).setResizable(false);
+            TBL_ShowAllPre.getColumnModel().getColumn(1).setResizable(false);
+            TBL_ShowAllPre.getColumnModel().getColumn(2).setResizable(false);
+            TBL_ShowAllPre.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout P_Table_ShowAllPreLayout = new javax.swing.GroupLayout(P_Table_ShowAllPre);
+        P_Table_ShowAllPre.setLayout(P_Table_ShowAllPreLayout);
+        P_Table_ShowAllPreLayout.setHorizontalGroup(
+            P_Table_ShowAllPreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane5)
+        );
+        P_Table_ShowAllPreLayout.setVerticalGroup(
+            P_Table_ShowAllPreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout P_ShowAllPrerequisitesLayout = new javax.swing.GroupLayout(P_ShowAllPrerequisites);
+        P_ShowAllPrerequisites.setLayout(P_ShowAllPrerequisitesLayout);
+        P_ShowAllPrerequisitesLayout.setHorizontalGroup(
+            P_ShowAllPrerequisitesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ShowAllPrerequisitesLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(P_ShowAllPrerequisitesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P_Table_ShowAllPre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(P_ShowAllPrerequisitesLayout.createSequentialGroup()
+                        .addComponent(L_Message_ShowAllPre, javax.swing.GroupLayout.PREFERRED_SIZE, 1340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 71, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        P_ShowAllPrerequisitesLayout.setVerticalGroup(
+            P_ShowAllPrerequisitesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_ShowAllPrerequisitesLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(L_Message_ShowAllPre)
+                .addGap(18, 18, 18)
+                .addComponent(P_Table_ShowAllPre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1418,7 +1493,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(P_ClassDetails_FindStudents1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(L_Message_Classes_FindStudent1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ClassDetails_FindStudents1Layout.createSequentialGroup()
-                        .addGap(0, 10, Short.MAX_VALUE)
+                        .addGap(0, 62, Short.MAX_VALUE)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1321, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -1528,19 +1603,22 @@ public class Home extends javax.swing.JFrame {
 
         LP_Courses.setLayer(P_Default_Courses, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LP_Courses.setLayer(P_ShowAllCourses, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LP_Courses.setLayer(P_ShowAllPrerequisites, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LP_Courses.setLayer(P_FindCourse, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout LP_CoursesLayout = new javax.swing.GroupLayout(LP_Courses);
         LP_Courses.setLayout(LP_CoursesLayout);
         LP_CoursesLayout.setHorizontalGroup(
             LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1398, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_FindCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_ShowAllCourses, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_Default_Courses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_ShowAllPrerequisites, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LP_CoursesLayout.setVerticalGroup(
             LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1551,6 +1629,8 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(P_ShowAllCourses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_Default_Courses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_CoursesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_ShowAllPrerequisites, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout P_ViewCoursesLayout = new javax.swing.GroupLayout(P_ViewCourses);
@@ -1561,10 +1641,10 @@ public class Home extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(P_Button_Courses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(LP_Courses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addComponent(LP_Courses)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ViewCoursesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(863, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addGap(769, 769, 769))
         );
@@ -2274,7 +2354,7 @@ public class Home extends javax.swing.JFrame {
         // @shree - show only P_ShowAllCourses panel
         P_Default_Courses.setVisible(false);
         P_ShowAllCourses.setVisible(true);
-//            P_ShowAllPrerequisites.setVisible(false);
+        P_ShowAllPrerequisites.setVisible(false);
         P_FindCourse.setVisible(false);
         
         // @shree - hiding a table
@@ -2334,15 +2414,80 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_B_ShowAllCoursesActionPerformed
 
     private void B_ShowAllPrerequisitesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllPrerequisitesActionPerformed
-        // TODO add your handling code here:
+        
+        // @shree - show only prerequisites panel
+        P_Default_Courses.setVisible(false);
+        P_ShowAllCourses.setVisible(false);
+        P_ShowAllPrerequisites.setVisible(true);
+        P_FindCourse.setVisible(false);
+        
+        // @shree - hiding a table
+        P_Table_ShowAllPre.setVisible(false);
+
+        // @shree - fecthing the data using procedure and display on GUI
+        try {
+
+            // @shree - connect to DB
+            OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
+            ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+            Connection conn = ds.getConnection("shree", "shree2103");
+
+            // @shree - fetching result from DB usnig procedure
+            CallableStatement call = conn.prepareCall("begin SQLPackage.display_prerequisites(?); end;");
+            call.registerOutParameter(1, OracleTypes.CURSOR);
+            call.execute();
+
+            ResultSet rs = (ResultSet) call.getObject(1);
+
+            // @shree - inserting data into the table on GUI
+            DefaultTableModel model = (DefaultTableModel) TBL_ShowAllPre.getModel();
+            model.setRowCount(0);
+            TBL_ShowAllPre.setModel(model);
+
+            int cols = TBL_ShowAllPre.getColumnCount();
+
+            while (rs.next()) {
+                Object[] obj = new Object[cols];
+                for (int i = 0; i < cols; i++) {
+                    obj[i] = rs.getObject(i + 1);
+                }
+                model.addRow(obj);
+            }
+
+            TBL_ShowAllPre.setModel(model);
+            TBL_ShowAllPre.getTableHeader().setFont(new Font("Monteserrat", Font.BOLD, 14));
+            P_Table_ShowAllPre.setVisible(true);
+
+            L_Message_ShowAllPre.setText("Displaying all available prerequisites - ");
+            L_Message_ShowAllPre.setForeground(Color.BLACK);
+
+            conn.close();
+
+        } catch (SQLException ex) {
+
+            // @shree - show errors on panel -
+            L_Message_ShowAllPre.setText("SQL Exception : " + ex);
+            L_Message_ShowAllPre.setForeground(Color.RED);
+        } catch (Exception e) {
+
+            // @shree - show errors on panel -
+            L_Message_ShowAllPre.setText("Exception : " + e);
+            L_Message_ShowAllPre.setForeground(Color.RED);
+        }
+        
     }//GEN-LAST:event_B_ShowAllPrerequisitesActionPerformed
 
     private void B_FindCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_FindCourseActionPerformed
-        // TODO add your handling code here:
+        
+         // @shree - show only find course panel
+        P_Default_Courses.setVisible(false);
+        P_ShowAllCourses.setVisible(false);
+        P_ShowAllPrerequisites.setVisible(false);
+        P_FindCourse.setVisible(true);
     }//GEN-LAST:event_B_FindCourseActionPerformed
 
     private void B_ExitCoursesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ExitCoursesActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_B_ExitCoursesActionPerformed
 
     private void T_sid_FindStudent1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_FindStudent1FocusGained
@@ -2437,6 +2582,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel L_Message_Classes_FindStudent1;
     private javax.swing.JLabel L_Message_DeleteStudent;
     private javax.swing.JLabel L_Message_ShowAllCourses;
+    private javax.swing.JLabel L_Message_ShowAllPre;
     private javax.swing.JLabel L_Message_ShowAllStudent;
     private javax.swing.JLabel L_Message_Student_FindStudent;
     private javax.swing.JLabel L_Message_Student_FindStudent1;
@@ -2460,10 +2606,12 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel P_FindStudent;
     private javax.swing.JPanel P_ManageStudents;
     private javax.swing.JPanel P_ShowAllCourses;
+    private javax.swing.JPanel P_ShowAllPrerequisites;
     private javax.swing.JPanel P_ShowAllStudents;
     private javax.swing.JPanel P_StudentDetails_FindStudent;
     private javax.swing.JPanel P_StudentDetails_FindStudent1;
     private javax.swing.JPanel P_Table_ShowAllCourses;
+    private javax.swing.JPanel P_Table_ShowAllPre;
     private javax.swing.JPanel P_Table_ShowAllStudents;
     private javax.swing.JPanel P_ViewCourses;
     private javax.swing.ButtonGroup RBG_Students;
@@ -2475,6 +2623,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTable TBL_Classes_FindStudent;
     private javax.swing.JTable TBL_Classes_FindStudent1;
     private javax.swing.JTable TBL_ShowAllCourses;
+    private javax.swing.JTable TBL_ShowAllPre;
     private javax.swing.JTable TBL_ShowAllStudents;
     private javax.swing.JTextField T_Email;
     private javax.swing.JTextField T_FirstName;
@@ -2516,6 +2665,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
