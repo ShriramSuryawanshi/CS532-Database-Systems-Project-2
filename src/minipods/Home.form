@@ -1391,22 +1391,22 @@
                                           <Renderer/>
                                         </Column>
                                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                                          <Title/>
+                                          <Title value="Course No."/>
                                           <Editor/>
                                           <Renderer/>
                                         </Column>
                                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                                          <Title/>
+                                          <Title value="Title"/>
                                           <Editor/>
                                           <Renderer/>
                                         </Column>
                                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                                          <Title/>
+                                          <Title value="Year"/>
                                           <Editor/>
                                           <Renderer/>
                                         </Column>
                                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                                          <Title/>
+                                          <Title value="Semester"/>
                                           <Editor/>
                                           <Renderer/>
                                         </Column>
@@ -2767,29 +2767,37 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1400" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="1450" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                              <Component id="P_FindClass" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
                               <Component id="P_ShowAllClasses" alignment="1" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
+                          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
                               <Component id="P_Default_Classes" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                  <Component id="P_FindClass" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="664" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="691" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                              <Component id="P_FindClass" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
                               <Component id="P_ShowAllClasses" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
+                          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
                               <Component id="P_Default_Classes" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                  <Component id="P_FindClass" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2816,7 +2824,7 @@
                                   <EmptySpace min="555" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="1232" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="1282" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel34" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
                                       <Component id="jLabel33" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
@@ -2845,7 +2853,7 @@
                                   <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="384" max="32767" attributes="0"/>
+                                  <EmptySpace pref="411" max="32767" attributes="0"/>
                                   <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
@@ -2968,7 +2976,7 @@
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane4" alignment="0" pref="599" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane4" alignment="0" pref="603" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -3068,107 +3076,82 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                  <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="L_Error_FindCourse1" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="P_ShowPre_FindCourse1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="B_Find_FindCourse1" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="B_Cancel_FindCourse1" min="-2" pref="160" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jSeparator13" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="T_Dept_FindCourse1" alignment="0" min="-2" pref="289" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                                          <Component id="jLabel38" min="-2" pref="98" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jSeparator14" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="T_Course_FindCourse1" alignment="0" min="-2" pref="289" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="P_StudentDetails_FindClass" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="P_ClassDetails_FindClass" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="L_Error_FindClass" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jSeparator7" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="T_classid_FindClass" alignment="0" min="-2" pref="289" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="B_Find_FindClass" min="-2" pref="160" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="B_Cancel_FindClass" min="-2" pref="160" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
-                                      <Component id="L_Message_FindCourse1" alignment="1" min="-2" pref="948" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="171" pref="322" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="L_Error_FindCourse1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="B_Cancel_FindClass" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                                              <Component id="B_Find_FindClass" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                                  <Component id="T_Course_FindCourse1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="T_classid_FindClass" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                                  <Component id="jSeparator14" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jSeparator7" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                      </Group>
-                                      <Component id="T_Dept_FindCourse1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                          <Component id="jSeparator13" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace pref="20" max="32767" attributes="0"/>
+                                          <Component id="L_Error_FindClass" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="B_Cancel_FindCourse1" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                                      <Component id="B_Find_FindCourse1" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                                  <Component id="L_Message_FindCourse1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="30" max="32767" attributes="0"/>
-                                  <Component id="P_ShowPre_FindCourse1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                  <Component id="P_ClassDetails_FindClass" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="P_StudentDetails_FindClass" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel36">
+                        <Component class="javax.swing.JLabel" name="jLabel13">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Montserrat" size="14" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Please provide below details of the course - "/>
+                            <Property name="text" type="java.lang.String" value="Please provide student&apos;s B-Number (sid) - "/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel37">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Montserrat" size="14" style="1"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Department Code - "/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="T_Dept_FindCourse1">
+                        <Component class="javax.swing.JTextField" name="T_classid_FindClass">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -3176,57 +3159,24 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Montserrat" size="14" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Enter department code here"/>
+                            <Property name="text" type="java.lang.String" value="Enter classid here"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="null"/>
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="T_Dept_FindCourse1FocusGained"/>
-                            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="T_Dept_FindCourse1FocusLost"/>
+                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="T_classid_FindClassFocusGained"/>
+                            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="T_classid_FindClassFocusLost"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JSeparator" name="jSeparator13">
+                        <Component class="javax.swing.JSeparator" name="jSeparator7">
                           <Properties>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel38">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Montserrat" size="14" style="1"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Course No. - "/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="T_Course_FindCourse1">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="cc" green="cc" red="0" type="rgb"/>
-                            </Property>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Montserrat" size="14" style="0"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Enter course no. here"/>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="T_Course_FindCourse1FocusGained"/>
-                            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="T_Course_FindCourse1FocusLost"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JSeparator" name="jSeparator14">
-                          <Properties>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="B_Find_FindCourse1">
+                        <Component class="javax.swing.JButton" name="B_Find_FindClass">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Montserrat" size="15" style="1"/>
@@ -3243,10 +3193,10 @@
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Find_FindCourse1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Find_FindClassActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="B_Cancel_FindCourse1">
+                        <Component class="javax.swing.JButton" name="B_Cancel_FindClass">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Montserrat" size="15" style="1"/>
@@ -3263,10 +3213,10 @@
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Cancel_FindCourse1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_Cancel_FindClassActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="L_Error_FindCourse1">
+                        <Component class="javax.swing.JLabel" name="L_Error_FindClass">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Montserrat" size="14" style="0"/>
@@ -3274,19 +3224,14 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="33" green="33" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Please provide valid sid (sid should be of length 4, and it starts with B)!"/>
+                            <Property name="text" type="java.lang.String" value="Please provide valid classid (cid should be of length 5, and it starts with c)!"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="L_Message_FindCourse1">
+                        <Container class="javax.swing.JPanel" name="P_ClassDetails_FindClass">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Montserrat" size="14" style="0"/>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Prerequisite courses - "/>
-                          </Properties>
-                        </Component>
-                        <Container class="javax.swing.JPanel" name="P_ShowPre_FindCourse1">
-                          <Properties>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                                 <BevelBorder/>
@@ -3297,38 +3242,204 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane8" alignment="0" pref="948" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="L_Message_Class_FindClass" pref="1381" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="L_Classid_FindClass" min="-2" pref="72" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="L_Classid_Value_FindClass" min="-2" pref="196" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="L_Title_FindClass" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="L_Title_Value_FindClass" min="-2" pref="196" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="L_Semester_FindClass" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="L_Semester_Value_FindClass" min="-2" pref="196" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="L_Year_FindClass" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="L_Year_Value_FindClass" min="-2" pref="196" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane8" min="-2" pref="355" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="L_Message_Class_FindClass" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="L_Classid_FindClass" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="L_Classid_Value_FindClass" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="L_Title_FindClass" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="L_Title_Value_FindClass" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="L_Semester_FindClass" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="L_Semester_Value_FindClass" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                                              <Component id="L_Year_FindClass" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="L_Year_Value_FindClass" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace pref="37" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Container class="javax.swing.JScrollPane" name="jScrollPane8">
+                            <Component class="javax.swing.JLabel" name="L_Message_Class_FindClass">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Class Details - "/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="L_Classid_FindClass">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Class ID -"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="L_Classid_Value_FindClass">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="SID - "/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="L_Title_FindClass">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Title -"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="L_Title_Value_FindClass">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="SID - "/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="L_Semester_FindClass">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Semester - "/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="L_Semester_Value_FindClass">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="SID - "/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="L_Year_FindClass">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Year -"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="L_Year_Value_FindClass">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="SID - "/>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="P_StudentDetails_FindClass">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
+                          </Properties>
+
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="L_Message_Students_FindClass" alignment="1" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="0" pref="60" max="32767" attributes="0"/>
+                                              <Component id="jScrollPane7" min="-2" pref="1321" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                      <Component id="L_Message_Students_FindClass" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane7" pref="366" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="L_Message_Students_FindClass">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Enrolled Students - "/>
+                              </Properties>
+                            </Component>
+                            <Container class="javax.swing.JScrollPane" name="jScrollPane7">
                               <AuxValues>
                                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                               </AuxValues>
 
                               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                               <SubComponents>
-                                <Component class="javax.swing.JTable" name="TBL_ShowPre_FindCourse1">
+                                <Component class="javax.swing.JTable" name="TBL_Students_FindClass">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Montserrat" size="12" style="0"/>
                                     </Property>
                                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                      <Table columnCount="1" rowCount="0">
-                                        <Column editable="false" title="Prerequisite Courses" type="java.lang.Object"/>
+                                      <Table columnCount="2" rowCount="0">
+                                        <Column editable="false" title="SID" type="java.lang.Object"/>
+                                        <Column editable="false" title="Lastname" type="java.lang.Object"/>
                                       </Table>
                                     </Property>
                                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                       <TableColumnModel selectionModel="0">
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
                                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                           <Title/>
                                           <Editor/>

@@ -188,7 +188,7 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
         END;
 
         BEGIN
-            SELECT sid INTO stdntchk FROM enrollments WHERE classid = temp_classid;
+            SELECT sid INTO stdntchk FROM enrollments WHERE classid = temp_classid AND ROWNUM = 1;
             EXCEPTION                
                     WHEN no_data_found THEN 
                         OPEN oCursor FOR 
