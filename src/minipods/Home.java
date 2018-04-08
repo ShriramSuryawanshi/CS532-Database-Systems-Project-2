@@ -51,6 +51,12 @@ public class Home extends javax.swing.JFrame {
         B_DeleteStudent = new javax.swing.JButton();
         B_ExitStudent = new javax.swing.JButton();
         LP_Students = new javax.swing.JLayeredPane();
+        P_Default_Students = new javax.swing.JPanel();
+        L_Message_DeleteStudent1 = new javax.swing.JLabel();
+        L_Message_DeleteStudent2 = new javax.swing.JLabel();
+        L_Message_DeleteStudent3 = new javax.swing.JLabel();
+        L_Message_DeleteStudent4 = new javax.swing.JLabel();
+        L_Message_DeleteStudent5 = new javax.swing.JLabel();
         P_ShowAllStudents = new javax.swing.JPanel();
         L_Message_ShowAllStudent = new javax.swing.JLabel();
         P_Table_ShowAllStudents = new javax.swing.JPanel();
@@ -125,6 +131,11 @@ public class Home extends javax.swing.JFrame {
 
         Tabs.setBackground(new java.awt.Color(204, 204, 204));
         Tabs.setFont(new java.awt.Font("Montserrat", 0, 16)); // NOI18N
+        Tabs.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                TabsStateChanged(evt);
+            }
+        });
 
         Tab_Students.setBackground(new java.awt.Color(255, 255, 255));
         Tab_Students.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -224,6 +235,64 @@ public class Home extends javax.swing.JFrame {
 
         LP_Students.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        P_Default_Students.setBackground(new java.awt.Color(153, 153, 255));
+        P_Default_Students.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        L_Message_DeleteStudent1.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        L_Message_DeleteStudent1.setText("Please select the desired action with the help of buttons provided on the left. ");
+
+        L_Message_DeleteStudent2.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        L_Message_DeleteStudent2.setText("CS 532 : Database System");
+
+        L_Message_DeleteStudent3.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        L_Message_DeleteStudent3.setText("1. Shriram Suryawanshi");
+
+        L_Message_DeleteStudent4.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        L_Message_DeleteStudent4.setText("2. Vinen Furtado");
+
+        L_Message_DeleteStudent5.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        L_Message_DeleteStudent5.setText("Welcome to Manage Student section!");
+
+        javax.swing.GroupLayout P_Default_StudentsLayout = new javax.swing.GroupLayout(P_Default_Students);
+        P_Default_Students.setLayout(P_Default_StudentsLayout);
+        P_Default_StudentsLayout.setHorizontalGroup(
+            P_Default_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Default_StudentsLayout.createSequentialGroup()
+                .addGap(543, 543, 543)
+                .addComponent(L_Message_DeleteStudent5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_StudentsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(P_Default_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_StudentsLayout.createSequentialGroup()
+                        .addGroup(P_Default_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(L_Message_DeleteStudent4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(L_Message_DeleteStudent3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_StudentsLayout.createSequentialGroup()
+                        .addComponent(L_Message_DeleteStudent1)
+                        .addGap(369, 369, 369))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_StudentsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(L_Message_DeleteStudent2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        P_Default_StudentsLayout.setVerticalGroup(
+            P_Default_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Default_StudentsLayout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(L_Message_DeleteStudent5)
+                .addGap(27, 27, 27)
+                .addComponent(L_Message_DeleteStudent1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 407, Short.MAX_VALUE)
+                .addComponent(L_Message_DeleteStudent2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(L_Message_DeleteStudent3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(L_Message_DeleteStudent4)
+                .addContainerGap())
+        );
+
         P_ShowAllStudents.setBackground(new java.awt.Color(204, 255, 204));
         P_ShowAllStudents.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -284,7 +353,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(P_Table_ShowAllStudents, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(P_ShowAllStudentsLayout.createSequentialGroup()
                         .addComponent(L_Message_ShowAllStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 1340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 9, Short.MAX_VALUE)))
+                        .addGap(0, 58, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         P_ShowAllStudentsLayout.setVerticalGroup(
@@ -563,7 +632,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_AddNewStudentLayout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
+                .addContainerGap(126, Short.MAX_VALUE)
                 .addGroup(P_AddNewStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(L_Message_AddNewStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -578,7 +647,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(L_Message_AddNewStudent)
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         P_FindStudent.setBackground(new java.awt.Color(0, 204, 204));
@@ -697,7 +766,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(P_ClassDetails_FindStudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(L_Message_Classes_FindStudent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ClassDetails_FindStudentsLayout.createSequentialGroup()
-                        .addGap(0, 28, Short.MAX_VALUE)
+                        .addGap(0, 49, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1321, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -707,7 +776,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(L_Message_Classes_FindStudent)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -874,7 +943,7 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(B_Cancel_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(P_DeleteStudentLayout.createSequentialGroup()
                         .addComponent(L_Error_DeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 728, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 355, Short.MAX_VALUE)))
+                        .addGap(0, 376, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(P_DeleteStudentLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
@@ -900,13 +969,14 @@ public class Home extends javax.swing.JFrame {
                                 .addGap(25, 25, 25)
                                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_DeleteStudentLayout.createSequentialGroup()
-                        .addContainerGap(64, Short.MAX_VALUE)
+                        .addContainerGap(78, Short.MAX_VALUE)
                         .addComponent(L_Error_DeleteStudent)))
                 .addGap(75, 75, 75)
                 .addComponent(L_Message_DeleteStudent)
-                .addContainerGap(481, Short.MAX_VALUE))
+                .addContainerGap(494, Short.MAX_VALUE))
         );
 
+        LP_Students.setLayer(P_Default_Students, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LP_Students.setLayer(P_ShowAllStudents, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LP_Students.setLayer(P_AddNewStudent, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LP_Students.setLayer(P_FindStudent, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -916,7 +986,7 @@ public class Home extends javax.swing.JFrame {
         LP_Students.setLayout(LP_StudentsLayout);
         LP_StudentsLayout.setHorizontalGroup(
             LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1416, Short.MAX_VALUE)
+            .addGap(0, 1437, Short.MAX_VALUE)
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_AddNewStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -925,10 +995,12 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(P_ShowAllStudents, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_DeleteStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_Default_Students, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LP_StudentsLayout.setVerticalGroup(
             LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 687, Short.MAX_VALUE)
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_AddNewStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -937,6 +1009,8 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(P_ShowAllStudents, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_DeleteStudent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_StudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_Default_Students, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout P_ManageStudentsLayout = new javax.swing.GroupLayout(P_ManageStudents);
@@ -1061,6 +1135,7 @@ public class Home extends javax.swing.JFrame {
     private void B_ShowAllStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllStudentsActionPerformed
 
         // @shree - show P_ShowAllStudents panel, hide all others
+        P_Default_Students.setVisible(false);
         P_ShowAllStudents.setVisible(true);
         P_AddNewStudent.setVisible(false);
         P_FindStudent.setVisible(false);
@@ -1120,6 +1195,7 @@ public class Home extends javax.swing.JFrame {
     private void B_AddNewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_AddNewStudentActionPerformed
 
         // @shree - show P_AddNewStudents panel, hide all others
+        P_Default_Students.setVisible(false);
         P_ShowAllStudents.setVisible(false);
         P_AddNewStudent.setVisible(true);
         P_FindStudent.setVisible(false);
@@ -1292,6 +1368,7 @@ public class Home extends javax.swing.JFrame {
     private void B_FindStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_FindStudentActionPerformed
 
         // @shree - show P_FindStudent panel, hide all others
+        P_Default_Students.setVisible(false);
         P_ShowAllStudents.setVisible(false);
         P_AddNewStudent.setVisible(false);
         P_FindStudent.setVisible(true);
@@ -1308,6 +1385,7 @@ public class Home extends javax.swing.JFrame {
     private void B_DeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_DeleteStudentActionPerformed
 
         // @shree - show P_DeleteStudent panel, hide all others
+        P_Default_Students.setVisible(false);
         P_ShowAllStudents.setVisible(false);
         P_AddNewStudent.setVisible(false);
         P_FindStudent.setVisible(false);
@@ -1642,6 +1720,18 @@ public class Home extends javax.swing.JFrame {
         L_Error_DeleteStudent.setVisible(false);
     }//GEN-LAST:event_B_Cancel_DeleteStudentActionPerformed
 
+    private void TabsStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabsStateChanged
+
+        // @shree - tab selection changed, hide Layered pane depending on Tab selected
+        if (Tabs.getSelectedIndex() == 0) {
+            P_Default_Students.setVisible(true);
+            P_ShowAllStudents.setVisible(false);
+            P_AddNewStudent.setVisible(false);
+            P_FindStudent.setVisible(false);
+            P_DeleteStudent.setVisible(false);
+        }
+    }//GEN-LAST:event_TabsStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -1706,6 +1796,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel L_Message_AddNewStudent;
     private javax.swing.JLabel L_Message_Classes_FindStudent;
     private javax.swing.JLabel L_Message_DeleteStudent;
+    private javax.swing.JLabel L_Message_DeleteStudent1;
+    private javax.swing.JLabel L_Message_DeleteStudent2;
+    private javax.swing.JLabel L_Message_DeleteStudent3;
+    private javax.swing.JLabel L_Message_DeleteStudent4;
+    private javax.swing.JLabel L_Message_DeleteStudent5;
     private javax.swing.JLabel L_Message_ShowAllStudent;
     private javax.swing.JLabel L_Message_Student_FindStudent;
     private javax.swing.JLabel L_SID_FindStudent;
@@ -1715,6 +1810,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel P_AddNewStudent;
     private javax.swing.JPanel P_Button_Students;
     private javax.swing.JPanel P_ClassDetails_FindStudents;
+    private javax.swing.JPanel P_Default_Students;
     private javax.swing.JPanel P_DeleteStudent;
     private javax.swing.JPanel P_FindStudent;
     private javax.swing.JPanel P_ManageStudents;
