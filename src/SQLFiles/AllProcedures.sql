@@ -39,6 +39,8 @@ CREATE OR REPLACE PACKAGE SQLPackage AS
 -- @shree : Classes Module
 
     PROCEDURE display_classes(oCursor OUT myCursor);
+
+    PROCEDURE find_class(oCursor IN OUT myCursor,  temp_classid IN classes.classid%TYPE);
     
     
 
@@ -167,6 +169,43 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
         BEGIN
             OPEN oCursor FOR SELECT * FROM classes; 
         END;
+
+    -- @shree : Classes module - find class and students
+    PROCEDURE find_class(oCursor IN OUT myCursor,  temp_classid IN classes.classid%TYPE) AS
+
+    classidcheck char(10);
+    stdntchk char(10);
+
+
+    BEGIN
+        classidcheck := 0;
+
+        BEGIN
+            SELECT classid INTO classidcheck FROM classes WHERE classid = temp_classid;
+            EXCEPTION
+                WHEN no_data_found THEN raise_application_error(-20001, 'The cid is invalid.');
+            return;
+        END;
+
+        BEGIN
+            SELECT sid INTO stdntchk FROM enrollments WHERE classid = temp_classid;
+            EXCEPTION                
+                    WHEN no_data_found THEN 
+                        OPEN oCursor FOR 
+                            SELECT classes.classid, courses.title, classes.semester, classes.year FROM classes 
+                                JOIN courses ON courses.dept_code = classes.dept_code AND courses.course_no = classes.course_no AND classes.classid = temp_classid;                                
+                return;
+        END;
+
+        BEGIN
+            OPEN oCursor FOR 
+                SELECT classes.classid, courses.title, classes.semester, classes.year, students.sid, students.lastname FROM classes 
+                    JOIN courses ON courses.dept_code = classes.dept_code AND courses.course_no = classes.course_no AND classes.classid = temp_classid
+	JOIN enrollments ON enrollments.classid = classes.classid
+	JOIN students ON students.sid = enrollments.sid;
+        END;
+     
+     END;
 
 
 
