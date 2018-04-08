@@ -34,6 +34,11 @@ CREATE OR REPLACE PACKAGE SQLPackage AS
     PROCEDURE display_prerequisites(oCursor OUT myCursor);
 
     PROCEDURE find_course(oCursor IN OUT myCursor, temp_dept IN courses.dept_code%TYPE, temp_course IN courses.course_no%TYPE);
+
+
+-- @shree : Classes Module
+
+    PROCEDURE display_classes(oCursor OUT myCursor);
     
     
 
@@ -43,7 +48,7 @@ END;
 
 CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 
-
+-- @shree : Students module
 -- @shree : Students module - show students
     PROCEDURE display_students(oCursor OUT myCursor) AS
         BEGIN
@@ -112,6 +117,7 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
         END;
             
     
+    -- @shree : Courses module
     -- @shree : Courses module - show courses
     PROCEDURE display_courses(oCursor OUT myCursor) AS
         BEGIN
@@ -123,6 +129,7 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
         BEGIN
             OPEN oCursor FOR SELECT * FROM prerequisites; 
         END;
+
             
     -- @shree : Courses module - find course
      PROCEDURE find_course(oCursor IN OUT myCursor, temp_dept IN courses.dept_code%TYPE, temp_course IN courses.course_no%TYPE) AS
@@ -152,6 +159,14 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
            END;
 
      END;
+
+
+-- @shree : Classes module
+-- @shree : Classes module - show classes
+    PROCEDURE display_classes(oCursor OUT myCursor) AS
+        BEGIN
+            OPEN oCursor FOR SELECT * FROM classes; 
+        END;
 
 
 
