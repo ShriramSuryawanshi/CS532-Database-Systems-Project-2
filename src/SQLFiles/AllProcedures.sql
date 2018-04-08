@@ -41,6 +41,12 @@ CREATE OR REPLACE PACKAGE SQLPackage AS
     PROCEDURE display_classes(oCursor OUT myCursor);
 
     PROCEDURE find_class(oCursor IN OUT myCursor,  temp_classid IN classes.classid%TYPE);
+
+
+-- @shree : Enrollments Module
+
+    PROCEDURE display_enrollments(oCursor OUT myCursor);
+
     
     
 
@@ -207,6 +213,13 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
      
      END;
 
+
+-- @shree : Enrollments module
+-- @shree : Enrollments module - show enrollments
+    PROCEDURE display_enrollments(oCursor OUT myCursor) AS
+        BEGIN
+            OPEN oCursor FOR SELECT * FROM enrollments; 
+        END;
 
 
 END;

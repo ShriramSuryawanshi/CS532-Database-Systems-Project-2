@@ -194,7 +194,26 @@ public class Home extends javax.swing.JFrame {
         L_Message_Students_FindClass = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         TBL_Students_FindClass = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
+        Tab_Enrollments = new javax.swing.JPanel();
+        P_ManageEnrollments = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        P_Button_Enrollments = new javax.swing.JPanel();
+        B_ShowAllEnrollments = new javax.swing.JButton();
+        B_EnrollStudent = new javax.swing.JButton();
+        B_DropEnrollment = new javax.swing.JButton();
+        B_ExitEnrollments = new javax.swing.JButton();
+        LP_Enrollments = new javax.swing.JLayeredPane();
+        P_Default_Enrollments = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        P_ShowAllEnrollments = new javax.swing.JPanel();
+        L_Message_ShowAllEnrollments = new javax.swing.JLabel();
+        P_Table_ShowAllEnrollments = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        TBL_ShowAllEnrollments = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1829,6 +1848,11 @@ public class Home extends javax.swing.JFrame {
             TBL_ShowAllClasses.getColumnModel().getColumn(0).setResizable(false);
             TBL_ShowAllClasses.getColumnModel().getColumn(1).setResizable(false);
             TBL_ShowAllClasses.getColumnModel().getColumn(2).setResizable(false);
+            TBL_ShowAllClasses.getColumnModel().getColumn(3).setHeaderValue("Section No.");
+            TBL_ShowAllClasses.getColumnModel().getColumn(4).setHeaderValue("Year");
+            TBL_ShowAllClasses.getColumnModel().getColumn(5).setHeaderValue("Semester");
+            TBL_ShowAllClasses.getColumnModel().getColumn(6).setHeaderValue("Limit");
+            TBL_ShowAllClasses.getColumnModel().getColumn(7).setHeaderValue("Class Size");
         }
 
         javax.swing.GroupLayout P_Table_ShowAllClassesLayout = new javax.swing.GroupLayout(P_Table_ShowAllClasses);
@@ -2168,18 +2192,275 @@ public class Home extends javax.swing.JFrame {
 
         Tabs.addTab("   View Classes   ", Tab_Classes);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1739, Short.MAX_VALUE)
+        P_ManageEnrollments.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel14.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel14.setText("Manage Enrollments");
+
+        P_Button_Enrollments.setBackground(new java.awt.Color(0, 153, 153));
+        P_Button_Enrollments.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        B_ShowAllEnrollments.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_ShowAllEnrollments.setForeground(new java.awt.Color(0, 102, 102));
+        B_ShowAllEnrollments.setText("Show All Enrollments");
+        B_ShowAllEnrollments.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_ShowAllEnrollments.setOpaque(false);
+        B_ShowAllEnrollments.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_ShowAllEnrollmentsActionPerformed(evt);
+            }
+        });
+
+        B_EnrollStudent.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_EnrollStudent.setForeground(new java.awt.Color(0, 102, 102));
+        B_EnrollStudent.setText("Enroll Student");
+        B_EnrollStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_EnrollStudent.setOpaque(false);
+        B_EnrollStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_EnrollStudentActionPerformed(evt);
+            }
+        });
+
+        B_DropEnrollment.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_DropEnrollment.setForeground(new java.awt.Color(0, 102, 102));
+        B_DropEnrollment.setText("Drop Enrollment");
+        B_DropEnrollment.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_DropEnrollment.setOpaque(false);
+        B_DropEnrollment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_DropEnrollmentActionPerformed(evt);
+            }
+        });
+
+        B_ExitEnrollments.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_ExitEnrollments.setForeground(new java.awt.Color(0, 102, 102));
+        B_ExitEnrollments.setText("Exit");
+        B_ExitEnrollments.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_ExitEnrollments.setOpaque(false);
+        B_ExitEnrollments.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_ExitEnrollmentsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout P_Button_EnrollmentsLayout = new javax.swing.GroupLayout(P_Button_Enrollments);
+        P_Button_Enrollments.setLayout(P_Button_EnrollmentsLayout);
+        P_Button_EnrollmentsLayout.setHorizontalGroup(
+            P_Button_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Button_EnrollmentsLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(P_Button_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(B_DropEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_ExitEnrollments, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_EnrollStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_ShowAllEnrollments, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 736, Short.MAX_VALUE)
+        P_Button_EnrollmentsLayout.setVerticalGroup(
+            P_Button_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Button_EnrollmentsLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(B_ShowAllEnrollments, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(B_EnrollStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(B_DropEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 419, Short.MAX_VALUE)
+                .addComponent(B_ExitEnrollments, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
-        Tabs.addTab("   Manage Enrollments   ", jPanel3);
+        LP_Enrollments.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        P_Default_Enrollments.setBackground(new java.awt.Color(153, 153, 255));
+        P_Default_Enrollments.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel36.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel36.setText("Please select the desired action with the help of buttons provided on the left. ");
+
+        jLabel37.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel37.setText("CS 532 : Database System");
+
+        jLabel38.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel38.setText("1. Shriram Suryawanshi");
+
+        jLabel39.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel39.setText("2. Vinen Furtado");
+
+        jLabel40.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel40.setText("Welcome to Manage Enrollments section!");
+
+        javax.swing.GroupLayout P_Default_EnrollmentsLayout = new javax.swing.GroupLayout(P_Default_Enrollments);
+        P_Default_Enrollments.setLayout(P_Default_EnrollmentsLayout);
+        P_Default_EnrollmentsLayout.setHorizontalGroup(
+            P_Default_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Default_EnrollmentsLayout.createSequentialGroup()
+                .addGap(543, 543, 543)
+                .addComponent(jLabel40)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_EnrollmentsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(P_Default_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_EnrollmentsLayout.createSequentialGroup()
+                .addContainerGap(437, Short.MAX_VALUE)
+                .addGroup(P_Default_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_EnrollmentsLayout.createSequentialGroup()
+                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_EnrollmentsLayout.createSequentialGroup()
+                        .addComponent(jLabel36)
+                        .addGap(339, 339, 339))))
+        );
+        P_Default_EnrollmentsLayout.setVerticalGroup(
+            P_Default_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Default_EnrollmentsLayout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(jLabel40)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 411, Short.MAX_VALUE)
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel39)
+                .addContainerGap())
+        );
+
+        P_ShowAllEnrollments.setBackground(new java.awt.Color(204, 255, 204));
+        P_ShowAllEnrollments.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        L_Message_ShowAllEnrollments.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Message_ShowAllEnrollments.setText("Displaying all available enrollments - ");
+
+        P_Table_ShowAllEnrollments.setBackground(new java.awt.Color(204, 255, 204));
+        P_Table_ShowAllEnrollments.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        TBL_ShowAllEnrollments.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        TBL_ShowAllEnrollments.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "SID", "Class ID", "Letter Grade"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TBL_ShowAllEnrollments.setRowHeight(22);
+        TBL_ShowAllEnrollments.getTableHeader().setReorderingAllowed(false);
+        jScrollPane8.setViewportView(TBL_ShowAllEnrollments);
+        if (TBL_ShowAllEnrollments.getColumnModel().getColumnCount() > 0) {
+            TBL_ShowAllEnrollments.getColumnModel().getColumn(0).setResizable(false);
+            TBL_ShowAllEnrollments.getColumnModel().getColumn(1).setResizable(false);
+            TBL_ShowAllEnrollments.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        javax.swing.GroupLayout P_Table_ShowAllEnrollmentsLayout = new javax.swing.GroupLayout(P_Table_ShowAllEnrollments);
+        P_Table_ShowAllEnrollments.setLayout(P_Table_ShowAllEnrollmentsLayout);
+        P_Table_ShowAllEnrollmentsLayout.setHorizontalGroup(
+            P_Table_ShowAllEnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane8)
+        );
+        P_Table_ShowAllEnrollmentsLayout.setVerticalGroup(
+            P_Table_ShowAllEnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout P_ShowAllEnrollmentsLayout = new javax.swing.GroupLayout(P_ShowAllEnrollments);
+        P_ShowAllEnrollments.setLayout(P_ShowAllEnrollmentsLayout);
+        P_ShowAllEnrollmentsLayout.setHorizontalGroup(
+            P_ShowAllEnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ShowAllEnrollmentsLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(P_ShowAllEnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P_Table_ShowAllEnrollments, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(P_ShowAllEnrollmentsLayout.createSequentialGroup()
+                        .addComponent(L_Message_ShowAllEnrollments, javax.swing.GroupLayout.PREFERRED_SIZE, 1340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 92, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        P_ShowAllEnrollmentsLayout.setVerticalGroup(
+            P_ShowAllEnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_ShowAllEnrollmentsLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(L_Message_ShowAllEnrollments)
+                .addGap(18, 18, 18)
+                .addComponent(P_Table_ShowAllEnrollments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        LP_Enrollments.setLayer(P_Default_Enrollments, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LP_Enrollments.setLayer(P_ShowAllEnrollments, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout LP_EnrollmentsLayout = new javax.swing.GroupLayout(LP_Enrollments);
+        LP_Enrollments.setLayout(LP_EnrollmentsLayout);
+        LP_EnrollmentsLayout.setHorizontalGroup(
+            LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1471, Short.MAX_VALUE)
+            .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_ShowAllEnrollments, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_Default_Enrollments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        LP_EnrollmentsLayout.setVerticalGroup(
+            LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_ShowAllEnrollments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_Default_Enrollments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout P_ManageEnrollmentsLayout = new javax.swing.GroupLayout(P_ManageEnrollments);
+        P_ManageEnrollments.setLayout(P_ManageEnrollmentsLayout);
+        P_ManageEnrollmentsLayout.setHorizontalGroup(
+            P_ManageEnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_ManageEnrollmentsLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(P_Button_Enrollments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LP_Enrollments)
+                .addContainerGap())
+            .addGroup(P_ManageEnrollmentsLayout.createSequentialGroup()
+                .addGap(768, 768, 768)
+                .addComponent(jLabel14)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        P_ManageEnrollmentsLayout.setVerticalGroup(
+            P_ManageEnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_ManageEnrollmentsLayout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addGroup(P_ManageEnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P_Button_Enrollments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LP_Enrollments))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout Tab_EnrollmentsLayout = new javax.swing.GroupLayout(Tab_Enrollments);
+        Tab_Enrollments.setLayout(Tab_EnrollmentsLayout);
+        Tab_EnrollmentsLayout.setHorizontalGroup(
+            Tab_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(P_ManageEnrollments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        Tab_EnrollmentsLayout.setVerticalGroup(
+            Tab_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(P_ManageEnrollments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        Tabs.addTab("   Manage Enrollments   ", Tab_Enrollments);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -2833,6 +3114,12 @@ public class Home extends javax.swing.JFrame {
             P_Default_Classes.setVisible(true);
             P_ShowAllClasses.setVisible(false);
             P_FindClass.setVisible(false);
+            
+        } else if (Tabs.getSelectedIndex() == 3) {
+            P_Default_Enrollments.setVisible(true);
+            P_ShowAllEnrollments.setVisible(false);
+            //P_EnrollStudent.setVisible(false);
+            //P_DropEnrollment
         }
 
     }//GEN-LAST:event_TabsStateChanged
@@ -3347,6 +3634,82 @@ public class Home extends javax.swing.JFrame {
         T_classid_FindClass.setText("Enter classid here");
     }//GEN-LAST:event_B_Cancel_FindClassActionPerformed
 
+    private void B_ShowAllEnrollmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllEnrollmentsActionPerformed
+        
+        // @shree - show only show all enrollment panel
+        P_Default_Enrollments.setVisible(false);
+        P_ShowAllEnrollments.setVisible(true);
+        //P_EnrollStudent.setVisible(false);
+        //P_DropEnrollment.setVisible(false);
+        
+        // @shree - hiding a table
+        P_Table_ShowAllEnrollments.setVisible(false);
+
+        // @shree - fecthing the data using procedure and display on GUI
+        try {
+
+            // @shree - connect to DB
+            OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
+            ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+            Connection conn = ds.getConnection("shree", "shree2103");
+
+            // @shree - fetching result from DB usnig procedure
+            CallableStatement call = conn.prepareCall("begin SQLPackage.display_enrollments(?); end;");
+            call.registerOutParameter(1, OracleTypes.CURSOR);
+            call.execute();
+
+            ResultSet rs = (ResultSet) call.getObject(1);
+
+            // @shree - inserting data into the table on GUI
+            DefaultTableModel model = (DefaultTableModel) TBL_ShowAllEnrollments.getModel();
+            model.setRowCount(0);
+            TBL_ShowAllEnrollments.setModel(model);
+
+            int cols = TBL_ShowAllEnrollments.getColumnCount();
+
+            while (rs.next()) {
+                Object[] obj = new Object[cols];
+                for (int i = 0; i < cols; i++) {
+                    obj[i] = rs.getObject(i + 1);
+                }
+                model.addRow(obj);
+            }
+
+            TBL_ShowAllEnrollments.setModel(model);
+            TBL_ShowAllEnrollments.getTableHeader().setFont(new Font("Monteserrat", Font.BOLD, 14));
+            P_Table_ShowAllEnrollments.setVisible(true);
+
+            L_Message_ShowAllEnrollments.setText("Displaying all available enrollments - ");
+            L_Message_ShowAllEnrollments.setForeground(Color.BLACK);
+
+            conn.close();
+
+        } catch (SQLException ex) {
+
+            // @shree - show errors on panel -
+            L_Message_ShowAllEnrollments.setText("SQL Exception : " + ex);
+            L_Message_ShowAllEnrollments.setForeground(Color.RED);
+        } catch (Exception e) {
+
+            // @shree - show errors on panel -
+            L_Message_ShowAllEnrollments.setText("Exception : " + e);
+            L_Message_ShowAllEnrollments.setForeground(Color.RED);
+        }
+        
+    }//GEN-LAST:event_B_ShowAllEnrollmentsActionPerformed
+
+    private void B_EnrollStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_EnrollStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_EnrollStudentActionPerformed
+
+    private void B_ExitEnrollmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ExitEnrollmentsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_ExitEnrollmentsActionPerformed
+
+    private void B_DropEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_DropEnrollmentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_DropEnrollmentActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3400,8 +3763,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton B_Cancel_FindStudent;
     private javax.swing.JButton B_DeleteStudent;
     private javax.swing.JButton B_Delete_DeleteStudent;
+    private javax.swing.JButton B_DropEnrollment;
+    private javax.swing.JButton B_EnrollStudent;
     private javax.swing.JButton B_ExitClasses;
     private javax.swing.JButton B_ExitCourses;
+    private javax.swing.JButton B_ExitEnrollments;
     private javax.swing.JButton B_ExitStudent;
     private javax.swing.JButton B_FindClass;
     private javax.swing.JButton B_FindCourse;
@@ -3411,10 +3777,12 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton B_Find_FindStudent;
     private javax.swing.JButton B_ShowAllClasses;
     private javax.swing.JButton B_ShowAllCourses;
+    private javax.swing.JButton B_ShowAllEnrollments;
     private javax.swing.JButton B_ShowAllPrerequisites;
     private javax.swing.JButton B_ShowAllStudents;
     private javax.swing.JLayeredPane LP_Classes;
     private javax.swing.JLayeredPane LP_Courses;
+    private javax.swing.JLayeredPane LP_Enrollments;
     private javax.swing.JLayeredPane LP_Students;
     private javax.swing.JLabel L_Classid_FindClass;
     private javax.swing.JLabel L_Classid_Value_FindClass;
@@ -3432,6 +3800,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel L_Message_FindCourse;
     private javax.swing.JLabel L_Message_ShowAllClasses;
     private javax.swing.JLabel L_Message_ShowAllCourses;
+    private javax.swing.JLabel L_Message_ShowAllEnrollments;
     private javax.swing.JLabel L_Message_ShowAllPre;
     private javax.swing.JLabel L_Message_ShowAllStudent;
     private javax.swing.JLabel L_Message_Student_FindStudent;
@@ -3449,19 +3818,23 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel P_AddNewStudent;
     private javax.swing.JPanel P_Button_Classes;
     private javax.swing.JPanel P_Button_Courses;
+    private javax.swing.JPanel P_Button_Enrollments;
     private javax.swing.JPanel P_Button_Students;
     private javax.swing.JPanel P_ClassDetails_FindClass;
     private javax.swing.JPanel P_ClassDetails_FindStudents;
     private javax.swing.JPanel P_Default_Classes;
     private javax.swing.JPanel P_Default_Courses;
+    private javax.swing.JPanel P_Default_Enrollments;
     private javax.swing.JPanel P_Default_Students;
     private javax.swing.JPanel P_DeleteStudent;
     private javax.swing.JPanel P_FindClass;
     private javax.swing.JPanel P_FindCourse;
     private javax.swing.JPanel P_FindStudent;
+    private javax.swing.JPanel P_ManageEnrollments;
     private javax.swing.JPanel P_ManageStudents;
     private javax.swing.JPanel P_ShowAllClasses;
     private javax.swing.JPanel P_ShowAllCourses;
+    private javax.swing.JPanel P_ShowAllEnrollments;
     private javax.swing.JPanel P_ShowAllPrerequisites;
     private javax.swing.JPanel P_ShowAllStudents;
     private javax.swing.JPanel P_ShowPre_FindCourse;
@@ -3469,6 +3842,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel P_StudentDetails_FindStudent;
     private javax.swing.JPanel P_Table_ShowAllClasses;
     private javax.swing.JPanel P_Table_ShowAllCourses;
+    private javax.swing.JPanel P_Table_ShowAllEnrollments;
     private javax.swing.JPanel P_Table_ShowAllPre;
     private javax.swing.JPanel P_Table_ShowAllStudents;
     private javax.swing.JPanel P_ViewClasses;
@@ -3482,6 +3856,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTable TBL_Classes_FindStudent;
     private javax.swing.JTable TBL_ShowAllClasses;
     private javax.swing.JTable TBL_ShowAllCourses;
+    private javax.swing.JTable TBL_ShowAllEnrollments;
     private javax.swing.JTable TBL_ShowAllPre;
     private javax.swing.JTable TBL_ShowAllStudents;
     private javax.swing.JTable TBL_ShowPre_FindCourse;
@@ -3497,6 +3872,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField T_sid_FindStudent;
     private javax.swing.JPanel Tab_Classes;
     private javax.swing.JPanel Tab_Courses;
+    private javax.swing.JPanel Tab_Enrollments;
     private javax.swing.JPanel Tab_Students;
     private javax.swing.JTabbedPane Tabs;
     private javax.swing.JLabel jLabel1;
@@ -3504,6 +3880,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -3524,13 +3901,17 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
@@ -3540,6 +3921,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
