@@ -32,6 +32,8 @@ CREATE OR REPLACE PACKAGE SQLPackage AS
     PROCEDURE display_courses(oCursor OUT myCursor);
 
     PROCEDURE display_prerequisites(oCursor OUT myCursor);
+
+    PROCEDURE find_course(oCursor IN OUT myCursor, temp_dept IN courses.dept_code%TYPE, temp_course IN courses.course_no%TYPE);
     
     
 
@@ -122,7 +124,35 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
             OPEN oCursor FOR SELECT * FROM prerequisites; 
         END;
             
-    
+    -- @shree : Courses module - find course
+     PROCEDURE find_course(oCursor IN OUT myCursor, temp_dept IN courses.dept_code%TYPE, temp_course IN courses.course_no%TYPE) AS
+
+        cidcheck varchar(20);
+        
+        BEGIN
+            cidcheck := 0;
+
+            BEGIN
+                SELECT title INTO cidcheck FROM courses WHERE course_no = temp_course AND UPPER(dept_code) = temp_dept;
+                EXCEPTION
+                    WHEN no_data_found THEN raise_application_error(-20001, 'Course not found!');
+                return;
+            END;
+
+            BEGIN
+               OPEN oCursor FOR WITH Parent (pre_dept_code, pre_course_no, dept_code, course_no)
+               AS
+               (
+                   SELECT pre_dept_code, pre_course_no, dept_code, course_no FROM prerequisites m WHERE UPPER(dept_code) = temp_dept AND course_no = temp_course
+                   UNION ALL
+                   SELECT  m.pre_dept_code, m.pre_course_no, m.dept_code, m.course_no FROM prerequisites m INNER JOIN Parent p ON p.pre_dept_code = m.dept_code and p.pre_course_no = m.course_no
+               )
+               SELECT concat(pre_dept_code, pre_course_no) FROM Parent;
+
+           END;
+
+     END;
+
 
 
 END;

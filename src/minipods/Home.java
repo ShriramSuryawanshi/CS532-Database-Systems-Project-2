@@ -150,6 +150,10 @@ public class Home extends javax.swing.JFrame {
         B_Find_FindCourse = new javax.swing.JButton();
         B_Cancel_FindCourse = new javax.swing.JButton();
         L_Error_FindCourse = new javax.swing.JLabel();
+        L_Message_FindCourse = new javax.swing.JLabel();
+        P_ShowPre_FindCourse = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        TBL_ShowPre_FindCourse = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -360,7 +364,9 @@ public class Home extends javax.swing.JFrame {
         if (TBL_ShowAllStudents.getColumnModel().getColumnCount() > 0) {
             TBL_ShowAllStudents.getColumnModel().getColumn(0).setResizable(false);
             TBL_ShowAllStudents.getColumnModel().getColumn(1).setResizable(false);
+            TBL_ShowAllStudents.getColumnModel().getColumn(1).setHeaderValue("Course No.");
             TBL_ShowAllStudents.getColumnModel().getColumn(2).setResizable(false);
+            TBL_ShowAllStudents.getColumnModel().getColumn(2).setHeaderValue("Prerequisite Department Code");
             TBL_ShowAllStudents.getColumnModel().getColumn(3).setResizable(false);
             TBL_ShowAllStudents.getColumnModel().getColumn(3).setHeaderValue("Status");
             TBL_ShowAllStudents.getColumnModel().getColumn(4).setResizable(false);
@@ -1262,7 +1268,9 @@ public class Home extends javax.swing.JFrame {
         if (TBL_ShowAllCourses.getColumnModel().getColumnCount() > 0) {
             TBL_ShowAllCourses.getColumnModel().getColumn(0).setResizable(false);
             TBL_ShowAllCourses.getColumnModel().getColumn(1).setResizable(false);
+            TBL_ShowAllCourses.getColumnModel().getColumn(1).setHeaderValue("Course No.");
             TBL_ShowAllCourses.getColumnModel().getColumn(2).setResizable(false);
+            TBL_ShowAllCourses.getColumnModel().getColumn(2).setHeaderValue("Prerequisite Department Code");
         }
 
         javax.swing.GroupLayout P_Table_ShowAllCoursesLayout = new javax.swing.GroupLayout(P_Table_ShowAllCourses);
@@ -1331,8 +1339,11 @@ public class Home extends javax.swing.JFrame {
         if (TBL_ShowAllPre.getColumnModel().getColumnCount() > 0) {
             TBL_ShowAllPre.getColumnModel().getColumn(0).setResizable(false);
             TBL_ShowAllPre.getColumnModel().getColumn(1).setResizable(false);
+            TBL_ShowAllPre.getColumnModel().getColumn(1).setHeaderValue("Course No.");
             TBL_ShowAllPre.getColumnModel().getColumn(2).setResizable(false);
+            TBL_ShowAllPre.getColumnModel().getColumn(2).setHeaderValue("Prerequisite Department Code");
             TBL_ShowAllPre.getColumnModel().getColumn(3).setResizable(false);
+            TBL_ShowAllPre.getColumnModel().getColumn(3).setHeaderValue("Prerequisite Course No.");
         }
 
         javax.swing.GroupLayout P_Table_ShowAllPreLayout = new javax.swing.GroupLayout(P_Table_ShowAllPre);
@@ -1437,38 +1448,80 @@ public class Home extends javax.swing.JFrame {
         L_Error_FindCourse.setForeground(new java.awt.Color(255, 51, 51));
         L_Error_FindCourse.setText("Please provide valid sid (sid should be of length 4, and it starts with B)!");
 
+        L_Message_FindCourse.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Message_FindCourse.setText("Prerequisite courses - ");
+
+        P_ShowPre_FindCourse.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        TBL_ShowPre_FindCourse.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        TBL_ShowPre_FindCourse.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Prerequisite Courses"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TBL_ShowPre_FindCourse.setRowHeight(22);
+        TBL_ShowPre_FindCourse.getTableHeader().setReorderingAllowed(false);
+        jScrollPane6.setViewportView(TBL_ShowPre_FindCourse);
+        if (TBL_ShowPre_FindCourse.getColumnModel().getColumnCount() > 0) {
+            TBL_ShowPre_FindCourse.getColumnModel().getColumn(0).setResizable(false);
+        }
+
+        javax.swing.GroupLayout P_ShowPre_FindCourseLayout = new javax.swing.GroupLayout(P_ShowPre_FindCourse);
+        P_ShowPre_FindCourse.setLayout(P_ShowPre_FindCourseLayout);
+        P_ShowPre_FindCourseLayout.setHorizontalGroup(
+            P_ShowPre_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 948, Short.MAX_VALUE)
+        );
+        P_ShowPre_FindCourseLayout.setVerticalGroup(
+            P_ShowPre_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_ShowPre_FindCourseLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout P_FindCourseLayout = new javax.swing.GroupLayout(P_FindCourse);
         P_FindCourse.setLayout(P_FindCourseLayout);
         P_FindCourseLayout.setHorizontalGroup(
             P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_FindCourseLayout.createSequentialGroup()
-                .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(P_FindCourseLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel18)
-                        .addGap(18, 18, 18)
-                        .addComponent(L_Error_FindCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(P_FindCourseLayout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(P_FindCourseLayout.createSequentialGroup()
-                                .addComponent(B_Find_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(B_Cancel_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(P_FindCourseLayout.createSequentialGroup()
-                                .addComponent(jLabel19)
-                                .addGap(18, 18, 18)
-                                .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jSeparator11)
-                                    .addComponent(T_Dept_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(97, 97, 97)
-                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jSeparator12)
-                                    .addComponent(T_Course_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 314, Short.MAX_VALUE)))
+                .addGap(34, 34, 34)
+                .addComponent(jLabel18)
+                .addGap(18, 18, 18)
+                .addComponent(L_Error_FindCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(P_FindCourseLayout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(P_ShowPre_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(P_FindCourseLayout.createSequentialGroup()
+                        .addComponent(B_Find_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(B_Cancel_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(P_FindCourseLayout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addGap(18, 18, 18)
+                        .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator11)
+                            .addComponent(T_Dept_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(97, 97, 97)
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator12)
+                            .addComponent(T_Course_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(L_Message_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 948, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(171, 322, Short.MAX_VALUE))
         );
         P_FindCourseLayout.setVerticalGroup(
             P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1498,7 +1551,11 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(P_FindCourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(B_Cancel_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(B_Find_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(476, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addComponent(L_Message_FindCourse)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(P_ShowPre_FindCourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         LP_Courses.setLayer(P_Default_Courses, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -2389,7 +2446,8 @@ public class Home extends javax.swing.JFrame {
         T_Dept_FindCourse.setText("Enter department code here");
         T_Course_FindCourse.setText("Enter course no. here");
         L_Error_FindCourse.setVisible(false);
-        //  P_CourseDetails_FindCourse.setVisible(false);
+        P_ShowPre_FindCourse.setVisible(false);
+        L_Message_FindCourse.setVisible(false);
     }//GEN-LAST:event_B_FindCourseActionPerformed
 
     private void B_ExitCoursesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ExitCoursesActionPerformed
@@ -2419,12 +2477,91 @@ public class Home extends javax.swing.JFrame {
         if (T_Dept_FindCourse.getText().equals("") || T_Dept_FindCourse.getText().equals("Enter department code here") || T_Dept_FindCourse.getText().length() > 4) {
             L_Error_FindCourse.setText("Please provide valid department code!");
             L_Error_FindCourse.setVisible(true);
+            P_ShowPre_FindCourse.setVisible(false);
 
         } else if (T_Course_FindCourse.getText().equals("") || T_Course_FindCourse.getText().equals("Enter course no. here") || (!T_Course_FindCourse.getText().matches("[0-9][0-9][0-9]"))) {
             L_Error_FindCourse.setText("Please provide valid numeric 3 digit course number!");
             L_Error_FindCourse.setVisible(true);
+            P_ShowPre_FindCourse.setVisible(false);
         } else {
-            System.out.println("Find now");
+
+            L_Error_FindCourse.setVisible(false);
+
+            // @shree - fecthing the data using procedure and display on GUI
+            try {
+
+                String dept = T_Dept_FindCourse.getText().toUpperCase();
+                Integer course = Integer.parseInt(T_Course_FindCourse.getText());
+
+                // @shree - connect to DB
+                OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
+                ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+                Connection conn = ds.getConnection("shree", "shree2103");
+
+                // @shree - fetching result from DB usnig procedure
+                CallableStatement call = conn.prepareCall("begin SQLPackage.find_course(?, ?, ?); end;");
+                call.registerOutParameter(1, OracleTypes.CURSOR);
+                call.setString(2, dept);
+                call.setInt(3, course);
+                call.execute();
+
+                ResultSet rs = (ResultSet) call.getObject(1);
+
+                // @shree - inserting data into the table on GUI
+                DefaultTableModel model = (DefaultTableModel) TBL_ShowPre_FindCourse.getModel();
+                model.setRowCount(0);
+                TBL_ShowPre_FindCourse.setModel(model);
+
+                int cols = TBL_ShowPre_FindCourse.getColumnCount();
+
+                int rows = 0;
+
+                while (rs.next()) {
+                    Object[] obj = new Object[cols];
+                    for (int i = 0; i < cols; i++) {
+                        obj[i] = rs.getObject(i + 1);
+                    }
+                    model.addRow(obj);
+                    rows++;
+                }
+
+                if (rows != 0) {
+                    TBL_ShowPre_FindCourse.setModel(model);
+                    TBL_ShowPre_FindCourse.getTableHeader().setFont(new Font("Monteserrat", Font.BOLD, 14));
+                    P_ShowPre_FindCourse.setVisible(true);
+
+                    L_Message_FindCourse.setText("Prerequisites courses - ");
+                    L_Message_FindCourse.setForeground(Color.BLACK);
+                    L_Message_FindCourse.setVisible(true);
+                } else {
+                    L_Message_FindCourse.setText("There is no prerequisites courses for this course!");
+                    L_Message_FindCourse.setForeground(Color.BLACK);
+                    L_Message_FindCourse.setVisible(true);
+                      P_ShowPre_FindCourse.setVisible(false);
+                }
+
+                conn.close();
+
+            } catch (SQLException ex) {
+
+                // @shree - show errors on panel
+                if (ex.toString().contains("Course not found!")) {
+                    L_Message_FindCourse.setText("Course not found! Please make sure provided department code and course no. combination is correct!");
+                } else {
+                    L_Message_FindCourse.setText("SQL Exception : " + ex);
+                }
+                L_Message_FindCourse.setForeground(Color.RED);
+                L_Message_FindCourse.setVisible(true);
+                P_ShowPre_FindCourse.setVisible(false);
+
+            } catch (Exception e) {
+
+                // @shree - show errors on panel 
+                L_Message_FindCourse.setText("Exception : " + e);
+                L_Message_FindCourse.setForeground(Color.RED);
+                L_Message_FindCourse.setVisible(true);
+                P_ShowPre_FindCourse.setVisible(false);
+            }
         }
 
 
@@ -2436,7 +2573,8 @@ public class Home extends javax.swing.JFrame {
         T_Dept_FindCourse.setText("Enter department code here");
         T_Course_FindCourse.setText("Enter course no. here");
         L_Error_FindCourse.setVisible(false);
-        //     P_CourseDetails_FindCourse.setVisible(false);
+        P_ShowPre_FindCourse.setVisible(false);
+        L_Message_FindCourse.setVisible(false);
     }//GEN-LAST:event_B_Cancel_FindCourseActionPerformed
 
     private void T_Course_FindCourseFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_Course_FindCourseFocusGained
@@ -2528,6 +2666,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel L_Message_AddNewStudent;
     private javax.swing.JLabel L_Message_Classes_FindStudent;
     private javax.swing.JLabel L_Message_DeleteStudent;
+    private javax.swing.JLabel L_Message_FindCourse;
     private javax.swing.JLabel L_Message_ShowAllCourses;
     private javax.swing.JLabel L_Message_ShowAllPre;
     private javax.swing.JLabel L_Message_ShowAllStudent;
@@ -2549,6 +2688,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel P_ShowAllCourses;
     private javax.swing.JPanel P_ShowAllPrerequisites;
     private javax.swing.JPanel P_ShowAllStudents;
+    private javax.swing.JPanel P_ShowPre_FindCourse;
     private javax.swing.JPanel P_StudentDetails_FindStudent;
     private javax.swing.JPanel P_Table_ShowAllCourses;
     private javax.swing.JPanel P_Table_ShowAllPre;
@@ -2564,6 +2704,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTable TBL_ShowAllCourses;
     private javax.swing.JTable TBL_ShowAllPre;
     private javax.swing.JTable TBL_ShowAllStudents;
+    private javax.swing.JTable TBL_ShowPre_FindCourse;
     private javax.swing.JTextField T_Course_FindCourse;
     private javax.swing.JTextField T_Dept_FindCourse;
     private javax.swing.JTextField T_Email;
@@ -2607,6 +2748,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
