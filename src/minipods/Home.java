@@ -3080,8 +3080,10 @@ public class Home extends javax.swing.JFrame {
 
             // @shree - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-            ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            Connection conn = ds.getConnection("shree", "shree2103");
+            //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+            //Connection conn = ds.getConnection("shree", "shree2103");
+            ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
             // @shree - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_students(?); end;");
@@ -3184,8 +3186,10 @@ public class Home extends javax.swing.JFrame {
 
                 // @shree - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-                ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                Connection conn = ds.getConnection("shree", "shree2103");
+                //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+                //Connection conn = ds.getConnection("shree", "shree2103");
+                ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
                 Statement stmt = conn.createStatement();
 
@@ -3482,8 +3486,10 @@ public class Home extends javax.swing.JFrame {
 
                 // @shree - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-                ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                Connection conn = ds.getConnection("shree", "shree2103");
+                //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+                //Connection conn = ds.getConnection("shree", "shree2103");
+                ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
                 // @shree - calling procedure to  student
                 CallableStatement call = conn.prepareCall("begin SQLPackage.find_student(?, ?); end;");
@@ -3621,10 +3627,12 @@ public class Home extends javax.swing.JFrame {
 
                 // @shree - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-                ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                Connection conn = ds.getConnection("shree", "shree2103");
+                //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+                //Connection conn = ds.getConnection("shree", "shree2103");
+                ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
-                // @shree - calling procedure to  student
+                // @shree - calling procedure to delete student
                 CallableStatement call = conn.prepareCall("begin SQLPackage.delete_student(?); end;");
                 call.setString(1, sid);
                 int temp = call.executeUpdate();
@@ -3719,8 +3727,10 @@ public class Home extends javax.swing.JFrame {
 
             // @shree - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-            ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            Connection conn = ds.getConnection("shree", "shree2103");
+            //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+            //Connection conn = ds.getConnection("shree", "shree2103");
+            ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
             // @shree - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_courses(?); end;");
@@ -3784,8 +3794,10 @@ public class Home extends javax.swing.JFrame {
 
             // @shree - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-            ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            Connection conn = ds.getConnection("shree", "shree2103");
+            //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+            //Connection conn = ds.getConnection("shree", "shree2103");
+            ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
             // @shree - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_prerequisites(?); end;");
@@ -3898,8 +3910,10 @@ public class Home extends javax.swing.JFrame {
 
                 // @shree - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-                ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                Connection conn = ds.getConnection("shree", "shree2103");
+                //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+                //Connection conn = ds.getConnection("shree", "shree2103");
+                ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
                 // @shree - fetching result from DB usnig procedure
                 CallableStatement call = conn.prepareCall("begin SQLPackage.find_course(?, ?, ?); end;");
@@ -4016,8 +4030,10 @@ public class Home extends javax.swing.JFrame {
 
             // @shree - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-            ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            Connection conn = ds.getConnection("shree", "shree2103");
+            //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+            //Connection conn = ds.getConnection("shree", "shree2103");
+            ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
             // @shree - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_classes(?); end;");
@@ -4121,8 +4137,10 @@ public class Home extends javax.swing.JFrame {
 
                 // @shree - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-                ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                Connection conn = ds.getConnection("shree", "shree2103");
+                //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+                //Connection conn = ds.getConnection("shree", "shree2103");
+                ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
                 // @shree - calling procedure to  student
                 CallableStatement call = conn.prepareCall("begin SQLPackage.find_class(?, ?); end;");
@@ -4246,8 +4264,10 @@ public class Home extends javax.swing.JFrame {
 
             // @shree - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-            ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            Connection conn = ds.getConnection("shree", "shree2103");
+            //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+            //Connection conn = ds.getConnection("shree", "shree2103");
+            ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
             // @shree - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_enrollments(?); end;");
@@ -4395,8 +4415,10 @@ public class Home extends javax.swing.JFrame {
 
                 // @shree - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-                ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                Connection conn = ds.getConnection("shree", "shree2103");
+                //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+                //Connection conn = ds.getConnection("shree", "shree2103");
+                ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
                 // @shree - fetching result from DB usnig procedure
                 CallableStatement call = conn.prepareCall("begin SQLPackage.enroll_student(?, ?); end;");
@@ -4532,8 +4554,10 @@ public class Home extends javax.swing.JFrame {
 
                 // @shree - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-                ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                Connection conn = ds.getConnection("shree", "shree2103");
+                //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+                //Connection conn = ds.getConnection("shree", "shree2103");
+                ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
                 // @shree - fetching result from DB usnig procedure
                 CallableStatement call = conn.prepareCall("begin SQLPackage.drop_enrollment(?, ?); end;");
@@ -4606,7 +4630,7 @@ public class Home extends javax.swing.JFrame {
 
         // @shree - show only show all logs panel
         P_Default_Logs.setVisible(false);
-        P_ShowAllLogs.setVisible(true);       
+        P_ShowAllLogs.setVisible(true);
 
         // @shree - hiding a table
         P_Table_ShowAllLogs.setVisible(false);
@@ -4616,8 +4640,10 @@ public class Home extends javax.swing.JFrame {
 
             // @shree - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
-            ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            Connection conn = ds.getConnection("shree", "shree2103");
+            //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+            //Connection conn = ds.getConnection("shree", "shree2103");
+            ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
+            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
 
             // @shree - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_logs(?); end;");
