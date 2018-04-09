@@ -32,6 +32,7 @@ CREATE OR REPLACE PACKAGE SQLPackage AS
 -- @shree : Enrollments Module
 	PROCEDURE display_enrollments(oCursor OUT myCursor);
 	PROCEDURE enroll_student(temp_sid IN students.sid%TYPE, temp_cid IN classes.classid%TYPE);
+	PROCEDURE drop_enrollment(temp_sid IN students.sid%TYPE, temp_cid IN classes.classid%TYPE);
 
 END;
 /
@@ -228,8 +229,10 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 		END;
 
 		BEGIN 
-			SELECT class_size INTO classcnt FROM classes WHERE classid = temp_cid;
-			SELECT classes.limit INTO classlimit FROM classes WHERE classid = temp_cid;                        
+			BEGIN
+				SELECT class_size INTO classcnt FROM classes WHERE classid = temp_cid;
+				SELECT classes.limit INTO classlimit FROM classes WHERE classid = temp_cid;                        
+			END;
 			IF(classcnt = classlimit) 
 				THEN raise_application_error(-20001, 'The class is closed.'); 
 				RETURN;
@@ -237,19 +240,25 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 		END;
 
 		BEGIN
-			SELECT COUNT(*) INTO enrollcnt FROM enrollments WHERE classid = temp_cid AND sid = temp_sid;
-			IF(enrollcnt >= 1)
+			BEGIN
+				SELECT COUNT(*) INTO enrollcnt FROM enrollments WHERE classid = temp_cid AND sid = temp_sid;
+				EXCEPTION WHEN no_data_found THEN enrollcnt := null;			
+			END;
+			
+			IF(enrollcnt = 1)
 				THEN raise_application_error(-20001, 'The student is already in the class.'); 
 				RETURN;
 			END IF;
 		END;
 
 		BEGIN
-			SELECT COUNT(temp.classid) AS COUNT INTO totalenrolled FROM 
-				(SELECT en.sid, en.classid FROM enrollments en JOIN classes cl ON cl.classid = en.classid WHERE en.sid = temp_sid AND cl.semester IN  (SELECT semester FROM classes WHERE classid = temp_cid) 
-					AND cl.year IN (SELECT classes.year FROM classes WHERE classid = temp_cid)) temp 
-			GROUP BY temp.sid;
-                 
+			BEGIN
+				SELECT COUNT(temp.classid) AS COUNT INTO totalenrolled FROM 
+					(SELECT en.sid, en.classid FROM enrollments en JOIN classes cl ON cl.classid = en.classid WHERE en.sid = temp_sid AND cl.semester IN  (SELECT semester FROM classes WHERE classid = temp_cid) 
+						AND cl.year IN (SELECT classes.year FROM classes WHERE classid = temp_cid)) temp 
+				GROUP BY temp.sid;
+				EXCEPTION WHEN no_data_found THEN totalenrolled := 0;
+			END;
 			IF(totalenrolled = 2)
 				THEN                                 
 					BEGIN
@@ -294,6 +303,93 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
                     END;
           END;
 
+	-- @shree : Enrollments module - drop enrollment
+	PROCEDURE drop_enrollment(temp_sid IN students.sid%TYPE, temp_cid IN classes.classid%TYPE) AS
+		 sidcheck varchar(10);
+		 classidcheck char(10);
+		 enrollcnt number;
+		 precourses number;
+		 temp_dept prerequisites.dept_code%TYPE;
+		 temp_course prerequisites.course_no%TYPE;
+		 remainclass number;
+		 remainstud number;
+	
+	BEGIN
+		sidcheck := 0;
+		classidcheck := 0;
+		enrollcnt := 0;
+		precourses := 0;
+		remainclass := 0;
+		remainstud := 0;
+		
+
+		BEGIN
+			SELECT sid INTO sidcheck FROM students WHERE sid = temp_sid;
+			EXCEPTION
+				WHEN no_data_found THEN raise_application_error(-20001, 'The sid is invalid.');
+				RETURN;
+		END;                
+
+		BEGIN
+			SELECT classid INTO classidcheck FROM classes WHERE classid = temp_cid;
+			EXCEPTION
+				WHEN no_data_found THEN raise_application_error(-20001, 'The classid is invalid.');
+				RETURN;
+		END;
+
+		BEGIN
+			BEGIN
+				SELECT COUNT(*) INTO enrollcnt FROM enrollments WHERE classid = temp_cid AND sid = temp_sid;
+				EXCEPTION WHEN no_data_found THEN enrollcnt := null;			
+			END;
+			
+			IF(enrollcnt = 0)
+				THEN raise_application_error(-20001, 'The student is not enrolled in the class.'); 
+				RETURN;
+			END IF;
+		END;
+
+		BEGIN
+			SELECT dept_code, course_no INTO temp_dept, temp_course FROM classes WHERE classid = temp_cid;
+		
+			BEGIN
+				SELECT COUNT(*) INTO precourses  FROM (SELECT UNIQUE * FROM ( SELECT cl.dept_code, cl.course_no FROM (WITH Child (pre_dept_code, pre_course_no, dept_code, course_no) AS
+					(SELECT pre_dept_code, pre_course_no, dept_code, course_no FROM prerequisites pre WHERE pre_dept_code = temp_dept AND pre_course_no = temp_course
+						UNION ALL
+						SELECT  pre.pre_dept_code, pre.pre_course_no, pre.dept_code, pre.course_no FROM prerequisites pre 
+							INNER JOIN Child chld ON chld.dept_code = pre.pre_dept_code AND chld.course_no = pre.pre_course_no)
+					SELECT dept_code, course_no FROM Child) temp1 JOIN classes cl ON cl.dept_code = temp1.dept_code AND cl.course_no = temp1.course_no) temp2
+						JOIN (SELECT en.sid, cl.course_no, cl.dept_code FROM enrollments en JOIN classes cl ON  en.classid = cl.classid WHERE en.sid = temp_sid AND en.classid != temp_cid) temp3 
+						ON temp2.dept_code = temp3.dept_code AND temp2.course_no = temp3.course_no);
+				EXCEPTION WHEN no_data_found THEN precourses := 0;
+			END;
+			
+			IF(precourses > 0) 
+				THEN raise_application_error(-20001, 'The drop is not permitted because another class uses it as a prerequisite.');
+				RETURN;
+			END IF;
+		END;
+
+		BEGIN		
+			DELETE FROM enrollments WHERE classid = temp_cid AND sid = temp_sid;
+			COMMIT;
+		
+			BEGIN
+				SELECT classid INTO remainclass FROM enrollments WHERE sid = temp_sid AND ROWNUM = 1;
+				EXCEPTION
+					WHEN no_data_found THEN raise_application_error(-20001, 'This student is not enrolled in any classes.');
+					RETURN;			
+			END;
+		
+			BEGIN
+				SELECT class_size INTO remainstud FROM classes WHERE classid = temp_cid AND ROWNUM = 1;
+				EXCEPTION 
+					WHEN no_data_found THEN raise_application_error(-20001, 'The class now has no students.');
+					RETURN;
+			END;
+		END;
+          END;	
+	
 END;
 /
 

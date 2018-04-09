@@ -204,11 +204,11 @@ public class Home extends javax.swing.JFrame {
         B_ExitEnrollments = new javax.swing.JButton();
         LP_Enrollments = new javax.swing.JLayeredPane();
         P_Default_Enrollments = new javax.swing.JPanel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
         P_ShowAllEnrollments = new javax.swing.JPanel();
         L_Message_ShowAllEnrollments = new javax.swing.JLabel();
         P_Table_ShowAllEnrollments = new javax.swing.JPanel();
@@ -226,6 +226,18 @@ public class Home extends javax.swing.JFrame {
         B_Cancel_EnrollStudent = new javax.swing.JButton();
         L_Error_EnrollStudent = new javax.swing.JLabel();
         L_Message_EnrollStudent = new javax.swing.JLabel();
+        P_DropEnrollment = new javax.swing.JPanel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        T_sid_DropEnrollment = new javax.swing.JTextField();
+        jSeparator15 = new javax.swing.JSeparator();
+        jLabel46 = new javax.swing.JLabel();
+        T_cid_DropEnrollment = new javax.swing.JTextField();
+        jSeparator16 = new javax.swing.JSeparator();
+        B_Drop_DropEnrollment = new javax.swing.JButton();
+        B_Cancel_DropEnrollment = new javax.swing.JButton();
+        L_Error_DropEnrollment = new javax.swing.JLabel();
+        L_Message_DropEnrollment = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2289,20 +2301,20 @@ public class Home extends javax.swing.JFrame {
         P_Default_Enrollments.setBackground(new java.awt.Color(153, 153, 255));
         P_Default_Enrollments.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel36.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        jLabel36.setText("Please select the desired action with the help of buttons provided on the left. ");
+        jLabel47.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel47.setText("Please select the desired action with the help of buttons provided on the left. ");
 
-        jLabel37.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        jLabel37.setText("CS 532 : Database System");
+        jLabel48.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel48.setText("CS 532 : Database System");
 
-        jLabel38.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        jLabel38.setText("1. Shriram Suryawanshi");
+        jLabel49.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel49.setText("1. Shriram Suryawanshi");
 
-        jLabel39.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        jLabel39.setText("2. Vinen Furtado");
+        jLabel50.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jLabel50.setText("2. Vinen Furtado");
 
-        jLabel40.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        jLabel40.setText("Welcome to Manage Enrollments section!");
+        jLabel51.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel51.setText("Welcome to Manage Enrollment section!");
 
         javax.swing.GroupLayout P_Default_EnrollmentsLayout = new javax.swing.GroupLayout(P_Default_Enrollments);
         P_Default_Enrollments.setLayout(P_Default_EnrollmentsLayout);
@@ -2310,37 +2322,37 @@ public class Home extends javax.swing.JFrame {
             P_Default_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_Default_EnrollmentsLayout.createSequentialGroup()
                 .addGap(543, 543, 543)
-                .addComponent(jLabel40)
+                .addComponent(jLabel51)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_EnrollmentsLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(P_Default_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_EnrollmentsLayout.createSequentialGroup()
-                .addContainerGap(437, Short.MAX_VALUE)
+                .addContainerGap(366, Short.MAX_VALUE)
                 .addGroup(P_Default_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_EnrollmentsLayout.createSequentialGroup()
-                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_Default_EnrollmentsLayout.createSequentialGroup()
-                        .addComponent(jLabel36)
+                        .addComponent(jLabel47)
                         .addGap(339, 339, 339))))
         );
         P_Default_EnrollmentsLayout.setVerticalGroup(
             P_Default_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_Default_EnrollmentsLayout.createSequentialGroup()
                 .addGap(131, 131, 131)
-                .addComponent(jLabel40)
+                .addComponent(jLabel51)
                 .addGap(27, 27, 27)
-                .addComponent(jLabel36)
+                .addComponent(jLabel47)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 397, Short.MAX_VALUE)
-                .addComponent(jLabel37)
+                .addComponent(jLabel48)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel38)
+                .addComponent(jLabel49)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel39)
+                .addComponent(jLabel50)
                 .addContainerGap())
         );
 
@@ -2400,7 +2412,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(P_Table_ShowAllEnrollments, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(P_ShowAllEnrollmentsLayout.createSequentialGroup()
                         .addComponent(L_Message_ShowAllEnrollments, javax.swing.GroupLayout.PREFERRED_SIZE, 1340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 92, Short.MAX_VALUE)))
+                        .addGap(0, 21, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         P_ShowAllEnrollmentsLayout.setVerticalGroup(
@@ -2553,9 +2565,150 @@ public class Home extends javax.swing.JFrame {
                 .addGap(392, 392, 392))
         );
 
+        P_DropEnrollment.setBackground(new java.awt.Color(204, 204, 255));
+        P_DropEnrollment.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel44.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        jLabel44.setText("Please provide below details - ");
+
+        jLabel45.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel45.setText("SID - ");
+
+        T_sid_DropEnrollment.setBackground(new java.awt.Color(204, 204, 255));
+        T_sid_DropEnrollment.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        T_sid_DropEnrollment.setText("Enter sid here");
+        T_sid_DropEnrollment.setBorder(null);
+        T_sid_DropEnrollment.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                T_sid_DropEnrollmentFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                T_sid_DropEnrollmentFocusLost(evt);
+            }
+        });
+
+        jSeparator15.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel46.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jLabel46.setText("Class ID - ");
+
+        T_cid_DropEnrollment.setBackground(new java.awt.Color(204, 204, 255));
+        T_cid_DropEnrollment.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        T_cid_DropEnrollment.setText("Enter classid here");
+        T_cid_DropEnrollment.setBorder(null);
+        T_cid_DropEnrollment.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                T_cid_DropEnrollmentFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                T_cid_DropEnrollmentFocusLost(evt);
+            }
+        });
+
+        jSeparator16.setForeground(new java.awt.Color(255, 255, 255));
+
+        B_Drop_DropEnrollment.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_Drop_DropEnrollment.setForeground(new java.awt.Color(0, 102, 102));
+        B_Drop_DropEnrollment.setText("Drop Enrollment");
+        B_Drop_DropEnrollment.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_Drop_DropEnrollment.setOpaque(false);
+        B_Drop_DropEnrollment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_Drop_DropEnrollmentActionPerformed(evt);
+            }
+        });
+
+        B_Cancel_DropEnrollment.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
+        B_Cancel_DropEnrollment.setForeground(new java.awt.Color(0, 102, 102));
+        B_Cancel_DropEnrollment.setText("Cancel");
+        B_Cancel_DropEnrollment.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        B_Cancel_DropEnrollment.setOpaque(false);
+        B_Cancel_DropEnrollment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_Cancel_DropEnrollmentActionPerformed(evt);
+            }
+        });
+
+        L_Error_DropEnrollment.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Error_DropEnrollment.setForeground(new java.awt.Color(255, 51, 51));
+        L_Error_DropEnrollment.setText("Please provide valid sid (sid should be of length 4, and it starts with B)!");
+
+        L_Message_DropEnrollment.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        L_Message_DropEnrollment.setText("Message");
+
+        javax.swing.GroupLayout P_DropEnrollmentLayout = new javax.swing.GroupLayout(P_DropEnrollment);
+        P_DropEnrollment.setLayout(P_DropEnrollmentLayout);
+        P_DropEnrollmentLayout.setHorizontalGroup(
+            P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_DropEnrollmentLayout.createSequentialGroup()
+                .addGap(286, 286, 286)
+                .addGroup(P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(P_DropEnrollmentLayout.createSequentialGroup()
+                        .addComponent(B_Drop_DropEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(B_Cancel_DropEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(P_DropEnrollmentLayout.createSequentialGroup()
+                        .addComponent(jLabel45)
+                        .addGap(18, 18, 18)
+                        .addGroup(P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator15)
+                            .addComponent(T_sid_DropEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(123, 123, 123)
+                        .addComponent(jLabel46)
+                        .addGap(18, 18, 18)
+                        .addGroup(P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator16)
+                            .addComponent(T_cid_DropEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(272, Short.MAX_VALUE))
+            .addGroup(P_DropEnrollmentLayout.createSequentialGroup()
+                .addGroup(P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_DropEnrollmentLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel44)
+                        .addGap(18, 18, 18)
+                        .addComponent(L_Error_DropEnrollment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(P_DropEnrollmentLayout.createSequentialGroup()
+                        .addGap(286, 286, 286)
+                        .addComponent(L_Message_DropEnrollment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        P_DropEnrollmentLayout.setVerticalGroup(
+            P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_DropEnrollmentLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(L_Error_DropEnrollment))
+                .addGap(46, 46, 46)
+                .addGroup(P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_DropEnrollmentLayout.createSequentialGroup()
+                            .addComponent(jLabel45)
+                            .addGap(9, 9, 9))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(T_cid_DropEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel46))
+                            .addGroup(P_DropEnrollmentLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(T_sid_DropEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(P_DropEnrollmentLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(42, 42, 42)
+                .addGroup(P_DropEnrollmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(B_Cancel_DropEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_Drop_DropEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
+                .addComponent(L_Message_DropEnrollment)
+                .addContainerGap(392, Short.MAX_VALUE))
+        );
+
         LP_Enrollments.setLayer(P_Default_Enrollments, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LP_Enrollments.setLayer(P_ShowAllEnrollments, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LP_Enrollments.setLayer(P_EnrollStudent, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LP_Enrollments.setLayer(P_DropEnrollment, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout LP_EnrollmentsLayout = new javax.swing.GroupLayout(LP_Enrollments);
         LP_Enrollments.setLayout(LP_EnrollmentsLayout);
@@ -2565,9 +2718,11 @@ public class Home extends javax.swing.JFrame {
             .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_ShowAllEnrollments, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(P_Default_Enrollments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_EnrollStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_DropEnrollment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_Default_Enrollments, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LP_EnrollmentsLayout.setVerticalGroup(
             LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2575,9 +2730,11 @@ public class Home extends javax.swing.JFrame {
             .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_ShowAllEnrollments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(P_Default_Enrollments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(P_EnrollStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_DropEnrollment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LP_EnrollmentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(P_Default_Enrollments, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout P_ManageEnrollmentsLayout = new javax.swing.GroupLayout(P_ManageEnrollments);
@@ -3277,7 +3434,7 @@ public class Home extends javax.swing.JFrame {
             P_Default_Enrollments.setVisible(true);
             P_ShowAllEnrollments.setVisible(false);
             P_EnrollStudent.setVisible(false);
-            //P_DropEnrollment
+            P_DropEnrollment.setVisible(false);
         }
 
     }//GEN-LAST:event_TabsStateChanged
@@ -3877,11 +4034,17 @@ public class Home extends javax.swing.JFrame {
 
     private void B_DropEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_DropEnrollmentActionPerformed
 
-        // @shree - show only enrollment panel
+         // @shree - show only enrollment panel
         P_Default_Enrollments.setVisible(false);
         P_ShowAllEnrollments.setVisible(false);
         P_EnrollStudent.setVisible(false);
-        //P_DropEnrollment.setVisible(true);
+        P_DropEnrollment.setVisible(true);
+
+        // @shree - resetting the panel
+        T_sid_DropEnrollment.setText("Enter sid here");
+        T_cid_DropEnrollment.setText("Enter classid here");
+        L_Error_DropEnrollment.setVisible(false);
+        L_Message_DropEnrollment.setVisible(false);
     }//GEN-LAST:event_B_DropEnrollmentActionPerformed
 
     private void T_sid_EnrollStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_EnrollStudentFocusGained
@@ -4015,6 +4178,133 @@ public class Home extends javax.swing.JFrame {
         L_Message_EnrollStudent.setVisible(false);
     }//GEN-LAST:event_B_Cancel_EnrollStudentActionPerformed
 
+    private void T_sid_DropEnrollmentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_DropEnrollmentFocusGained
+        
+         // @shree - clearing the default text on focus
+        if (T_sid_DropEnrollment.getText().equals("Enter sid here")) {
+            T_sid_DropEnrollment.setText("");
+        }
+        L_Error_DropEnrollment.setVisible(false);
+    }//GEN-LAST:event_T_sid_DropEnrollmentFocusGained
+
+    private void T_sid_DropEnrollmentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_DropEnrollmentFocusLost
+        
+         // @shree - no value provided, resetting the text
+        if (T_sid_DropEnrollment.getText().equals("")) {
+            T_sid_DropEnrollment.setText("Enter sid here");
+        }
+    }//GEN-LAST:event_T_sid_DropEnrollmentFocusLost
+
+    private void T_cid_DropEnrollmentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_cid_DropEnrollmentFocusGained
+        
+         // @shree - clearing the default text on focus
+        if (T_cid_DropEnrollment.getText().equals("Enter classid here")) {
+            T_cid_DropEnrollment.setText("");
+        }
+        L_Error_DropEnrollment.setVisible(false);
+    }//GEN-LAST:event_T_cid_DropEnrollmentFocusGained
+
+    private void T_cid_DropEnrollmentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_cid_DropEnrollmentFocusLost
+        
+        // @shree - no value provided, resetting the text
+        if (T_cid_DropEnrollment.getText().equals("")) {
+            T_cid_DropEnrollment.setText("Enter classid here");
+        }
+    }//GEN-LAST:event_T_cid_DropEnrollmentFocusLost
+
+    private void B_Drop_DropEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Drop_DropEnrollmentActionPerformed
+        
+        // @shree - performing validation on details entered, if pass, fetch details, else report errors
+        if ((!T_sid_DropEnrollment.getText().matches("B[0-9]+")) || (T_sid_DropEnrollment.getText().length() < 4) || (T_sid_DropEnrollment.getText().equals("Enter (B-Number) sid here"))) {
+            L_Error_DropEnrollment.setText("Please provide valid sid (sid should be of length 4, and it starts with B)!");
+            L_Error_DropEnrollment.setVisible(true);
+            L_Message_DropEnrollment.setVisible(false);
+
+        } else if ((!T_cid_DropEnrollment.getText().matches("c[0-9]+")) || (T_cid_DropEnrollment.getText().equals("Enter classid here"))) {
+            L_Error_DropEnrollment.setText("Please provide valid classid (cid should be of length 5, and it starts with c)!");
+            L_Error_DropEnrollment.setVisible(true);
+            L_Message_DropEnrollment.setVisible(false);
+
+        } else {
+
+            L_Error_DropEnrollment.setVisible(false);
+
+            // @shree - enrolling student to class, showing exceptions
+            try {
+
+                String sid = T_sid_DropEnrollment.getText();
+                String cid = T_cid_DropEnrollment.getText();
+
+                // @shree - connect to DB
+                OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
+                ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+                Connection conn = ds.getConnection("shree", "shree2103");
+
+                // @shree - fetching result from DB usnig procedure
+                CallableStatement call = conn.prepareCall("begin SQLPackage.drop_enrollment(?, ?); end;");
+                call.setString(1, sid);
+                call.setString(2, cid);
+                Integer chk = call.executeUpdate();
+
+                L_Message_DropEnrollment.setText("Enrollment dropped!");
+                L_Message_DropEnrollment.setForeground(Color.BLACK);
+                L_Message_DropEnrollment.setVisible(true);
+
+                conn.close();
+
+            } catch (SQLException ex) {
+
+                // @shree - show errors on panel
+                if (ex.toString().contains("The sid is invalid.")) {
+                    L_Message_DropEnrollment.setText("The sid is invalid.");
+                    L_Message_DropEnrollment.setForeground(Color.RED);
+
+                } else if (ex.toString().contains("The classid is invalid.")) {
+                    L_Message_DropEnrollment.setText("The classid is invalid.");
+                    L_Message_DropEnrollment.setForeground(Color.RED);
+
+                } else if (ex.toString().contains("The student is not enrolled in the class.")) {
+                    L_Message_DropEnrollment.setText("The student is not enrolled in the class.");
+                    L_Message_DropEnrollment.setForeground(Color.RED);
+
+                } else if (ex.toString().contains("The drop is not permitted because another class uses it as a prerequisite.")) {
+                    L_Message_DropEnrollment.setText("The drop is not permitted because another class uses it as a prerequisite.");
+                    L_Message_DropEnrollment.setForeground(Color.RED);
+
+                } else if (ex.toString().contains("This student is not enrolled in any classes.")) {
+                    L_Message_DropEnrollment.setText("Enrollment dropped! This student is not enrolled in any classes.");
+                    L_Message_DropEnrollment.setForeground(Color.BLACK);
+
+                } else if (ex.toString().contains("The class now has no students..")) {
+                    L_Message_DropEnrollment.setText("Enrollment dropped! The class now has no students.");
+                    L_Message_DropEnrollment.setForeground(Color.BLACK);
+                
+                } else {
+                    L_Message_DropEnrollment.setText("SQL Exception : " + ex);
+                    L_Message_DropEnrollment.setForeground(Color.RED);
+                }
+
+                L_Message_DropEnrollment.setVisible(true);
+
+            } catch (Exception e) {
+
+                // @shree - show errors on panel 
+                L_Message_DropEnrollment.setText("Exception : " + e);
+                L_Message_DropEnrollment.setForeground(Color.RED);
+                L_Message_DropEnrollment.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_B_Drop_DropEnrollmentActionPerformed
+
+    private void B_Cancel_DropEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_DropEnrollmentActionPerformed
+        
+        // @shree - resetting the panel
+        T_sid_DropEnrollment.setText("Enter sid here");
+        T_cid_DropEnrollment.setText("Enter classid here");
+        L_Error_DropEnrollment.setVisible(false);
+        L_Message_DropEnrollment.setVisible(false);
+    }//GEN-LAST:event_B_Cancel_DropEnrollmentActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4063,6 +4353,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton B_Add_AddNewStudent;
     private javax.swing.JButton B_Cancel_AddNewStudent;
     private javax.swing.JButton B_Cancel_DeleteStudent;
+    private javax.swing.JButton B_Cancel_DropEnrollment;
     private javax.swing.JButton B_Cancel_EnrollStudent;
     private javax.swing.JButton B_Cancel_FindClass;
     private javax.swing.JButton B_Cancel_FindCourse;
@@ -4070,6 +4361,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton B_DeleteStudent;
     private javax.swing.JButton B_Delete_DeleteStudent;
     private javax.swing.JButton B_DropEnrollment;
+    private javax.swing.JButton B_Drop_DropEnrollment;
     private javax.swing.JButton B_EnrollStudent;
     private javax.swing.JButton B_Enroll_EnrollStudent;
     private javax.swing.JButton B_ExitClasses;
@@ -4095,6 +4387,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel L_Classid_Value_FindClass;
     private javax.swing.JLabel L_Error_AddNewStudent;
     private javax.swing.JLabel L_Error_DeleteStudent;
+    private javax.swing.JLabel L_Error_DropEnrollment;
     private javax.swing.JLabel L_Error_EnrollStudent;
     private javax.swing.JLabel L_Error_FindClass;
     private javax.swing.JLabel L_Error_FindCourse;
@@ -4105,6 +4398,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel L_Message_Class_FindClass;
     private javax.swing.JLabel L_Message_Classes_FindStudent;
     private javax.swing.JLabel L_Message_DeleteStudent;
+    private javax.swing.JLabel L_Message_DropEnrollment;
     private javax.swing.JLabel L_Message_EnrollStudent;
     private javax.swing.JLabel L_Message_FindCourse;
     private javax.swing.JLabel L_Message_ShowAllClasses;
@@ -4136,6 +4430,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel P_Default_Enrollments;
     private javax.swing.JPanel P_Default_Students;
     private javax.swing.JPanel P_DeleteStudent;
+    private javax.swing.JPanel P_DropEnrollment;
     private javax.swing.JPanel P_EnrollStudent;
     private javax.swing.JPanel P_FindClass;
     private javax.swing.JPanel P_FindCourse;
@@ -4177,9 +4472,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField T_FirstName;
     private javax.swing.JTextField T_GPA;
     private javax.swing.JTextField T_LastName;
+    private javax.swing.JTextField T_cid_DropEnrollment;
     private javax.swing.JTextField T_cid_EnrollStudent;
     private javax.swing.JTextField T_classid_FindClass;
     private javax.swing.JTextField T_sid_DeleteStudent;
+    private javax.swing.JTextField T_sid_DropEnrollment;
     private javax.swing.JTextField T_sid_EnrollStudent;
     private javax.swing.JTextField T_sid_FindStudent;
     private javax.swing.JPanel Tab_Classes;
@@ -4213,16 +4510,19 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -4242,6 +4542,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
