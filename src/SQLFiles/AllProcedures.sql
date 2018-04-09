@@ -50,6 +50,7 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 	PROCEDURE add_student(temp_sid IN students.sid%TYPE, temp_firstname IN students.firstname%TYPE, temp_lastname IN students.lastname%TYPE, temp_status IN students.status%TYPE, temp_gpa IN students.gpa%TYPE, temp_email IN students.email%TYPE) AS
 	BEGIN
 		INSERT INTO students VALUES (temp_sid, temp_firstname, temp_lastname, temp_status, temp_gpa, temp_email);
+		commit;
 	END;
 
 	-- @shree : Students module - find student and his classes
@@ -100,6 +101,7 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 
 		BEGIN
 			DELETE FROM students WHERE sid = temp_sid;
+			commit;
 		END;
 	END;
             
@@ -251,7 +253,8 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 			IF(totalenrolled = 2)
 				THEN                                 
 					BEGIN
-						INSERT INTO enrollments VALUES (temp_sid, temp_cid, null);		
+						INSERT INTO enrollments VALUES (temp_sid, temp_cid, null);	
+						commit;
 					END;                                
 					raise_application_error(-20001, 'You are overloaded.'); 
 				RETURN;
@@ -287,6 +290,7 @@ CREATE OR REPLACE PACKAGE BODY SQLPackage AS
 			  
 		BEGIN
 			INSERT INTO enrollments VALUES (temp_sid, temp_cid, null);		
+			commit;
                     END;
           END;
 
