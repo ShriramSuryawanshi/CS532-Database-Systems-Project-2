@@ -3,16 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+/*  CS 532 - Project 2 (Spring 2018)
+*   1. Shriram Suryawanshi
+*   2. Vinen Furtado
+*/
+
+
 package minipods;
 
 import java.awt.event.KeyEvent;
-import javax.swing.JOptionPane;
-
 import java.sql.*;
 import oracle.jdbc.*;
-import java.math.*;
-import java.io.*;
 import java.awt.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.pool.OracleDataSource;
 
@@ -25,8 +31,21 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    public String user;
+    public String pass;
+    Connection conn;
+
     public Home() {
         initComponents();
+    }
+
+    public Home(String user1, String pass1) {
+        initComponents();
+
+        // @@ - getting username & password from Login class
+        Login loginvar = new Login();
+        user = user1;
+        pass = pass1;
     }
 
     /**
@@ -3065,34 +3084,34 @@ public class Home extends javax.swing.JFrame {
 
     private void B_ShowAllStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllStudentsActionPerformed
 
-        // @shree - show P_ShowAllStudents panel, hide all others
+        // @@ - show P_ShowAllStudents panel, hide all others
         P_Default_Students.setVisible(false);
         P_ShowAllStudents.setVisible(true);
         P_AddNewStudent.setVisible(false);
         P_FindStudent.setVisible(false);
         P_DeleteStudent.setVisible(false);
 
-        // @shree - hiding table, in case exceptions
+        // @@ - hiding table, in case exceptions
         P_Table_ShowAllStudents.setVisible(false);
 
-        // @shree - fecthing the data using procedure and display on GUI
+        // @@ - fecthing the data using procedure and display on GUI
         try {
 
-            // @shree - connect to DB
+            // @@ - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
             //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            //Connection conn = ds.getConnection("shree", "shree2103");
+            //Connection conn = ds.getConnection("shree", "shree");
             ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+            conn = ds.getConnection(user, pass);
 
-            // @shree - fetching result from DB usnig procedure
+            // @@ - fetching result from DB using procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_students(?); end;");
             call.registerOutParameter(1, OracleTypes.CURSOR);
             call.execute();
 
             ResultSet rs = (ResultSet) call.getObject(1);
 
-            // @shree - inserting data into the table on GUI
+            // @@ - inserting data into the table on GUI
             DefaultTableModel model = (DefaultTableModel) TBL_ShowAllStudents.getModel();
             model.setRowCount(0);
             TBL_ShowAllStudents.setModel(model);
@@ -3118,28 +3137,45 @@ public class Home extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllStudent.setText("SQL Exception : " + ex);
             L_Message_ShowAllStudent.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
+
         } catch (Exception e) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllStudent.setText("Exception : " + e);
             L_Message_ShowAllStudent.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
         }
+
+
     }//GEN-LAST:event_B_ShowAllStudentsActionPerformed
 
 
     private void B_AddNewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_AddNewStudentActionPerformed
 
-        // @shree - show P_AddNewStudents panel, hide all others
+        // @@ - show P_AddNewStudents panel, hide all others
         P_Default_Students.setVisible(false);
         P_ShowAllStudents.setVisible(false);
         P_AddNewStudent.setVisible(true);
         P_FindStudent.setVisible(false);
         P_DeleteStudent.setVisible(false);
 
-        // @shree - resetting the panel (textbox values, selections etc.)
+        // @@ - resetting the panel (textbox values, selections etc.)
         L_Error_AddNewStudent.setVisible(false);
         L_Message_AddNewStudent.setVisible(false);
         T_FirstName.setText("Enter firstname here");
@@ -3153,7 +3189,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Add_AddNewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Add_AddNewStudentActionPerformed
 
-        // @shree - Performing validation on the details provided
+        // @@ - Performing validation on the details provided
         if (T_FirstName.getText().equals("") || T_FirstName.getText().equals("Enter firstname here")) {
             L_Error_AddNewStudent.setText("Please provide valid firstname!");
             L_Error_AddNewStudent.setVisible(true);
@@ -3163,7 +3199,7 @@ public class Home extends javax.swing.JFrame {
             L_Error_AddNewStudent.setVisible(true);
 
         } else if ((!(T_GPA.getText().equals("") || T_GPA.getText().equals("Enter gpa here"))) && (Float.parseFloat(T_GPA.getText()) < 0 || Float.parseFloat(T_GPA.getText()) > 4.0)) {
-            // @shree - allowing null values for gpa
+            // @@ - allowing null values for gpa
             L_Error_AddNewStudent.setText("Please provide valid gpa!");
             L_Error_AddNewStudent.setVisible(true);
 
@@ -3184,12 +3220,12 @@ public class Home extends javax.swing.JFrame {
                 int SID = 0;
                 String sid = "B";
 
-                // @shree - connect to DB
+                // @@ - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
                 //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                //Connection conn = ds.getConnection("shree", "shree2103");
+                //Connection conn = ds.getConnection("shree", "shree");
                 ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+                conn = ds.getConnection(user, pass);
 
                 Statement stmt = conn.createStatement();
 
@@ -3200,7 +3236,7 @@ public class Home extends javax.swing.JFrame {
                     SID = Integer.parseInt(rs.getString(1).substring(1));
                 }
 
-                // @shree - sid reached to 999, then do nothing, else create new sid
+                // @@ - sid reached to 999, then do nothing, else create new sid
                 if (SID >= 999) {
                     L_Error_AddNewStudent.setText("Maximum SID (999) reached!");
                     L_Error_AddNewStudent.setVisible(true);
@@ -3216,7 +3252,7 @@ public class Home extends javax.swing.JFrame {
                         sid = sid + SID;
                     }
 
-                    // @shree - getting the student's details from the GUI
+                    // @@ - getting the student's details from the GUI
                     String firstname = T_FirstName.getText();
                     String lastname = T_LastName.getText();
                     String email = T_Email.getText();
@@ -3234,7 +3270,7 @@ public class Home extends javax.swing.JFrame {
                         status = "graduate";
                     }
 
-                    // @shree - calling procedure to add student
+                    // @@ - calling procedure to add student
                     CallableStatement call = conn.prepareCall("begin SQLPackage.add_student(?, ?, ?, ?, ?, ?); end;");
                     call.setString(1, sid);
                     call.setString(2, firstname);
@@ -3242,7 +3278,7 @@ public class Home extends javax.swing.JFrame {
                     call.setString(4, status);
                     call.setString(6, email);
 
-                    // @shree - handling the null gpa condition
+                    // @@ - handling the null gpa condition
                     if (T_GPA.getText().equals("") || T_GPA.getText().equals("Enter gpa here")) {
                         call.setString(5, "");
                     } else {
@@ -3269,25 +3305,38 @@ public class Home extends javax.swing.JFrame {
 
             } catch (SQLException ex) {
 
-                // @shree - if same email found, show error on GUI instead of long oracle excpetion
+                // @@ - if same email found, show error on GUI instead of long oracle excpetion
                 if (ex.toString().contains("java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constrain")) {
-                    System.out.println(ex);
                     L_Error_AddNewStudent.setText("SQL Exception : Email id should be unique!");
                     L_Error_AddNewStudent.setVisible(true);
                 } else {
 
-                    // @shree - show other exceptions on the GUI
+                    // @@ - show other exceptions on the GUI
                     L_Message_AddNewStudent.setText("SQL Exception : " + ex);
                     L_Message_AddNewStudent.setForeground(Color.RED);
                     L_Message_AddNewStudent.setVisible(true);
                 }
 
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
+
             } catch (HeadlessException | NumberFormatException e) {
 
-                // @shree - show other exceptions on the GUI
+                // @@ - show other exceptions on the GUI
                 L_Message_AddNewStudent.setText("Exception : " + e);
                 L_Message_AddNewStudent.setForeground(Color.RED);
                 L_Message_AddNewStudent.setVisible(true);
+
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
             }
         }
     }//GEN-LAST:event_B_Add_AddNewStudentActionPerformed
@@ -3295,7 +3344,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Cancel_AddNewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_AddNewStudentActionPerformed
 
-        // @shree - clearing all the selected/entered values, errors on Cancel
+        // @@ - clearing all the selected/entered values, errors on Cancel
         L_Error_AddNewStudent.setVisible(false);
         L_Message_AddNewStudent.setVisible(false);
         T_FirstName.setText("Enter firstname here");
@@ -3308,14 +3357,14 @@ public class Home extends javax.swing.JFrame {
 
     private void B_FindStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_FindStudentActionPerformed
 
-        // @shree - show P_FindStudent panel, hide all others
+        // @@ - show P_FindStudent panel, hide all others
         P_Default_Students.setVisible(false);
         P_ShowAllStudents.setVisible(false);
         P_AddNewStudent.setVisible(false);
         P_FindStudent.setVisible(true);
         P_DeleteStudent.setVisible(false);
 
-        // @shree -  hiding the internal panels, labels from find student panel
+        // @@ -  hiding the internal panels, labels from find student panel
         P_StudentDetails_FindStudent.setVisible(false);
         P_ClassDetails_FindStudents.setVisible(false);
         T_sid_FindStudent.setText("Enter (B-Number) sid here");
@@ -3325,14 +3374,14 @@ public class Home extends javax.swing.JFrame {
 
     private void B_DeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_DeleteStudentActionPerformed
 
-        // @shree - show P_DeleteStudent panel, hide all others
+        // @@ - show P_DeleteStudent panel, hide all others
         P_Default_Students.setVisible(false);
         P_ShowAllStudents.setVisible(false);
         P_AddNewStudent.setVisible(false);
         P_FindStudent.setVisible(false);
         P_DeleteStudent.setVisible(true);
 
-        // @shree -  hiding labels
+        // @@ -  hiding labels
         T_sid_DeleteStudent.setText("Enter (B-Number) sid here");
         L_Error_DeleteStudent.setVisible(false);
         L_Message_DeleteStudent.setVisible(false);
@@ -3341,7 +3390,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_FirstNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_FirstNameFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_FirstName.getText().equals("Enter firstname here")) {
             T_FirstName.setText("");
 
@@ -3353,7 +3402,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_FirstNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_FirstNameFocusLost
 
-        // @shree - resetting the defualt text if the firstname is not entered
+        // @@ - resetting the defualt text if the firstname is not entered
         if (T_FirstName.getText().equals("")) {
             T_FirstName.setText("Enter firstname here");
         }
@@ -3362,7 +3411,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_LastNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_LastNameFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_LastName.getText().equals("Enter lastname here")) {
             T_LastName.setText("");
 
@@ -3374,7 +3423,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_LastNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_LastNameFocusLost
 
-        // @shree - resetting the defualt text if the lastname is not entered
+        // @@ - resetting the defualt text if the lastname is not entered
         if (T_LastName.getText().equals("")) {
             T_LastName.setText("Enter lastname here");
         }
@@ -3383,7 +3432,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_GPAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_GPAFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_GPA.getText().equals("Enter gpa here")) {
             T_GPA.setText("");
 
@@ -3395,7 +3444,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_GPAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_GPAFocusLost
 
-        // @shree - resetting the defualt text if the gpa is not entered
+        // @@ - resetting the defualt text if the gpa is not entered
         if (T_GPA.getText().equals("")) {
             T_GPA.setText("Enter gpa here");
         }
@@ -3404,7 +3453,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_EmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_EmailFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_Email.getText().equals("Enter email id here")) {
             T_Email.setText("");
         }
@@ -3415,7 +3464,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_EmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_EmailFocusLost
 
-        // @shree - resetting the defualt text if the email is not entered
+        // @@ - resetting the defualt text if the email is not entered
         if (T_Email.getText().equals("")) {
             T_Email.setText("Enter email id here");
         }
@@ -3424,7 +3473,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_GPAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T_GPAKeyTyped
 
-        // @shree - allowing only numbers and only one "." in the gpa textbox
+        // @@ - allowing only numbers and only one "." in the gpa textbox
         char temp = evt.getKeyChar();
 
         if (Character.isDigit(temp) || temp == KeyEvent.VK_PERIOD) {
@@ -3441,7 +3490,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_sid_FindStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_FindStudentFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_sid_FindStudent.getText().equals("Enter (B-Number) sid here")) {
             T_sid_FindStudent.setText("");
         }
@@ -3451,7 +3500,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_sid_FindStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_FindStudentFocusLost
 
-        // @shree - no value provided, resetting the text
+        // @@ - no value provided, resetting the text
         if (T_sid_FindStudent.getText().equals("")) {
             T_sid_FindStudent.setText("Enter (B-Number) sid here");
         }
@@ -3460,7 +3509,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Cancel_FindStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_FindStudentActionPerformed
 
-        // @shree -  hiding the internal panels, labels from find student panel
+        // @@ -  hiding the internal panels, labels from find student panel
         P_StudentDetails_FindStudent.setVisible(false);
         P_ClassDetails_FindStudents.setVisible(false);
         T_sid_FindStudent.setText("Enter (B-Number) sid here");
@@ -3470,7 +3519,10 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Find_FindStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Find_FindStudentActionPerformed
 
-        // @shree - perform sid validations first, if passes then fetch student details using procedure along with his classes, show errors
+        P_StudentDetails_FindStudent.setVisible(false);
+        P_ClassDetails_FindStudents.setVisible(false);
+
+        // @@ - perform sid validations first, if passes then fetch student details using procedure along with his classes, show errors
         if ((!T_sid_FindStudent.getText().matches("B[0-9]+")) || (T_sid_FindStudent.getText().length() < 4) || (T_sid_FindStudent.getText().equals("Enter (B-Number) sid here"))) {
             L_Error_FindStudent.setVisible(true);
             P_StudentDetails_FindStudent.setVisible(false);
@@ -3479,19 +3531,19 @@ public class Home extends javax.swing.JFrame {
 
             L_Error_FindStudent.setVisible(false);
 
-            // @shree - validation pass, fetech the data and show on GUI
+            // @@ - validation pass, fetech the data and show on GUI
             try {
 
                 String sid = T_sid_FindStudent.getText();
 
-                // @shree - connect to DB
+                // @@ - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
                 //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                //Connection conn = ds.getConnection("shree", "shree2103");
+                //Connection conn = ds.getConnection("shree", "shree");
                 ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+                conn = ds.getConnection(user, pass);
 
-                // @shree - calling procedure to  student
+                // @@ - calling procedure to  student
                 CallableStatement call = conn.prepareCall("begin SQLPackage.find_student(?, ?); end;");
                 call.registerOutParameter(1, OracleTypes.CURSOR);
                 call.setString(2, sid);
@@ -3499,10 +3551,10 @@ public class Home extends javax.swing.JFrame {
 
                 ResultSet rs = (ResultSet) call.getObject(1);
 
-                // @shree - student is not enrolled in any classes, if column count in rs is only 3
+                // @@ - student is not enrolled in any classes, if column count in rs is only 3
                 if (rs.getMetaData().getColumnCount() == 3) {
 
-                    // @shree - showing student details
+                    // @@ - showing student details
                     P_StudentDetails_FindStudent.setVisible(true);
                     L_Message_Student_FindStudent.setText("Student Details - ");
                     L_Message_Student_FindStudent.setForeground(Color.BLACK);
@@ -3521,9 +3573,12 @@ public class Home extends javax.swing.JFrame {
                     L_Message_Classes_FindStudent.setForeground(Color.RED);
                     TBL_Classes_FindStudent.setVisible(false);
 
+                    P_StudentDetails_FindStudent.setVisible(true);
+                    P_ClassDetails_FindStudents.setVisible(true);
+
                 } else {
 
-                    // @shree - showing student details
+                    // @@ - showing student details
                     P_StudentDetails_FindStudent.setVisible(true);
                     L_Message_Student_FindStudent.setText("Student Details - ");
                     L_Message_Student_FindStudent.setForeground(Color.BLACK);
@@ -3531,13 +3586,13 @@ public class Home extends javax.swing.JFrame {
                     L_Lastname_FindStudent.setVisible(true);
                     L_Status_FindStudent.setVisible(true);
 
-                    // @shree - showing classes details
+                    // @@ - showing classes details
                     P_ClassDetails_FindStudents.setVisible(true);
                     L_Message_Classes_FindStudent.setText("Classes Enrolled - ");
                     L_Message_Classes_FindStudent.setForeground(Color.BLACK);
                     TBL_Classes_FindStudent.setVisible(true);
 
-                    // @shree - inserting data into the table on GUI
+                    // @@ - inserting data into the table on GUI
                     DefaultTableModel model = (DefaultTableModel) TBL_Classes_FindStudent.getModel();
                     model.setRowCount(0);
                     TBL_Classes_FindStudent.setModel(model);
@@ -3557,6 +3612,8 @@ public class Home extends javax.swing.JFrame {
                         model.addRow(obj);
                     }
 
+                    P_StudentDetails_FindStudent.setVisible(true);
+                    P_ClassDetails_FindStudents.setVisible(true);
                     TBL_Classes_FindStudent.setModel(model);
                     TBL_Classes_FindStudent.getTableHeader().setFont(new Font("Monteserrat", Font.BOLD, 14));
                 }
@@ -3565,7 +3622,7 @@ public class Home extends javax.swing.JFrame {
 
             } catch (SQLException ex) {
 
-                // @shree - show excptions on GUI (avoiding long error text thrown by oracle)
+                // @@ - show excptions on GUI (avoiding long error text thrown by oracle)
                 if (ex.toString().contains("The sid is invalid.")) {
                     L_Error_FindStudent.setText("The sid is invalid.");
                 } else {
@@ -3573,16 +3630,28 @@ public class Home extends javax.swing.JFrame {
                 }
                 L_Error_FindStudent.setVisible(true);
 
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
+
             } catch (HeadlessException | NumberFormatException e) {
 
-                // @shree - show excptions on GUI
+                // @@ - show excptions on GUI
                 L_Error_FindStudent.setText(e.toString());
                 L_Error_FindStudent.setVisible(true);
+
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
             }
 
         }
-
-
     }//GEN-LAST:event_B_Find_FindStudentActionPerformed
 
 
@@ -3593,7 +3662,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_sid_DeleteStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_DeleteStudentFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_sid_DeleteStudent.getText().equals("Enter (B-Number) sid here")) {
             T_sid_DeleteStudent.setText("");
         }
@@ -3604,7 +3673,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_sid_DeleteStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_DeleteStudentFocusLost
 
-        // @shree - no value provided, resetting the text
+        // @@ - no value provided, resetting the text
         if (T_sid_DeleteStudent.getText().equals("")) {
             T_sid_DeleteStudent.setText("Enter (B-Number) sid here");
         }
@@ -3613,7 +3682,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Delete_DeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Delete_DeleteStudentActionPerformed
 
-        // @shree - perform sid validations first, if passes then delete student
+        // @@ - perform sid validations first, if passes then delete student
         if ((!T_sid_DeleteStudent.getText().matches("B[0-9]+")) || (T_sid_DeleteStudent.getText().length() < 4) || (T_sid_DeleteStudent.getText().equals("Enter (B-Number) sid here"))) {
             L_Error_DeleteStudent.setVisible(true);
             L_Message_DeleteStudent.setVisible(false);
@@ -3625,14 +3694,14 @@ public class Home extends javax.swing.JFrame {
 
                 String sid = T_sid_DeleteStudent.getText();
 
-                // @shree - connect to DB
+                // @@ - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
                 //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                //Connection conn = ds.getConnection("shree", "shree2103");
+                //Connection conn = ds.getConnection("shree", "shree");
                 ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+                conn = ds.getConnection(user, pass);
 
-                // @shree - calling procedure to delete student
+                // @@ - calling procedure to delete student
                 CallableStatement call = conn.prepareCall("begin SQLPackage.delete_student(?); end;");
                 call.setString(1, sid);
                 int temp = call.executeUpdate();
@@ -3647,30 +3716,41 @@ public class Home extends javax.swing.JFrame {
 
             } catch (SQLException ex) {
 
-                // @shree - show excptions on GUI (avoiding long error text thrown by oracle)
+                // @@ - show excptions on GUI (avoiding long error text thrown by oracle)
                 if (ex.toString().contains("The sid is invalid.")) {
                     L_Error_DeleteStudent.setText("The sid is invalid.");
                 } else {
                     L_Error_DeleteStudent.setText(ex.toString());
-                    System.out.println(ex);
                 }
                 L_Error_DeleteStudent.setVisible(true);
 
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
+
             } catch (HeadlessException | NumberFormatException e) {
 
-                // @shree - show excptions on GUI
+                // @@ - show excptions on GUI
                 L_Error_DeleteStudent.setText(e.toString());
                 L_Error_DeleteStudent.setVisible(true);
+
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
             }
-
         }
-
     }//GEN-LAST:event_B_Delete_DeleteStudentActionPerformed
 
 
     private void B_Cancel_DeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_DeleteStudentActionPerformed
 
-        // @shree -  hiding labels
+        // @@ -  hiding labels
         T_sid_DeleteStudent.setText("Enter (B-Number) sid here");
         L_Error_DeleteStudent.setVisible(false);
     }//GEN-LAST:event_B_Cancel_DeleteStudentActionPerformed
@@ -3678,7 +3758,7 @@ public class Home extends javax.swing.JFrame {
 
     private void TabsStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabsStateChanged
 
-        // @shree - tab selection changed, hide panels depending on Tab selected
+        // @@ - tab selection changed, hide panels depending on Tab selected
         if (Tabs.getSelectedIndex() == 0) {
             P_Default_Students.setVisible(true);
             P_ShowAllStudents.setVisible(false);
@@ -3713,33 +3793,33 @@ public class Home extends javax.swing.JFrame {
 
     private void B_ShowAllCoursesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllCoursesActionPerformed
 
-        // @shree - show only P_ShowAllCourses panel
+        // @@ - show only P_ShowAllCourses panel
         P_Default_Courses.setVisible(false);
         P_ShowAllCourses.setVisible(true);
         P_ShowAllPrerequisites.setVisible(false);
         P_FindCourse.setVisible(false);
 
-        // @shree - hiding a table
+        // @@ - hiding a table
         P_Table_ShowAllCourses.setVisible(false);
 
-        // @shree - fecthing the data using procedure and display on GUI
+        // @@ - fecthing the data using procedure and display on GUI
         try {
 
-            // @shree - connect to DB
+            // @@ - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
             //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            //Connection conn = ds.getConnection("shree", "shree2103");
+            //Connection conn = ds.getConnection("shree", "shree");
             ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+            conn = ds.getConnection(user, pass);
 
-            // @shree - fetching result from DB usnig procedure
+            // @@ - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_courses(?); end;");
             call.registerOutParameter(1, OracleTypes.CURSOR);
             call.execute();
 
             ResultSet rs = (ResultSet) call.getObject(1);
 
-            // @shree - inserting data into the table on GUI
+            // @@ - inserting data into the table on GUI
             DefaultTableModel model = (DefaultTableModel) TBL_ShowAllCourses.getModel();
             model.setRowCount(0);
             TBL_ShowAllCourses.setModel(model);
@@ -3765,48 +3845,62 @@ public class Home extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllCourses.setText("SQL Exception : " + ex);
             L_Message_ShowAllCourses.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
+
         } catch (Exception e) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllCourses.setText("Exception : " + e);
             L_Message_ShowAllCourses.setForeground(Color.RED);
-        }
 
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
+        }
     }//GEN-LAST:event_B_ShowAllCoursesActionPerformed
 
 
     private void B_ShowAllPrerequisitesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllPrerequisitesActionPerformed
 
-        // @shree - show only prerequisites panel
+        // @@ - show only prerequisites panel
         P_Default_Courses.setVisible(false);
         P_ShowAllCourses.setVisible(false);
         P_ShowAllPrerequisites.setVisible(true);
         P_FindCourse.setVisible(false);
 
-        // @shree - hiding a table
+        // @@ - hiding a table
         P_Table_ShowAllPre.setVisible(false);
 
-        // @shree - fecthing the data using procedure and display on GUI
+        // @@ - fecthing the data using procedure and display on GUI
         try {
 
-            // @shree - connect to DB
+            // @@ - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
             //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            //Connection conn = ds.getConnection("shree", "shree2103");
+            //Connection conn = ds.getConnection("shree", "shree");
             ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+            conn = ds.getConnection(user, pass);
 
-            // @shree - fetching result from DB usnig procedure
+            // @@ - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_prerequisites(?); end;");
             call.registerOutParameter(1, OracleTypes.CURSOR);
             call.execute();
 
             ResultSet rs = (ResultSet) call.getObject(1);
 
-            // @shree - inserting data into the table on GUI
+            // @@ - inserting data into the table on GUI
             DefaultTableModel model = (DefaultTableModel) TBL_ShowAllPre.getModel();
             model.setRowCount(0);
             TBL_ShowAllPre.setModel(model);
@@ -3832,14 +3926,29 @@ public class Home extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllPre.setText("SQL Exception : " + ex);
             L_Message_ShowAllPre.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
+
         } catch (Exception e) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllPre.setText("Exception : " + e);
             L_Message_ShowAllPre.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
         }
 
     }//GEN-LAST:event_B_ShowAllPrerequisitesActionPerformed
@@ -3847,13 +3956,13 @@ public class Home extends javax.swing.JFrame {
 
     private void B_FindCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_FindCourseActionPerformed
 
-        // @shree - show only find course panel
+        // @@ - show only find course panel
         P_Default_Courses.setVisible(false);
         P_ShowAllCourses.setVisible(false);
         P_ShowAllPrerequisites.setVisible(false);
         P_FindCourse.setVisible(true);
 
-        // @shree - resetting the find course panel
+        // @@ - resetting the find course panel
         T_Dept_FindCourse.setText("Enter department code here");
         T_Course_FindCourse.setText("Enter course no. here");
         L_Error_FindCourse.setVisible(false);
@@ -3869,7 +3978,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_Dept_FindCourseFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_Dept_FindCourseFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_Dept_FindCourse.getText().equals("Enter department code here")) {
             T_Dept_FindCourse.setText("");
         }
@@ -3879,7 +3988,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_Dept_FindCourseFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_Dept_FindCourseFocusLost
 
-        // @shree - no value provided, resetting the text
+        // @@ - no value provided, resetting the text
         if (T_Dept_FindCourse.getText().equals("")) {
             T_Dept_FindCourse.setText("Enter department code here");
         }
@@ -3888,7 +3997,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Find_FindCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Find_FindCourseActionPerformed
 
-        // @shree - performing validation on details entered, if pass, fetch details, ele report errors
+        // @@ - performing validation on details entered, if pass, fetch details, ele report errors
         if (T_Dept_FindCourse.getText().equals("") || T_Dept_FindCourse.getText().equals("Enter department code here") || T_Dept_FindCourse.getText().length() > 4) {
             L_Error_FindCourse.setText("Please provide valid department code!");
             L_Error_FindCourse.setVisible(true);
@@ -3902,20 +4011,20 @@ public class Home extends javax.swing.JFrame {
 
             L_Error_FindCourse.setVisible(false);
 
-            // @shree - fecthing the data using procedure and display on GUI
+            // @@ - fecthing the data using procedure and display on GUI
             try {
 
                 String dept = T_Dept_FindCourse.getText().toUpperCase();
                 Integer course = Integer.parseInt(T_Course_FindCourse.getText());
 
-                // @shree - connect to DB
+                // @@ - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
                 //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                //Connection conn = ds.getConnection("shree", "shree2103");
+                //Connection conn = ds.getConnection("shree", "shree");
                 ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+                conn = ds.getConnection(user, pass);
 
-                // @shree - fetching result from DB usnig procedure
+                // @@ - fetching result from DB usnig procedure
                 CallableStatement call = conn.prepareCall("begin SQLPackage.find_course(?, ?, ?); end;");
                 call.registerOutParameter(1, OracleTypes.CURSOR);
                 call.setString(2, dept);
@@ -3924,7 +4033,7 @@ public class Home extends javax.swing.JFrame {
 
                 ResultSet rs = (ResultSet) call.getObject(1);
 
-                // @shree - inserting data into the table on GUI
+                // @@ - inserting data into the table on GUI
                 DefaultTableModel model = (DefaultTableModel) TBL_ShowPre_FindCourse.getModel();
                 model.setRowCount(0);
                 TBL_ShowPre_FindCourse.setModel(model);
@@ -3961,7 +4070,7 @@ public class Home extends javax.swing.JFrame {
 
             } catch (SQLException ex) {
 
-                // @shree - show errors on panel
+                // @@ - show errors on panel
                 if (ex.toString().contains("Course not found!")) {
                     L_Message_FindCourse.setText("Course not found! Please make sure provided department code and course no. combination is correct!");
                 } else {
@@ -3971,13 +4080,27 @@ public class Home extends javax.swing.JFrame {
                 L_Message_FindCourse.setVisible(true);
                 P_ShowPre_FindCourse.setVisible(false);
 
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
+
             } catch (Exception e) {
 
-                // @shree - show errors on panel 
+                // @@ - show errors on panel 
                 L_Message_FindCourse.setText("Exception : " + e);
                 L_Message_FindCourse.setForeground(Color.RED);
                 L_Message_FindCourse.setVisible(true);
                 P_ShowPre_FindCourse.setVisible(false);
+
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
             }
         }
 
@@ -3987,7 +4110,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Cancel_FindCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_FindCourseActionPerformed
 
-        // @shree - resetting the find course panel
+        // @@ - resetting the find course panel
         T_Dept_FindCourse.setText("Enter department code here");
         T_Course_FindCourse.setText("Enter course no. here");
         L_Error_FindCourse.setVisible(false);
@@ -3998,7 +4121,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_Course_FindCourseFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_Course_FindCourseFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_Course_FindCourse.getText().equals("Enter course no. here")) {
             T_Course_FindCourse.setText("");
         }
@@ -4008,7 +4131,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_Course_FindCourseFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_Course_FindCourseFocusLost
 
-        // @shree - no value provided, resetting the text
+        // @@ - no value provided, resetting the text
         if (T_Course_FindCourse.getText().equals("")) {
             T_Course_FindCourse.setText("Enter course no. here");
         }
@@ -4017,32 +4140,32 @@ public class Home extends javax.swing.JFrame {
 
     private void B_ShowAllClassesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllClassesActionPerformed
 
-        // @shree - show only show all classes panel
+        // @@ - show only show all classes panel
         P_Default_Classes.setVisible(false);
         P_ShowAllClasses.setVisible(true);
         P_FindClass.setVisible(false);
 
-        // @shree - hiding a table
+        // @@ - hiding a table
         P_Table_ShowAllClasses.setVisible(false);
 
-        // @shree - fecthing the data using procedure and display on GUI
+        // @@ - fecthing the data using procedure and display on GUI
         try {
 
-            // @shree - connect to DB
+            // @@ - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
             //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            //Connection conn = ds.getConnection("shree", "shree2103");
+            //Connection conn = ds.getConnection("shree", "shree");
             ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+            conn = ds.getConnection(user, pass);
 
-            // @shree - fetching result from DB usnig procedure
+            // @@ - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_classes(?); end;");
             call.registerOutParameter(1, OracleTypes.CURSOR);
             call.execute();
 
             ResultSet rs = (ResultSet) call.getObject(1);
 
-            // @shree - inserting data into the table on GUI
+            // @@ - inserting data into the table on GUI
             DefaultTableModel model = (DefaultTableModel) TBL_ShowAllClasses.getModel();
             model.setRowCount(0);
             TBL_ShowAllClasses.setModel(model);
@@ -4068,26 +4191,41 @@ public class Home extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllClasses.setText("SQL Exception : " + ex);
             L_Message_ShowAllClasses.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
+
         } catch (Exception e) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllClasses.setText("Exception : " + e);
             L_Message_ShowAllClasses.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
         }
     }//GEN-LAST:event_B_ShowAllClassesActionPerformed
 
 
     private void B_FindClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_FindClassActionPerformed
 
-        // @shree - show only show all classes panel
+        // @@ - show only show all classes panel
         P_Default_Classes.setVisible(false);
         P_ShowAllClasses.setVisible(false);
         P_FindClass.setVisible(true);
 
-        // @shree - resetting the panel
+        // @@ - resetting the panel
         L_Error_FindClass.setVisible(false);
         P_ClassDetails_FindClass.setVisible(false);
         P_StudentDetails_FindClass.setVisible(false);
@@ -4102,7 +4240,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_classid_FindClassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_classid_FindClassFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_classid_FindClass.getText().equals("Enter classid here")) {
             T_classid_FindClass.setText("");
         }
@@ -4112,7 +4250,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_classid_FindClassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_classid_FindClassFocusLost
 
-        // @shree - no value provided, resetting the text
+        // @@ - no value provided, resetting the text
         if (T_classid_FindClass.getText().equals("")) {
             T_classid_FindClass.setText("Enter classid here");
         }
@@ -4121,7 +4259,12 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Find_FindClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Find_FindClassActionPerformed
 
-        // @shree - perform classid validations first, if passes then fetch class details using procedure along with enrolled students, show errors
+        // @@ - hiding the panels
+        P_ClassDetails_FindClass.setVisible(false);
+        P_StudentDetails_FindClass.setVisible(false);
+        
+        
+        // @@ - perform classid validations first, if passes then fetch class details using procedure along with enrolled students, show errors
         if ((!T_classid_FindClass.getText().matches("c[0-9]+")) || (T_classid_FindClass.getText().equals("Enter classid here"))) {
             L_Error_FindClass.setVisible(true);
             P_ClassDetails_FindClass.setVisible(false);
@@ -4130,19 +4273,19 @@ public class Home extends javax.swing.JFrame {
 
             L_Error_FindClass.setVisible(false);
 
-            // @shree - validation pass, fetech the data and show on GUI
+            // @@ - validation pass, fetech the data and show on GUI
             try {
 
                 String cid = T_classid_FindClass.getText();
 
-                // @shree - connect to DB
+                // @@ - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
                 //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                //Connection conn = ds.getConnection("shree", "shree2103");
+                //Connection conn = ds.getConnection("shree", "shree");
                 ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+                conn = ds.getConnection(user, pass);
 
-                // @shree - calling procedure to  student
+                // @@ - calling procedure to  student
                 CallableStatement call = conn.prepareCall("begin SQLPackage.find_class(?, ?); end;");
                 call.registerOutParameter(1, OracleTypes.CURSOR);
                 call.setString(2, cid);
@@ -4150,10 +4293,10 @@ public class Home extends javax.swing.JFrame {
 
                 ResultSet rs = (ResultSet) call.getObject(1);
 
-                // @shree - student is not enrolled in any classes, if column count in rs is only 3
+                // @@ - student is not enrolled in any classes, if column count in rs is only 3
                 if (rs.getMetaData().getColumnCount() == 4) {
 
-                    // @shree - showing student details
+                    // @@ - showing student details
                     P_ClassDetails_FindClass.setVisible(true);
                     L_Message_Class_FindClass.setText("Class Details - ");
                     L_Message_Class_FindClass.setForeground(Color.BLACK);
@@ -4176,7 +4319,7 @@ public class Home extends javax.swing.JFrame {
 
                 } else {
 
-                    // @shree - showing student details
+                    // @@ - showing student details
                     P_ClassDetails_FindClass.setVisible(true);
                     L_Message_Class_FindClass.setText("Class Details - ");
                     L_Message_Class_FindClass.setForeground(Color.BLACK);
@@ -4185,13 +4328,13 @@ public class Home extends javax.swing.JFrame {
                     L_Semester_FindClass.setVisible(true);
                     L_Year_FindClass.setVisible(true);
 
-                    // @shree - showing classes details
+                    // @@ - showing classes details
                     P_StudentDetails_FindClass.setVisible(true);
                     L_Message_Students_FindClass.setText("Enrolled Students - ");
                     L_Message_Students_FindClass.setForeground(Color.BLACK);
                     TBL_Students_FindClass.setVisible(true);
 
-                    // @shree - inserting data into the table on GUI
+                    // @@ - inserting data into the table on GUI
                     DefaultTableModel model = (DefaultTableModel) TBL_Students_FindClass.getModel();
                     model.setRowCount(0);
                     TBL_Students_FindClass.setModel(model);
@@ -4220,7 +4363,7 @@ public class Home extends javax.swing.JFrame {
 
             } catch (SQLException ex) {
 
-                // @shree - show excptions on GUI (avoiding long error text thrown by oracle)
+                // @@ - show excptions on GUI (avoiding long error text thrown by oracle)
                 if (ex.toString().contains("The cid is invalid.")) {
                     L_Error_FindClass.setText("The cid is invalid.");
                 } else {
@@ -4228,11 +4371,25 @@ public class Home extends javax.swing.JFrame {
                 }
                 L_Error_FindClass.setVisible(true);
 
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
+
             } catch (HeadlessException | NumberFormatException e) {
 
-                // @shree - show excptions on GUI
+                // @@ - show excptions on GUI
                 L_Error_FindClass.setText(e.toString());
                 L_Error_FindClass.setVisible(true);
+
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
             }
         }
     }//GEN-LAST:event_B_Find_FindClassActionPerformed
@@ -4240,7 +4397,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Cancel_FindClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_FindClassActionPerformed
 
-        // @shree - resetting the panel
+        // @@ - resetting the panel
         L_Error_FindClass.setVisible(false);
         P_ClassDetails_FindClass.setVisible(false);
         P_StudentDetails_FindClass.setVisible(false);
@@ -4250,33 +4407,33 @@ public class Home extends javax.swing.JFrame {
 
     private void B_ShowAllEnrollmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllEnrollmentsActionPerformed
 
-        // @shree - show only show all enrollment panel
+        // @@ - show only show all enrollment panel
         P_Default_Enrollments.setVisible(false);
         P_ShowAllEnrollments.setVisible(true);
         P_EnrollStudent.setVisible(false);
         P_DropEnrollment.setVisible(false);
 
-        // @shree - hiding a table
+        // @@ - hiding a table
         P_Table_ShowAllEnrollments.setVisible(false);
 
-        // @shree - fecthing the data using procedure and display on GUI
+        // @@ - fecthing the data using procedure and display on GUI
         try {
 
-            // @shree - connect to DB
+            // @@ - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
             //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            //Connection conn = ds.getConnection("shree", "shree2103");
+            //Connection conn = ds.getConnection("shree", "shree");
             ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+            conn = ds.getConnection(user, pass);
 
-            // @shree - fetching result from DB usnig procedure
+            // @@ - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_enrollments(?); end;");
             call.registerOutParameter(1, OracleTypes.CURSOR);
             call.execute();
 
             ResultSet rs = (ResultSet) call.getObject(1);
 
-            // @shree - inserting data into the table on GUI
+            // @@ - inserting data into the table on GUI
             DefaultTableModel model = (DefaultTableModel) TBL_ShowAllEnrollments.getModel();
             model.setRowCount(0);
             TBL_ShowAllEnrollments.setModel(model);
@@ -4302,14 +4459,29 @@ public class Home extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllEnrollments.setText("SQL Exception : " + ex);
             L_Message_ShowAllEnrollments.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
+
         } catch (Exception e) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllEnrollments.setText("Exception : " + e);
             L_Message_ShowAllEnrollments.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
         }
 
     }//GEN-LAST:event_B_ShowAllEnrollmentsActionPerformed
@@ -4317,13 +4489,13 @@ public class Home extends javax.swing.JFrame {
 
     private void B_EnrollStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_EnrollStudentActionPerformed
 
-        // @shree - show only enrollment panel
+        // @@ - show only enrollment panel
         P_Default_Enrollments.setVisible(false);
         P_ShowAllEnrollments.setVisible(false);
         P_EnrollStudent.setVisible(true);
         //P_DropEnrollment.setVisible(false);
 
-        // @shree - resetting the panel
+        // @@ - resetting the panel
         T_sid_EnrollStudent.setText("Enter sid here");
         T_cid_EnrollStudent.setText("Enter classid here");
         L_Error_EnrollStudent.setVisible(false);
@@ -4338,13 +4510,13 @@ public class Home extends javax.swing.JFrame {
 
     private void B_DropEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_DropEnrollmentActionPerformed
 
-        // @shree - show only enrollment panel
+        // @@ - show only enrollment panel
         P_Default_Enrollments.setVisible(false);
         P_ShowAllEnrollments.setVisible(false);
         P_EnrollStudent.setVisible(false);
         P_DropEnrollment.setVisible(true);
 
-        // @shree - resetting the panel
+        // @@ - resetting the panel
         T_sid_DropEnrollment.setText("Enter sid here");
         T_cid_DropEnrollment.setText("Enter classid here");
         L_Error_DropEnrollment.setVisible(false);
@@ -4354,7 +4526,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_sid_EnrollStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_EnrollStudentFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_sid_EnrollStudent.getText().equals("Enter sid here")) {
             T_sid_EnrollStudent.setText("");
         }
@@ -4364,7 +4536,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_sid_EnrollStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_EnrollStudentFocusLost
 
-        // @shree - no value provided, resetting the text
+        // @@ - no value provided, resetting the text
         if (T_sid_EnrollStudent.getText().equals("")) {
             T_sid_EnrollStudent.setText("Enter sid here");
         }
@@ -4373,7 +4545,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_cid_EnrollStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_cid_EnrollStudentFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_cid_EnrollStudent.getText().equals("Enter classid here")) {
             T_cid_EnrollStudent.setText("");
         }
@@ -4383,7 +4555,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_cid_EnrollStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_cid_EnrollStudentFocusLost
 
-        // @shree - no value provided, resetting the text
+        // @@ - no value provided, resetting the text
         if (T_cid_EnrollStudent.getText().equals("")) {
             T_cid_EnrollStudent.setText("Enter classid here");
         }
@@ -4392,7 +4564,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Enroll_EnrollStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Enroll_EnrollStudentActionPerformed
 
-        // @shree - performing validation on details entered, if pass, fetch details, else report errors
+        // @@ - performing validation on details entered, if pass, fetch details, else report errors
         if ((!T_sid_EnrollStudent.getText().matches("B[0-9]+")) || (T_sid_EnrollStudent.getText().length() < 4) || (T_sid_EnrollStudent.getText().equals("Enter (B-Number) sid here"))) {
             L_Error_EnrollStudent.setText("Please provide valid sid (sid should be of length 4, and it starts with B)!");
             L_Error_EnrollStudent.setVisible(true);
@@ -4407,20 +4579,20 @@ public class Home extends javax.swing.JFrame {
 
             L_Error_EnrollStudent.setVisible(false);
 
-            // @shree - enrolling student to class, showing exceptions
+            // @@ - enrolling student to class, showing exceptions
             try {
 
                 String sid = T_sid_EnrollStudent.getText();
                 String cid = T_cid_EnrollStudent.getText();
 
-                // @shree - connect to DB
+                // @@ - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
                 //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                //Connection conn = ds.getConnection("shree", "shree2103");
+                //Connection conn = ds.getConnection("shree", "shree");
                 ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+                conn = ds.getConnection(user, pass);
 
-                // @shree - fetching result from DB usnig procedure
+                // @@ - fetching result from DB usnig procedure
                 CallableStatement call = conn.prepareCall("begin SQLPackage.enroll_student(?, ?); end;");
                 call.setString(1, sid);
                 call.setString(2, cid);
@@ -4434,7 +4606,7 @@ public class Home extends javax.swing.JFrame {
 
             } catch (SQLException ex) {
 
-                // @shree - show errors on panel
+                // @@ - show errors on panel
                 if (ex.toString().contains("The sid is invalid.")) {
                     L_Message_EnrollStudent.setText("The sid is invalid.");
                     L_Message_EnrollStudent.setForeground(Color.RED);
@@ -4470,12 +4642,26 @@ public class Home extends javax.swing.JFrame {
 
                 L_Message_EnrollStudent.setVisible(true);
 
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
+
             } catch (Exception e) {
 
-                // @shree - show errors on panel 
+                // @@ - show errors on panel 
                 L_Message_EnrollStudent.setText("Exception : " + e);
                 L_Message_EnrollStudent.setForeground(Color.RED);
                 L_Message_EnrollStudent.setVisible(true);
+
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
             }
         }
     }//GEN-LAST:event_B_Enroll_EnrollStudentActionPerformed
@@ -4483,7 +4669,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Cancel_EnrollStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_EnrollStudentActionPerformed
 
-        // @shree - resetting the panel
+        // @@ - resetting the panel
         T_sid_EnrollStudent.setText("Enter sid here");
         T_cid_EnrollStudent.setText("Enter classid here");
         L_Error_EnrollStudent.setVisible(false);
@@ -4493,7 +4679,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_sid_DropEnrollmentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_DropEnrollmentFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_sid_DropEnrollment.getText().equals("Enter sid here")) {
             T_sid_DropEnrollment.setText("");
         }
@@ -4503,7 +4689,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_sid_DropEnrollmentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_sid_DropEnrollmentFocusLost
 
-        // @shree - no value provided, resetting the text
+        // @@ - no value provided, resetting the text
         if (T_sid_DropEnrollment.getText().equals("")) {
             T_sid_DropEnrollment.setText("Enter sid here");
         }
@@ -4512,7 +4698,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_cid_DropEnrollmentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_cid_DropEnrollmentFocusGained
 
-        // @shree - clearing the default text on focus
+        // @@ - clearing the default text on focus
         if (T_cid_DropEnrollment.getText().equals("Enter classid here")) {
             T_cid_DropEnrollment.setText("");
         }
@@ -4522,7 +4708,7 @@ public class Home extends javax.swing.JFrame {
 
     private void T_cid_DropEnrollmentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_cid_DropEnrollmentFocusLost
 
-        // @shree - no value provided, resetting the text
+        // @@ - no value provided, resetting the text
         if (T_cid_DropEnrollment.getText().equals("")) {
             T_cid_DropEnrollment.setText("Enter classid here");
         }
@@ -4531,7 +4717,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Drop_DropEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Drop_DropEnrollmentActionPerformed
 
-        // @shree - performing validation on details entered, if pass, fetch details, else report errors
+        // @@ - performing validation on details entered, if pass, fetch details, else report errors
         if ((!T_sid_DropEnrollment.getText().matches("B[0-9]+")) || (T_sid_DropEnrollment.getText().length() < 4) || (T_sid_DropEnrollment.getText().equals("Enter (B-Number) sid here"))) {
             L_Error_DropEnrollment.setText("Please provide valid sid (sid should be of length 4, and it starts with B)!");
             L_Error_DropEnrollment.setVisible(true);
@@ -4546,20 +4732,20 @@ public class Home extends javax.swing.JFrame {
 
             L_Error_DropEnrollment.setVisible(false);
 
-            // @shree - enrolling student to class, showing exceptions
+            // @@ - enrolling student to class, showing exceptions
             try {
 
                 String sid = T_sid_DropEnrollment.getText();
                 String cid = T_cid_DropEnrollment.getText();
 
-                // @shree - connect to DB
+                // @@ - connect to DB
                 OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
                 //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-                //Connection conn = ds.getConnection("shree", "shree2103");
+                //Connection conn = ds.getConnection("shree", "shree");
                 ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-                Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+                conn = ds.getConnection(user, pass);
 
-                // @shree - fetching result from DB usnig procedure
+                // @@ - fetching result from DB usnig procedure
                 CallableStatement call = conn.prepareCall("begin SQLPackage.drop_enrollment(?, ?); end;");
                 call.setString(1, sid);
                 call.setString(2, cid);
@@ -4573,7 +4759,7 @@ public class Home extends javax.swing.JFrame {
 
             } catch (SQLException ex) {
 
-                // @shree - show errors on panel
+                // @@ - show errors on panel
                 if (ex.toString().contains("The sid is invalid.")) {
                     L_Message_DropEnrollment.setText("The sid is invalid.");
                     L_Message_DropEnrollment.setForeground(Color.RED);
@@ -4605,12 +4791,26 @@ public class Home extends javax.swing.JFrame {
 
                 L_Message_DropEnrollment.setVisible(true);
 
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
+
             } catch (Exception e) {
 
-                // @shree - show errors on panel 
+                // @@ - show errors on panel 
                 L_Message_DropEnrollment.setText("Exception : " + e);
                 L_Message_DropEnrollment.setForeground(Color.RED);
                 L_Message_DropEnrollment.setVisible(true);
+
+                // @@ - handling too many session error by killing conn
+                try {
+                    conn.close();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+                }
             }
         }
     }//GEN-LAST:event_B_Drop_DropEnrollmentActionPerformed
@@ -4618,7 +4818,7 @@ public class Home extends javax.swing.JFrame {
 
     private void B_Cancel_DropEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Cancel_DropEnrollmentActionPerformed
 
-        // @shree - resetting the panel
+        // @@ - resetting the panel
         T_sid_DropEnrollment.setText("Enter sid here");
         T_cid_DropEnrollment.setText("Enter classid here");
         L_Error_DropEnrollment.setVisible(false);
@@ -4628,31 +4828,31 @@ public class Home extends javax.swing.JFrame {
 
     private void B_ShowAllLogsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ShowAllLogsActionPerformed
 
-        // @shree - show only show all logs panel
+        // @@ - show only show all logs panel
         P_Default_Logs.setVisible(false);
         P_ShowAllLogs.setVisible(true);
 
-        // @shree - hiding a table
+        // @@ - hiding a table
         P_Table_ShowAllLogs.setVisible(false);
 
-        // @shree - fecthing the data using procedure and display on GUI
+        // @@ - fecthing the data using procedure and display on GUI
         try {
 
-            // @shree - connect to DB
+            // @@ - connect to DB
             OracleDataSource ds = new oracle.jdbc.pool.OracleDataSource();
             //ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            //Connection conn = ds.getConnection("shree", "shree2103");
+            //Connection conn = ds.getConnection("shree", "shree");
             ds.setURL("jdbc:oracle:thin:@castor.cc.binghamton.edu:1521:ACAD111");
-            Connection conn = ds.getConnection("ssuryaw1", "JasonMS2018");
+            conn = ds.getConnection(user, pass);
 
-            // @shree - fetching result from DB usnig procedure
+            // @@ - fetching result from DB usnig procedure
             CallableStatement call = conn.prepareCall("begin SQLPackage.display_logs(?); end;");
             call.registerOutParameter(1, OracleTypes.CURSOR);
             call.execute();
 
             ResultSet rs = (ResultSet) call.getObject(1);
 
-            // @shree - inserting data into the table on GUI
+            // @@ - inserting data into the table on GUI
             DefaultTableModel model = (DefaultTableModel) TBL_ShowAllLogs.getModel();
             model.setRowCount(0);
             TBL_ShowAllLogs.setModel(model);
@@ -4678,14 +4878,29 @@ public class Home extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllLogs.setText("SQL Exception : " + ex);
             L_Message_ShowAllLogs.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
+
         } catch (Exception e) {
 
-            // @shree - show errors on panel -
+            // @@ - show errors on panel -
             L_Message_ShowAllLogs.setText("Exception : " + e);
             L_Message_ShowAllLogs.setForeground(Color.RED);
+
+            // @@ - handling too many session error by killing conn
+            try {
+                conn.close();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Login.class.getName()).log(Level.FINE, null, ex1);
+            }
         }
     }//GEN-LAST:event_B_ShowAllLogsActionPerformed
 
